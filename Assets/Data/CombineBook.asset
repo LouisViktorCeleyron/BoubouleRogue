@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1209869cc5a4f64488bd924e96b5432, type: 3}
+  m_Name: CombineBook
+  m_EditorClassIdentifier: 
+  _combinaisons:
+  - name: Simple Attack
+    elements:
+      a: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    consequence: {fileID: 11400000, guid: 1dddfa8514d1a4b40b46f6cbb2c7b4b4, type: 2}
+  - name: Simple Defence
+    elements:
+      a: {fileID: 0}
+      b: {fileID: 0}
+    consequence: {fileID: 0}
+  - name: 
+    elements:
+      a: {fileID: 0}
+      b: {fileID: 0}
+    consequence: {fileID: 0}
+  - name: 
+    elements:
+      a: {fileID: 0}
+      b: {fileID: 0}
+    consequence: {fileID: 0}
+  _defaultConsequence: {fileID: 11400000, guid: 1910cc61d532c704b9af505311eaa3e7, type: 2}
