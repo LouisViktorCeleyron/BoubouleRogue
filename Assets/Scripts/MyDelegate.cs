@@ -17,6 +17,6 @@ public class MyDelegate<T>
     }
     public void Launch(T param)
     {
-        _action.Invoke(param);
+        _action?.Invoke(param);
     }
 }

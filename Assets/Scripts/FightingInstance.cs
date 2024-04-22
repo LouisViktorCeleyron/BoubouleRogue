@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class FightingInstance : MonoBehaviour
 {
     public int hpMax;
+    [SerializeField]
     private int _currentHp;
 
     public List<Status> statusEffects;
@@ -34,5 +35,20 @@ public class FightingInstance : MonoBehaviour
     private void SetHp(int newAmount, bool negativeFeedback = true)
     {
         _currentHp = newAmount;
+    }
+
+    public void AddStatus<T>(int amount) where T : Status, new()
+    {
+        var currentStatus = statusEffects.Find((Status s)=> s.GetType() == typeof(T));
+        if(currentStatus != null) 
+        {
+            currentStatus.ChangeAmount(amount);
+        }
+        else
+        {
+            var _tempStatus = new T();
+            _tempStatus.ChangeAmount(amount);
+            statusEffects.Add(_tempStatus);
+        }
     }
 }

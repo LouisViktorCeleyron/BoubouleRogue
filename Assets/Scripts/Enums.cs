@@ -5,3 +5,9 @@ public enum ElementalType
     Wind,
     Water
 }
+
+public enum StatusEffect
+{
+    shield,
+    poison
+}

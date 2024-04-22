@@ -20,9 +20,9 @@ MonoBehaviour:
     consequence: {fileID: 11400000, guid: 1dddfa8514d1a4b40b46f6cbb2c7b4b4, type: 2}
   - name: Simple Defence
     elements:
-      a: {fileID: 0}
-      b: {fileID: 0}
-    consequence: {fileID: 0}
+      a: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+      b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+    consequence: {fileID: 11400000, guid: dbeddcd96b122a249af717aebca39692, type: 2}
   - name: 
     elements:
       a: {fileID: 0}

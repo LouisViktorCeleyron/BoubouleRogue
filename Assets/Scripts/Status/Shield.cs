@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shield : OnAttackedStatus
 {
+
     protected override void OnAttackedAction(Attack attack)
     {
         attack.ChangeDammage(-_amount);

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class OnAttackedStatus : Status
 {
-
     private void OnAttacked(Attack attack)
     {
         OnAttackedAction(attack);
