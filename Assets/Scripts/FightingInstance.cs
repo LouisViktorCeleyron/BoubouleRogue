@@ -13,6 +13,9 @@ public class FightingInstance : MonoBehaviour
 
     
     public MyDelegate<Attack> OnAttackReceived;
+    public UnityEvent<float> OnHpChanged;
+    public UnityEvent<StatusEffect,int> OnStatusInflicted;
+
 
     private void Awake()
     {
@@ -35,20 +38,36 @@ public class FightingInstance : MonoBehaviour
     private void SetHp(int newAmount, bool negativeFeedback = true)
     {
         _currentHp = newAmount;
+        OnHpChanged.Invoke((float)_currentHp / (float)hpMax);
     }
 
     public void AddStatus<T>(int amount) where T : Status, new()
     {
-        var currentStatus = statusEffects.Find((Status s)=> s.GetType() == typeof(T));
-        if(currentStatus != null) 
+        var currentStatus = statusEffects.Find((Status s) => s.GetType() == typeof(T));
+        if (currentStatus != null)
         {
             currentStatus.ChangeAmount(amount);
         }
         else
         {
             var _tempStatus = new T();
-            _tempStatus.ChangeAmount(amount);
+            _tempStatus.Inflict(this,amount);
             statusEffects.Add(_tempStatus);
         }
+    }
+
+    public void UpdateStatus(int amount, StatusEffect effect)
+    {
+        switch(effect) 
+        {
+            case StatusEffect.shield:
+                AddStatus<Shield>(amount);
+                break;
+
+            case StatusEffect.poison:
+                //AddStatus<>(amount);
+                break;
+        }
+        OnStatusInflicted.Invoke(effect, amount);
     }
 }

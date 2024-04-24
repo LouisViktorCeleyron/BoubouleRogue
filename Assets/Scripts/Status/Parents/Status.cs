@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class Status 
+public class Status 
 {
     protected FightingInstance _target;
+    [SerializeField]
     protected int _amount;
 
     public void Inflict(FightingInstance target, int amount)

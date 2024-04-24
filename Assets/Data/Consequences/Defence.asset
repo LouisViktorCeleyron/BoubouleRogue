@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
   m_Name: Defence
   m_EditorClassIdentifier: 
-  selfInflicted: 0
+  selfInflicted: 1
   icon: {fileID: 21300000, guid: 87283012dcc2b0e4098ef1095d2c8c16, type: 3}
-  amount: 5
   statusToInflict:
   - amount: 5
     effect: 0

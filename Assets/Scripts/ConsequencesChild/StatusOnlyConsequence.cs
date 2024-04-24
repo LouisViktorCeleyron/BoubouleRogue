@@ -25,15 +25,6 @@ public struct StatusInflicted
 
     public void ApplyStatus(FightingInstance target)
     {
-        switch (effect)
-        {
-            case StatusEffect.shield:
-                target.AddStatus<Shield>(amount);
-                break;
-            case StatusEffect.poison:
-                break;
-            default:
-                break;
-        }
+       target.UpdateStatus(amount, effect);
     }
 }
