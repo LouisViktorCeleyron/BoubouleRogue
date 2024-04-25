@@ -7,9 +7,8 @@ public class OnAttackedStatus : Status
 {
     private void OnAttacked(Attack attack)
     {
-        var tempDamage = attack.GetDammage();
+        "Attacked".ColorDebugLog(Color.yellow);
         OnAttackedAction(attack);
-        ChangeAmount(-tempDamage);
         if(_amount<=0)
         {
             Unsubscribe();
@@ -22,7 +21,6 @@ public class OnAttackedStatus : Status
     
     protected override void Subscribe()
     {
-        Debug.Log("OnAttack subscribed");
         _target.OnAttackReceived.Subscribe(OnAttacked);
     }
     protected override void Unsubscribe()

@@ -7,7 +7,6 @@ using TMPro;
 
 public class StatusUI : MonoBehaviour
 {
-
     public Image statusImage;
     public TextMeshProUGUI textMeshProUGUI;
     // Start is called before the first frame update

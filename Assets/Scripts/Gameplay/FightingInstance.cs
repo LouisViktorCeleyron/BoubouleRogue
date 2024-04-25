@@ -50,24 +50,24 @@ public class FightingInstance : MonoBehaviour
         }
         else
         {
-            var _tempStatus = new T();
-            _tempStatus.Inflict(this,amount);
-            statusEffects.Add(_tempStatus);
+            currentStatus = new T();
+            currentStatus.Inflict(this,amount);
+            statusEffects.Add(currentStatus);
         }
+        OnStatusInflicted.Invoke(currentStatus.StatusEnum, currentStatus.GetAmount());
     }
 
     public void UpdateStatus(int amount, StatusEffect effect)
     {
         switch(effect) 
         {
-            case StatusEffect.shield:
+            case StatusEffect.Shield:
                 AddStatus<Shield>(amount);
                 break;
 
-            case StatusEffect.poison:
-                //AddStatus<>(amount);
+            case StatusEffect.Burn:
+                AddStatus<Burn>(amount);
                 break;
         }
-        OnStatusInflicted.Invoke(effect, amount);
     }
 }

@@ -8,7 +8,9 @@ public class Shield : OnAttackedStatus
 
     protected override void OnAttackedAction(Attack attack)
     {
-        Debug.Log("attack changed");
+        "Shielded".ColorDebugLog(Color.cyan);
+        var tempDamage = attack.GetDammage();
         attack.ChangeDammage(-_amount);
+        UpdateStatusInPlayer(-tempDamage);
     }
 }

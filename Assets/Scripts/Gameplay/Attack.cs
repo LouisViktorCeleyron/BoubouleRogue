@@ -30,8 +30,4 @@ public class Attack
     {
 
     }
-    public FightingInstance GetTarget() 
-    { 
-        return _target;
-    }
 }

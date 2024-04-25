@@ -8,7 +8,8 @@ public enum ElementalType
 
 public enum StatusEffect
 {
-    shield,
-    poison
+    Shield,
+    Poison,
+    Burn
 }
 
