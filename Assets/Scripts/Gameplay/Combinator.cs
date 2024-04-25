@@ -32,7 +32,6 @@ public class Combinator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("coucou");
         if (!_isSelected) { return;}
         var other = collision.GetComponent<Combinator>();
         if (other)

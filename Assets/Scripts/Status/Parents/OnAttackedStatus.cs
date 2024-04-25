@@ -7,7 +7,6 @@ public class OnAttackedStatus : Status
 {
     private void OnAttacked(Attack attack)
     {
-        "Attacked".ColorDebugLog(Color.yellow);
         OnAttackedAction(attack);
         if(_amount<=0)
         {

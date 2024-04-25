@@ -12,9 +12,8 @@ public abstract class Consequence : ScriptableObject
     public void CallConsequence(FightingInstance launcher, FightingInstance opponent)
     {
         _target = selfInflicted ? launcher : opponent;
+        $"{launcher.gameObject.name} launched {name}, {_target.name} is the target".ColorDebugLog(Color.red);
         ConsequenceAction();
-
-        Debug.Log($"{launcher} à lancé {name} face à {opponent}, {_target} est la cible");
     }
 
     protected virtual void ConsequenceAction()

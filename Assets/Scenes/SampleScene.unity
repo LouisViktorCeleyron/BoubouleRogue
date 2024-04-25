@@ -438,6 +438,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1268481879683854794, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268481879683854794, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268481879683854794, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268481879683854794, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018202275874695587, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000020980835
+      objectReference: {fileID: 0}
     - target: {fileID: 2018202275874695587, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -4.952301
@@ -445,6 +465,10 @@ PrefabInstance:
     - target: {fileID: 3420640852680562373, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
       propertyPath: m_Name
       value: FightingInstanceUIOppponent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789656958482481046, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000020980835
       objectReference: {fileID: 0}
     - target: {fileID: 3789656958482481046, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1848,6 +1872,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1268481879683854794, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268481879683854794, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268481879683854794, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268481879683854794, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018202275874695587, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000020980835
+      objectReference: {fileID: 0}
     - target: {fileID: 2018202275874695587, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -4.952301
@@ -1855,6 +1899,10 @@ PrefabInstance:
     - target: {fileID: 3420640852680562373, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
       propertyPath: m_Name
       value: FightingInstanceUIPLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789656958482481046, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000020980835
       objectReference: {fileID: 0}
     - target: {fileID: 3789656958482481046, guid: 50cd775a92558ef4593367104d6c5f01, type: 3}
       propertyPath: m_AnchoredPosition.y

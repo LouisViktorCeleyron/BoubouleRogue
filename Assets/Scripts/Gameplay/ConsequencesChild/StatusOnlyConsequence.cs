@@ -12,6 +12,7 @@ public class StatusOnlyConsequence : Consequence
     {
         foreach (var status in statusToInflict) 
         {
+            $"{status.effect} inflicted".ColorDebugLog(Color.magenta);
             status.ApplyStatus(_target);
         }
     }

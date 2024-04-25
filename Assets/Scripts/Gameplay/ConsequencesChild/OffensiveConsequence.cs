@@ -12,6 +12,7 @@ public class OffensiveConsequence : StatusOnlyConsequence
     {
         var attack = new Attack(baseDammage, type, _target);
         _target.ReceiveAttack(attack);
+        base.ConsequenceAction();
     }
 }
 

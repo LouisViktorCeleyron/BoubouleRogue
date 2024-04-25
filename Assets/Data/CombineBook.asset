@@ -18,7 +18,7 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
       b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
     consequence: {fileID: 11400000, guid: 1dddfa8514d1a4b40b46f6cbb2c7b4b4, type: 2}
-  - name: Simple Defence
+  - name: Simple Defense
     elements:
       a: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
       b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
@@ -28,9 +28,9 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
       b: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
     consequence: {fileID: 11400000, guid: 4adf9d987718c6e4ba65b7c1ce026144, type: 2}
-  - name: 
+  - name: Burning Attack
     elements:
-      a: {fileID: 0}
-      b: {fileID: 0}
-    consequence: {fileID: 0}
+      a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    consequence: {fileID: 11400000, guid: a21476d46bdce3540bc166af2a61d751, type: 2}
   _defaultConsequence: {fileID: 11400000, guid: 1910cc61d532c704b9af505311eaa3e7, type: 2}
