@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eedc3a04e86757c478398136a668cbde, type: 3}
   m_Name: Default Attack
   m_EditorClassIdentifier: 
-  isTargetPlayer: 0
+  selfInflicted: 0
   icon: {fileID: 21300000, guid: eff6a1c7625c7f148b52d35d49c52185, type: 3}
+  statusToInflict: []
   type: 0
-  baseDammage: 1
+  baseDamages: 1
+  recoilDamages: 0

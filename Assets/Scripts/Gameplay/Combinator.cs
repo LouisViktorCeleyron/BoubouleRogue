@@ -13,10 +13,16 @@ public class Combinator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _spriteRenderer.sprite = element.icone;
         _battleManager = ManagerManager.GetManager<BattleManager>();
-    }
 
+        //Temp
+        _battleManager.CombinatorSubManager.SubscribleCombinator(this);
+    }
+    public void Initialise(Element element)
+    {
+        this.element = element;
+        _spriteRenderer.sprite = element.icone;
+    }
     private void OnMouseDrag()
     {
         _isSelected = true;
@@ -36,7 +42,7 @@ public class Combinator : MonoBehaviour
         var other = collision.GetComponent<Combinator>();
         if (other)
         {
-            _battleManager.PlayerTurn(element, other.element);
+            _battleManager.PlayerTurn(this, other);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

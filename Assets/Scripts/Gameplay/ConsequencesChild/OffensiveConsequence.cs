@@ -6,12 +6,16 @@ using UnityEngine;
 public class OffensiveConsequence : StatusOnlyConsequence
 {
     public ElementalType type = ElementalType.Neutral;
-    public int baseDammage;
+    public int baseDamages, recoilDamages = 0;
 
     protected override void ConsequenceAction()
     {
-        var attack = new Attack(baseDammage, type, _target);
+        var attack = new Attack(baseDamages, type, _target);
         _target.ReceiveAttack(attack);
+        if( recoilDamages > 0 ) 
+        {
+            _launcher.AutoInflictedDamage(recoilDamages);
+        }
         base.ConsequenceAction();
     }
 }

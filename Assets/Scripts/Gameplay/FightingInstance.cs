@@ -35,11 +35,17 @@ public class FightingInstance : MonoBehaviour
         SetHp(_currentHp - attack.GetDammage());
     }
 
+    public void AutoInflictedDamage(int amount)
+    {
+        SetHp(_currentHp - amount, true);
+    }
+
     private void SetHp(int newAmount, bool negativeFeedback = true)
     {
         _currentHp = newAmount;
         OnHpChanged.Invoke((float)_currentHp / (float)hpMax);
     }
+
 
     public void AddStatus<T>(int amount) where T : Status, new()
     {

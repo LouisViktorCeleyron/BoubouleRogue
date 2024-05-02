@@ -18,4 +18,5 @@ MonoBehaviour:
   - amount: 1
     effect: 2
   type: 1
-  baseDammage: 3
+  baseDamages: 3
+  recoilDamages: 0

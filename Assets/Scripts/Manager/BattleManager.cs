@@ -7,11 +7,16 @@ public class BattleManager : Manager
     public FightingInstance playerInstance, opponentInstance;
     public CombineBook book;
 
+    public ElementAndCombinatorSubManager CombinatorSubManager;
+
     [SerializeField]
     private bool _playerTurn, _opponentTurn;
 
+
     public override void ManagerAwake()
     {
+        
+        CombinatorSubManager.Initialise();   
         StartCoroutine(Turn());
     }
 
@@ -19,6 +24,7 @@ public class BattleManager : Manager
     {
         while (true) 
         { 
+            StartTurn();
             _playerTurn = true;
             yield return new WaitWhile(()=>_playerTurn == true);
 
@@ -27,17 +33,33 @@ public class BattleManager : Manager
             yield return null;
         }
     }
+
     
-    
-    public void PlayerTurn(Element a, Element b)
+    private void StartTurn()
     {
-        var c =book.GetConsequence(a, b);
+        CombinatorSubManager.ResetAvailableElements();
+        CombinatorSubManager.Draw(4);
+    }
+
+    public void PlayerTurn(Combinator a, Combinator b)
+    {
+        var c =book.GetConsequence(a.element, b.element);
         c.CallConsequence(playerInstance, opponentInstance);
+
+        CombinatorSubManager.DiscardCombinator(a, b);
+
+        if(CombinatorSubManager.CombinatorsCount <= 0) 
+        {
+            _playerTurn = false;   
+        }
     }
 
     public void OpponentTurn()
     {
         _opponentTurn = true;
         print("Olalal c tré le tour de l'oponent");
+        _opponentTurn = false;
+
     }
+
 }
