@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ManagerManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class ManagerManager : MonoBehaviour
         managers = GetComponents<Manager>().ToList();
 
         ProcessManagerAwake();
+        SceneManager.sceneLoaded += OnStartScene;
 
 
         DontDestroyOnLoad(gameObject);
@@ -47,7 +49,15 @@ public class ManagerManager : MonoBehaviour
     {
         foreach (var manager in managers) 
         { 
-            manager.ManagerAwake();
+            manager.ManagerPreAwake();
+        }
+    }
+
+    public void OnStartScene(Scene newScene, LoadSceneMode loadSceneMode)
+    {
+        foreach (var manager in managers)
+        {
+            manager.ManagerOnEachSceneStart(newScene);
         }
     }
 }

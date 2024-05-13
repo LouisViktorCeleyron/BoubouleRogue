@@ -1,35 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class BattleManager : Manager
 {
-    public FightingInstance playerInstance, opponentInstance;
+    public FightingInstance playerInstance;
+    public OponentInstance opponentInstance;
+
     public CombineBook book;
 
     public ElementAndCombinatorSubManager CombinatorSubManager;
+    public DrawingBoard board;
+
 
     [SerializeField]
     private bool _playerTurn, _opponentTurn;
-
-
-    public override void ManagerAwake()
+    private PlayerManager _playerManager;
+    private JourneyManager _journeyManager;
+   
+    public override void ManagerPreAwake()
     {
-        
-        CombinatorSubManager.Initialise();   
+        _journeyManager=ManagerManager.GetManager<JourneyManager>();
+        _playerManager =ManagerManager.GetManager<PlayerManager>();
+
+    }
+    public override void ManagerOnEachSceneStart(UnityEngine.SceneManagement.Scene scene)
+    {
+        if (scene.name != "BattleScene")
+        {
+            return;
+        }
+        CombinatorSubManager.Initialise();
         StartCoroutine(Turn());
+    }
+    private void SetUpOpponent()
+    {
+        opponentInstance.Initialise(_journeyManager.GetOpponent());
+    }
+
+    private void InitialiseBattle()
+    {
+        playerInstance.SetHp(_playerManager.currentHp);
     }
 
     private IEnumerator Turn()
     {
+        yield return new WaitUntil(LoopCanStart);
+        SetUpOpponent();
+        InitialiseBattle();
         while (true) 
         { 
             StartTurn();
+            playerInstance.StartTurn();
             _playerTurn = true;
             yield return new WaitWhile(()=>_playerTurn == true);
+            playerInstance.EndTurn();
 
+            opponentInstance.StartTurn();
             OpponentTurn();
             yield return new WaitWhile(() => _opponentTurn== true);
+            opponentInstance.EndTurn();
             yield return null;
         }
     }
@@ -57,9 +88,21 @@ public class BattleManager : Manager
     public void OpponentTurn()
     {
         _opponentTurn = true;
-        print("Olalal c tré le tour de l'oponent");
+        opponentInstance.LaunchConsequence(this);
         _opponentTurn = false;
 
+    }
+    public void EndOfBattle()
+    {
+        _playerManager.currentHp = playerInstance.GetHp();
+    }
+    private bool LoopCanStart()
+    {
+        Debug.Log("Hey");
+        return
+            board != null
+            && playerInstance != null
+            && opponentInstance != null;
     }
 
 }

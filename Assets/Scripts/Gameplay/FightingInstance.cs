@@ -7,26 +7,49 @@ public class FightingInstance : MonoBehaviour
 {
     public int hpMax;
     [SerializeField]
-    private int _currentHp;
+    protected int _currentHp;
 
     public List<Status> statusEffects;
-
     
+    public bool isPlayer;
+
     public MyDelegate<Attack> OnAttackReceived;
+    public MyDelegate<FightingInstance> OnStartTurn;
+    
     public UnityEvent<float> OnHpChanged;
     public UnityEvent<StatusEffect,int> OnStatusInflicted;
-
+    
+    protected BattleManager _battleManager;
 
     private void Awake()
     {
         //init
         OnAttackReceived = new MyDelegate<Attack>();
+        statusEffects = new List<Status>();
+
+        _battleManager = ManagerManager.GetManager<BattleManager>();
     }
 
-    void Start()
+    private void Start()
     {
-        statusEffects = new List<Status>();
-        SetHp(hpMax);
+        if (isPlayer)
+        {
+            _battleManager.playerInstance = this;
+        }
+    }
+
+    public void StartTurn()
+    {
+        OnStartTurn.Launch(this);
+    }
+    public void EndTurn()
+    {
+        OnStartTurn.Launch(this);
+    }
+
+    public int GetHp() 
+    { 
+        return _currentHp;
     }
 
     public void ReceiveAttack(Attack  attack)
@@ -40,7 +63,7 @@ public class FightingInstance : MonoBehaviour
         SetHp(_currentHp - amount, true);
     }
 
-    private void SetHp(int newAmount, bool negativeFeedback = true)
+    public void SetHp(int newAmount, bool negativeFeedback = true)
     {
         _currentHp = newAmount;
         OnHpChanged.Invoke((float)_currentHp / (float)hpMax);

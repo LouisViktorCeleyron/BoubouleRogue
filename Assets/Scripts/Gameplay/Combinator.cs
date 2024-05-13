@@ -28,7 +28,7 @@ public class Combinator : MonoBehaviour
         _isSelected = true;
         var mousPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane+10);
         var newPos = Camera.main.ScreenToWorldPoint(mousPos);
-        transform.position = newPos;
+        transform.position = newPos.ClampedVector3(_battleManager.board.botLeft.position,_battleManager.board.topRight.position);
     }
 
     private void OnMouseUp()

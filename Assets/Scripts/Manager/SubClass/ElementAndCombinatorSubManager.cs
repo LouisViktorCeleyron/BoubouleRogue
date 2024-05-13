@@ -10,11 +10,13 @@ public class ElementAndCombinatorSubManager
 
     public int CombinatorsCount => _availableElements.Count;
     private PlayerManager _playerManager;
+    private BattleManager _battleManager;
     public Combinator combinatorPrefab;
 
     public void Initialise()
     {
         _playerManager = ManagerManager.GetManager<PlayerManager>();
+        _battleManager = ManagerManager.GetManager<BattleManager>();
 
         _inBattleDeck = new List<Element>(_playerManager.Deck);
         _discardPile = new List<Element>();
@@ -37,7 +39,7 @@ public class ElementAndCombinatorSubManager
         var drawnElement = _inBattleDeck[drawIndex];
         _inBattleDeck.RemoveAt(drawIndex);
 
-        var combinator = Object.Instantiate(combinatorPrefab);
+        var combinator = Object.Instantiate(combinatorPrefab, _battleManager.board.RandomPointInBoard(), Quaternion.identity);
         combinator.Initialise(drawnElement);
     }
 

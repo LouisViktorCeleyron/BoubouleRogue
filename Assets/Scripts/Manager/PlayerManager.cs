@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerManager : Manager
 {
+    public int hpMax, currentHp;
     public List<Element> Deck;
-    public override void ManagerAwake()
+    public override void ManagerPreAwake()
     {
-        base.ManagerAwake();
+        base.ManagerPreAwake();
     }
 }
