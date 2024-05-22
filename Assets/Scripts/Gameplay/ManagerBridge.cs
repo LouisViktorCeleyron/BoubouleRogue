@@ -6,10 +6,12 @@ public class ManagerBridge : MonoBehaviour
 {
 
     private MySceneManager _mySceneManager;
+    private BattleManager _battleManager;
 
     private void Start()
     {
         _mySceneManager = ManagerManager.GetManager<MySceneManager>();      
+        _battleManager = ManagerManager.GetManager<BattleManager>();      
     }
 
     public void BattleScene()
@@ -27,5 +29,10 @@ public class ManagerBridge : MonoBehaviour
     public void InnScene()
     {
         _mySceneManager.LoadInn();
+    }
+
+    public void PassPlayerTurn()
+    {
+        _battleManager.StopPlayerTurn();
     }
 }

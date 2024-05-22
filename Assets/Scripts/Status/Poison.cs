@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Poison : MonoBehaviour
+public class Poison : OnStartTurnStatus
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public override StatusEffect StatusEnum => StatusEffect.Poison;
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnStartTurnAction(FightingInstance target)
     {
-        
+        target.AutoInflictedDamage(_amount);
+        UpdateStatusInPlayer(-1);
     }
 }

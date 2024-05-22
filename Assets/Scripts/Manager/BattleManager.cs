@@ -41,6 +41,7 @@ public class BattleManager : Manager
 
     private void InitialiseBattle()
     {
+        CombinatorSubManager.ResetAvailableElements();
         playerInstance.SetHp(_playerManager.currentHp);
     }
 
@@ -55,6 +56,7 @@ public class BattleManager : Manager
             playerInstance.StartTurn();
             _playerTurn = true;
             yield return new WaitWhile(()=>_playerTurn == true);
+            "End Of Player Turn".ColorDebugLog(Color.black);
             playerInstance.EndTurn();
 
             opponentInstance.StartTurn();
@@ -68,7 +70,7 @@ public class BattleManager : Manager
     
     private void StartTurn()
     {
-        CombinatorSubManager.ResetAvailableElements();
+        //Checker ici
         CombinatorSubManager.Draw(4);
     }
 
@@ -85,6 +87,11 @@ public class BattleManager : Manager
         }
     }
 
+    public void StopPlayerTurn()
+    {
+        _playerTurn = false;
+    }
+
     public void OpponentTurn()
     {
         _opponentTurn = true;
@@ -98,7 +105,6 @@ public class BattleManager : Manager
     }
     private bool LoopCanStart()
     {
-        Debug.Log("Hey");
         return
             board != null
             && playerInstance != null

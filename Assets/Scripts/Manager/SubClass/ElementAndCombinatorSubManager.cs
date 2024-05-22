@@ -33,14 +33,24 @@ public class ElementAndCombinatorSubManager
     {
         if(_inBattleDeck.Count <=0)
         {
+            if(_discardPile.Count<=0)
+            {
+                return;
+            }
             ResetDeck();
         }
         var drawIndex = Random.Range(0,_inBattleDeck.Count);
         var drawnElement = _inBattleDeck[drawIndex];
         _inBattleDeck.RemoveAt(drawIndex);
 
+        DrawSpecific(drawnElement);
+    }
+
+    public void DrawSpecific(Element element)
+    {
         var combinator = Object.Instantiate(combinatorPrefab, _battleManager.board.RandomPointInBoard(), Quaternion.identity);
-        combinator.Initialise(drawnElement);
+        combinator.Initialise(element);
+        SubscribleCombinator(combinator);
     }
 
     public void Draw(int amount = 1)

@@ -14,9 +14,6 @@ public class Combinator : MonoBehaviour
     void Start()
     {
         _battleManager = ManagerManager.GetManager<BattleManager>();
-
-        //Temp
-        _battleManager.CombinatorSubManager.SubscribleCombinator(this);
     }
     public void Initialise(Element element)
     {

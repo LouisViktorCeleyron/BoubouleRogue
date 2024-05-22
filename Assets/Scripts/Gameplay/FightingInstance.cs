@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Reflection;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,7 +15,7 @@ public class FightingInstance : MonoBehaviour
     public bool isPlayer;
 
     public MyDelegate<Attack> OnAttackReceived;
-    public MyDelegate<FightingInstance> OnStartTurn;
+    public MyDelegate<FightingInstance> OnStartTurn, OnEndTurn;
     
     public UnityEvent<float> OnHpChanged;
     public UnityEvent<StatusEffect,int> OnStatusInflicted;
@@ -25,6 +26,8 @@ public class FightingInstance : MonoBehaviour
     {
         //init
         OnAttackReceived = new MyDelegate<Attack>();
+        OnStartTurn = new MyDelegate<FightingInstance>();
+        OnEndTurn = new MyDelegate<FightingInstance>();
         statusEffects = new List<Status>();
 
         _battleManager = ManagerManager.GetManager<BattleManager>();
@@ -44,7 +47,7 @@ public class FightingInstance : MonoBehaviour
     }
     public void EndTurn()
     {
-        OnStartTurn.Launch(this);
+        OnEndTurn.Launch(this);
     }
 
     public int GetHp() 
@@ -86,17 +89,22 @@ public class FightingInstance : MonoBehaviour
         OnStatusInflicted.Invoke(currentStatus.StatusEnum, currentStatus.GetAmount());
     }
 
+
+    public void AddStatusNonGeneric(System.Type type, int amount)
+    {
+        MethodInfo method = GetType().GetMethod("AddStatus");
+        method = method.MakeGenericMethod(type);
+        method.Invoke(this, new object[] { amount });
+    }
+
+
     public void UpdateStatus(int amount, StatusEffect effect)
     {
-        switch(effect) 
+        var type = System.Type.GetType(effect.ToString());
+        if(type == null)
         {
-            case StatusEffect.Shield:
-                AddStatus<Shield>(amount);
-                break;
-
-            case StatusEffect.Burn:
-                AddStatus<Burn>(amount);
-                break;
+            return;
         }
+        AddStatusNonGeneric(type, amount);
     }
 }

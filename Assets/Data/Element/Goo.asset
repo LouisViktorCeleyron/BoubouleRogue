@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eedc3a04e86757c478398136a668cbde, type: 3}
-  m_Name: Simple Attack
+  m_Script: {fileID: 11500000, guid: 118bd8503ba39c04da5dc6fc19f8e359, type: 3}
+  m_Name: Goo
   m_EditorClassIdentifier: 
-  selfInflicted: 0
-  icon: {fileID: 21300000, guid: eff6a1c7625c7f148b52d35d49c52185, type: 3}
-  statusToInflict: []
-  type: 0
-  baseDamages: 0
-  recoilDamages: 0
+  icone: {fileID: 21300000, guid: 52532ceabcc87e74e9864fd7a4a06603, type: 3}

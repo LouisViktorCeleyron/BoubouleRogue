@@ -12,4 +12,15 @@ public class Shield : OnAttackedStatus
         attack.ChangeDammage(-_amount);
         UpdateStatusInPlayer(-tempDamage);
     }
+
+    protected override void Subscribe()
+    {
+        base.Subscribe();
+        _target.OnStartTurn.Subscribe(ResetShield);
+    }
+
+    private void ResetShield(FightingInstance target)
+    {
+        UpdateStatusInPlayer(-999);
+    }
 }

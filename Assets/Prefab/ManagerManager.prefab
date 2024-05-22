@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3982042921222889408}
   - component: {fileID: 3658780177701424931}
   - component: {fileID: 1397536334289530472}
+  - component: {fileID: 3662837913367717960}
   m_Layer: 0
   m_Name: ManagerManager
   m_TagString: Untagged
@@ -80,7 +81,6 @@ MonoBehaviour:
   board: {fileID: 0}
   _playerTurn: 0
   _opponentTurn: 0
-  isInBattle: 0
 --- !u!114 &3658780177701424931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,3 +120,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   realmNumber: 0
   currentRealms: {fileID: 11400000, guid: 7dcc916c5bcd6964b8133b3eda20ff33, type: 2}
+--- !u!114 &3662837913367717960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313206151600548301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14fd590ae60713478390b2512611ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugDeck:
+  - {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+  - {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+  - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+  - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+  - {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+  - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+  - {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}

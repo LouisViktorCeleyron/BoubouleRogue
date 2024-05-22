@@ -446,6 +446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4585930319870741171, guid: 5d32ce450726a3046b59051c3fea6eaf, type: 3}
+      propertyPath: OnClickAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6685532768513978945, guid: 5d32ce450726a3046b59051c3fea6eaf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7
@@ -499,6 +503,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2106885453834396639, guid: eb725488953de034da13c1aceb0e0932, type: 3}
+      propertyPath: OnClickAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3857328663511040962, guid: eb725488953de034da13c1aceb0e0932, type: 3}
       propertyPath: m_Name
       value: ShopButton
