@@ -26,5 +26,8 @@ public class MySceneManager : Manager
     {
         SceneManager.LoadScene(4);
     }
-
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene(5);
+    }
 }

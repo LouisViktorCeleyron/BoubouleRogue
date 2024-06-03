@@ -7,6 +7,7 @@ public class DEBUGGER_BATTLE : MonoBehaviour
     public Element[] debugDeck;
     private BattleManager manager;
 
+    [SerializeField]
     private bool showDebug;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,14 @@ public class DEBUGGER_BATTLE : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E))
             {
                 showDebug = !showDebug;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                ManagerManager.GetManager<MySceneManager>().LoadMap();
             }
         }
     }

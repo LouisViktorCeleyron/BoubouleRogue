@@ -9,6 +9,5 @@ public class Poison : OnStartTurnStatus
     protected override void OnStartTurnAction(FightingInstance target)
     {
         target.AutoInflictedDamage(_amount);
-        UpdateStatusInPlayer(-1);
     }
 }

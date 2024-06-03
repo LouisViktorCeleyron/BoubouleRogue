@@ -8,7 +8,8 @@ public class OnStartTurnStatus : Status
     private void OnStartTurn(FightingInstance target)
     {
         OnStartTurnAction(target);
-        if(_amount<=0)
+        UpdateStatusInPlayer(-1);
+        if (_amount<=0)
         {
             Unsubscribe();
         }

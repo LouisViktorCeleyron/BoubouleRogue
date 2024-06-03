@@ -64,12 +64,17 @@ public class FightingInstance : MonoBehaviour
     public void AutoInflictedDamage(int amount)
     {
         SetHp(_currentHp - amount, true);
+
     }
 
     public void SetHp(int newAmount, bool negativeFeedback = true)
     {
         _currentHp = newAmount;
         OnHpChanged.Invoke((float)_currentHp / (float)hpMax);
+        if(_currentHp<=0)
+        {
+            _battleManager.EndOfBattle(isPlayer);
+        }
     }
 
 

@@ -17,12 +17,14 @@ public class BattleManager : Manager
     [SerializeField]
     private bool _playerTurn, _opponentTurn;
     private PlayerManager _playerManager;
+    private MySceneManager _mySceneManager;
     private JourneyManager _journeyManager;
    
     public override void ManagerPreAwake()
     {
         _journeyManager=ManagerManager.GetManager<JourneyManager>();
         _playerManager =ManagerManager.GetManager<PlayerManager>();
+        _mySceneManager =ManagerManager.GetManager<MySceneManager>();
 
     }
     public override void ManagerOnEachSceneStart(UnityEngine.SceneManagement.Scene scene)
@@ -99,9 +101,19 @@ public class BattleManager : Manager
         _opponentTurn = false;
 
     }
-    public void EndOfBattle()
+
+
+    public void EndOfBattle(bool playrVictory= true)
     {
-        _playerManager.currentHp = playerInstance.GetHp();
+        if(playrVictory)
+        {
+            _playerManager.currentHp = playerInstance.GetHp();
+            _mySceneManager.LoadMap();
+        }
+        else
+        {
+            _mySceneManager.LoadGameOver();
+        }
     }
     private bool LoopCanStart()
     {
