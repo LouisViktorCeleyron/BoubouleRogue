@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: eff6a1c7625c7f148b52d35d49c52185, type: 3}
   statusToInflict: []
   type: 0
-  baseDamages: 0
+  baseDamages: 5
   recoilDamages: 0
