@@ -11,7 +11,7 @@ public class FightingInstance : MonoBehaviour
     protected int _currentHp;
 
     public List<Status> statusEffects;
-    
+
     public bool isPlayer;
 
     public MyDelegate<Attack> OnAttackReceived;
@@ -21,6 +21,7 @@ public class FightingInstance : MonoBehaviour
     public UnityEvent<StatusEffect,int> OnStatusInflicted;
     
     protected BattleManager _battleManager;
+    public FightingInstanceFeedbackSubComponent feedbackSubComp;
 
     private void Awake()
     {
@@ -49,24 +50,20 @@ public class FightingInstance : MonoBehaviour
     {
         OnEndTurn.Launch(this);
     }
-
     public int GetHp() 
     { 
         return _currentHp;
     }
-
     public void ReceiveAttack(Attack  attack)
     {
         OnAttackReceived.Launch(attack);
         SetHp(_currentHp - attack.GetDammage());
     }
-
     public void AutoInflictedDamage(int amount)
     {
         SetHp(_currentHp - amount, true);
 
     }
-
     public void SetHp(int newAmount, bool negativeFeedback = true)
     {
         _currentHp = newAmount;
@@ -76,8 +73,6 @@ public class FightingInstance : MonoBehaviour
             _battleManager.EndOfBattle(isPlayer);
         }
     }
-
-
     public void AddStatus<T>(int amount) where T : Status, new()
     {
         var currentStatus = statusEffects.Find((Status s) => s.GetType() == typeof(T));
@@ -93,16 +88,12 @@ public class FightingInstance : MonoBehaviour
         }
         OnStatusInflicted.Invoke(currentStatus.StatusEnum, currentStatus.GetAmount());
     }
-
-
     public void AddStatusNonGeneric(System.Type type, int amount)
     {
         MethodInfo method = GetType().GetMethod("AddStatus");
         method = method.MakeGenericMethod(type);
         method.Invoke(this, new object[] { amount });
     }
-
-
     public void UpdateStatus(int amount, StatusEffect effect)
     {
         var type = System.Type.GetType(effect.ToString());

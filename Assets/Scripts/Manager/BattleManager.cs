@@ -103,9 +103,9 @@ public class BattleManager : Manager
     }
 
 
-    public void EndOfBattle(bool playrVictory= true)
+    public void EndOfBattle(bool playerDead = true)
     {
-        if(playrVictory)
+        if(playerDead)
         {
             _playerManager.currentHp = playerInstance.GetHp();
             _mySceneManager.LoadMap();

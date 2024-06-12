@@ -6,7 +6,9 @@ public abstract class Consequence : ScriptableObject
 {
     public bool selfInflicted;
     public Sprite icon;
+    public AnimationClip clip;
     protected FightingInstance _target, _launcher;
+
 
 
     public void CallConsequence(FightingInstance launcher, FightingInstance opponent)
@@ -15,6 +17,10 @@ public abstract class Consequence : ScriptableObject
         $"{launcher.gameObject.name} launched {name}, {_target.name} is the target".ColorDebugLog(Color.red);
         _launcher = launcher;
         ConsequenceAction();
+        if(clip)
+        {
+            _target.feedbackSubComp.PlayClip(clip);
+        }
     }
 
     protected virtual void ConsequenceAction()
