@@ -13,7 +13,6 @@ public class BattleManager : Manager
     public ElementAndCombinatorSubManager CombinatorSubManager;
     public DrawingBoard board;
 
-
     [SerializeField]
     private bool _playerTurn, _opponentTurn;
     private PlayerManager _playerManager;
@@ -57,18 +56,18 @@ public class BattleManager : Manager
             StartTurn();
             playerInstance.StartTurn();
             _playerTurn = true;
-            yield return new WaitWhile(()=>_playerTurn == true);
+            yield return new WaitWhile(()=>_playerTurn );
             "End Of Player Turn".ColorDebugLog(Color.black);
             playerInstance.EndTurn();
 
             opponentInstance.StartTurn();
             OpponentTurn();
-            yield return new WaitWhile(() => _opponentTurn== true);
+            yield return new WaitWhile(() => _opponentTurn );
             opponentInstance.EndTurn();
             yield return null;
         }
     }
-
+   
     
     private void StartTurn()
     {
@@ -83,10 +82,10 @@ public class BattleManager : Manager
 
         CombinatorSubManager.DiscardCombinator(a, b);
 
-        if(CombinatorSubManager.CombinatorsCount <= 0) 
-        {
-            _playerTurn = false;   
-        }
+        //if(CombinatorSubManager.CombinatorsCount <= 0) 
+        //{
+        //    _playerTurn = false;   
+        //}
     }
 
     public void StopPlayerTurn()

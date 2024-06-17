@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfInflicted: 0
   icon: {fileID: 21300000, guid: c009101dc52f4544e95be28caffdb2f1, type: 3}
-  clip: {fileID: 7400000, guid: 813d22b7c68a56b44ae062211e642111, type: 2}
+  clip: {fileID: 7400000, guid: 5cf3e8ea1e6d1c849acb6d09fb3071fb, type: 2}
   statusToInflict:
   - amount: 1
     effect: 2

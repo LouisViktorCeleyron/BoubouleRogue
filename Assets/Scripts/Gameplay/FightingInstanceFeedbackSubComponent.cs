@@ -6,13 +6,11 @@ using UnityEngine;
 public class FightingInstanceFeedbackSubComponent 
 {
     private FightingInstance _parent;
-    [SerializeField] private Animation _vfxAnimation;
+    public Animator vfxAnimator;
 
     public void PlayClip(AnimationClip clip)
     {
-        _vfxAnimation.AddClip(clip, clip.name);
-        _vfxAnimation.clip = clip;
-        _vfxAnimation.Play();
+        vfxAnimator.Play(clip.name);
     }
 
 }
