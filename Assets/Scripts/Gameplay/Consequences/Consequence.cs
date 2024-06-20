@@ -9,6 +9,7 @@ public abstract class Consequence : ScriptableObject
     public AnimationClip clip;
     protected FightingInstance _target, _launcher;
 
+    protected CseCollection _cseCollection; 
 
 
     public void CallConsequence(FightingInstance launcher, FightingInstance opponent)
