@@ -15,4 +15,5 @@ MonoBehaviour:
   baseHp: 20000
   availableConsequences:
   - {fileID: 11400000, guid: eaa67f08b97c60441a88c7e3e7ed2edd, type: 2}
+  - {fileID: 11400000, guid: dbeddcd96b122a249af717aebca39692, type: 2}
   sprite: {fileID: 21300000, guid: d8962af5a7bd338499be8bdd208b8d5c, type: 3}

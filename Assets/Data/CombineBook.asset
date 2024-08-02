@@ -78,4 +78,14 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
       b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
     consequence: {fileID: 11400000, guid: 1c3f1233904262742ad49a8a19ad4f13, type: 2}
+  - name: Quick Posture
+    elements:
+      a: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+      b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+    consequence: {fileID: 11400000, guid: 702d1184ad5eb5542975d50d3dce57c7, type: 2}
+  - name: Smoke
+    elements:
+      a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+      b: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+    consequence: {fileID: 11400000, guid: 6e08a2f0a8e48124993a528681755434, type: 2}
   _defaultConsequence: {fileID: 11400000, guid: 1910cc61d532c704b9af505311eaa3e7, type: 2}

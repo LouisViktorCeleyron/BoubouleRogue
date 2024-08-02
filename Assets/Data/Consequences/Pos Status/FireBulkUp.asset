@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
-  m_Name: Smoke
+  m_Name: FireBulkUp
   m_EditorClassIdentifier: 
-  selfInflicted: 1
+  selfInflicted: 0
   icon: {fileID: 0}
   clip: {fileID: 0}
   _cseCollection:
@@ -29,6 +29,4 @@ MonoBehaviour:
     heal:
       _use: 0
       amount: 1
-  statusToInflict:
-  - amount: 2
-    effect: 6
+  statusToInflict: []
