@@ -15,7 +15,7 @@ public class BattleManager : Manager
     public DrawingBoard board;
 
     [SerializeField]
-    private bool _playerTurn, _opponentTurn;
+    private bool _playerTurn, _opponentTurn, _initialized;
     private PlayerManager _playerManager;
     private MySceneManager _mySceneManager;
     private JourneyManager _journeyManager;
@@ -38,6 +38,7 @@ public class BattleManager : Manager
         }
         BattlePreviewSubManager.Initialize();
         CombinatorSubManager.Initialise();
+        _initialized = false;
         StartCoroutine(Turn());
     }
     private void SetUpOpponent()
@@ -49,31 +50,36 @@ public class BattleManager : Manager
     {
         CombinatorSubManager.ResetAvailableElements();
         playerInstance.SetHp(_playerManager.currentHp);
+        SetUpOpponent();
+
     }
 
     private IEnumerator Turn()
     {
         yield return new WaitUntil(LoopCanStart);
-        SetUpOpponent();
         InitialiseBattle();
         while (true) 
         { 
             StartTurn();
             playerInstance.StartTurn();
             _playerTurn = true;
+            Debug.Log("Before WaitPlayer turn");
+            yield return new WaitForEndOfFrame();
             yield return new WaitWhile(()=>_playerTurn );
             "End Of Player Turn".ColorDebugLog(Color.black);
             playerInstance.EndTurn();
 
             opponentInstance.StartTurn();
             OpponentTurn();
+            yield return new WaitForEndOfFrame();
             yield return new WaitWhile(() => _opponentTurn );
             opponentInstance.EndTurn();
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
     }
-   
-    
+
+
+
     private void StartTurn()
     {
         //Checker ici

@@ -13,6 +13,7 @@ public enum StatusEffect
     Burn,
     Regen,
     DrawLess,
-    Veil
+    Veil,
+    Dodge
 }
 

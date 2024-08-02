@@ -782,6 +782,14 @@ PrefabInstance:
       propertyPath: _loadingSubManager._timeToTransition
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 920518041945060664, guid: 1fd7d9d52acbc9149825f6e7d77c1b30, type: 3}
+      propertyPath: _loadingSubManager._battleTransitionSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 920518041945060664, guid: 1fd7d9d52acbc9149825f6e7d77c1b30, type: 3}
+      propertyPath: _loadingSubManager._battleTransitionSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: ab24f017396892c48af03f791661db1b, type: 3}
     - target: {fileID: 1100103558455305799, guid: 1fd7d9d52acbc9149825f6e7d77c1b30, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -833,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 4712909844638643162, guid: 1fd7d9d52acbc9149825f6e7d77c1b30, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 53f88b882823bd442be921b52e5d6ab0, type: 3}
+      objectReference: {fileID: 21300000, guid: 096ce1dc3f6724a4a93ad59cb905f1c9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
