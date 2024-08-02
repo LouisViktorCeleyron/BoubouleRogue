@@ -10,6 +10,7 @@ public enum StatusEffect
 {
     Shield,
     Poison,
-    Burn
+    Burn,
+    DrawLess
 }
 

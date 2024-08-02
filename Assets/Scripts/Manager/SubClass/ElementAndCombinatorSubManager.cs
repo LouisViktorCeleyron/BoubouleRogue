@@ -55,7 +55,7 @@ public class ElementAndCombinatorSubManager
 
     public void Draw(int amount = 1)
     {
-        for (int i = 0; i < amount; i++)
+        for (int i = 0; i < Mathf.Max(amount,0); i++)
         {
             Draw();
         }

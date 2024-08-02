@@ -15,6 +15,14 @@ MonoBehaviour:
   selfInflicted: 0
   icon: {fileID: 21300000, guid: c009101dc52f4544e95be28caffdb2f1, type: 3}
   clip: {fileID: 7400000, guid: 3785f14edc5bac14393e4a5ec89823f6, type: 2}
+  _cseCollection:
+    _collection:
+    - ichBinEinBerliner: 0
+    - ichBinEinBerliner: 0
+    - ichBinEinBerliner: 0
+    - ichBinEinBerliner: 0
+    - ichBinEinBerliner: 0
+    isUsed: 1
   statusToInflict:
   - amount: 3
     effect: 2

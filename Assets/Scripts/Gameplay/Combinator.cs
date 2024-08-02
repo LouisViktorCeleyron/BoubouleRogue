@@ -9,7 +9,9 @@ public class Combinator : MonoBehaviour
     public Element element;
     private bool _isSelected;
 
-    private BattleManager _battleManager;   
+    private BattleManager _battleManager;
+
+    private Combinator _otherCombinator;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,17 +33,35 @@ public class Combinator : MonoBehaviour
     private void OnMouseUp()
     {
         _isSelected = false;
+        
+        if(_otherCombinator)
+        {
+            _battleManager.PlayerTurn(this, _otherCombinator);
+            _battleManager.BattlePreviewSubManager.HidePreviewPlayerCombinaison();
+
+            Destroy(_otherCombinator.gameObject);
+            Destroy(gameObject);
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var tempOthComb = collision.GetComponent<Combinator>();
+        if(tempOthComb == _otherCombinator)
+        {
+            _otherCombinator = null;
+            _battleManager.BattlePreviewSubManager.HidePreviewPlayerCombinaison();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!_isSelected) { return;}
-        var other = collision.GetComponent<Combinator>();
-        if (other)
+        if (!_isSelected || _otherCombinator != null) { return;}
+        _otherCombinator = collision.GetComponent<Combinator>();
+        if (_otherCombinator)
         {
-            _battleManager.PlayerTurn(this, other);
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+            _battleManager.BattlePreviewSubManager.PreviewPlayerCombinaison(this,_otherCombinator);
         }
     }
 }

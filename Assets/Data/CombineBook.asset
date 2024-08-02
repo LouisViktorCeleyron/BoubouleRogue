@@ -38,4 +38,14 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
       b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
     consequence: {fileID: 11400000, guid: 9ac6a4321ce1b844896268785971f870, type: 2}
+  - name: Quick Attack
+    elements:
+      a: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    consequence: {fileID: 11400000, guid: 972ffcd0b6dd82b4db15d467c2d26891, type: 2}
+  - name: Quick Draw
+    elements:
+      a: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+      b: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+    consequence: {fileID: 11400000, guid: 0ad41536ce27b114bb08a474a12fc2bf, type: 2}
   _defaultConsequence: {fileID: 11400000, guid: 1910cc61d532c704b9af505311eaa3e7, type: 2}

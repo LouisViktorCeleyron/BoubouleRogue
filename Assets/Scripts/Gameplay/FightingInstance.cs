@@ -103,4 +103,9 @@ public class FightingInstance : MonoBehaviour
         }
         AddStatusNonGeneric(type, amount);
     }
+
+    public T GetStatus<T>() where T : Status
+    {
+        return statusEffects.Find((Status s)=> s.GetType()== typeof(T)) as T;
+    }
 }

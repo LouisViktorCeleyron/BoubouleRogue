@@ -20,3 +20,21 @@ public class MyDelegate<T>
         _action?.Invoke(param);
     }
 }
+
+public class MyDelegate
+{
+    private UnityAction _action;
+
+    public void Subscribe(UnityAction newAction)
+    {
+        _action += newAction;
+    }
+    public void Unsubscribe(UnityAction newAction)
+    {
+        _action -= newAction;
+    }
+    public void Launch()
+    {
+        _action?.Invoke();
+    }
+}

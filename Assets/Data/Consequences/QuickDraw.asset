@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
+  m_Name: QuickDraw
+  m_EditorClassIdentifier: 
+  selfInflicted: 0
+  icon: {fileID: 21300000, guid: b2e79830fe3350e4392ab61c6dadc034, type: 3}
+  clip: {fileID: 7400000, guid: 66014b05d049d0e46ae0f6209dad3312, type: 2}
+  _cseCollection:
+    draw:
+      use: 0
+      amount: 1
+    winGold:
+      use: 0
+      amount: 1
+  statusToInflict: []

@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
+using TMPro;
 using UnityEngine;
 
 public class BattleManager : Manager
@@ -11,6 +11,7 @@ public class BattleManager : Manager
     public CombineBook book;
 
     public ElementAndCombinatorSubManager CombinatorSubManager;
+    public BattlePreviewSubManager BattlePreviewSubManager;
     public DrawingBoard board;
 
     [SerializeField]
@@ -19,11 +20,14 @@ public class BattleManager : Manager
     private MySceneManager _mySceneManager;
     private JourneyManager _journeyManager;
    
+
+
     public override void ManagerPreAwake()
     {
         _journeyManager=ManagerManager.GetManager<JourneyManager>();
         _playerManager =ManagerManager.GetManager<PlayerManager>();
         _mySceneManager =ManagerManager.GetManager<MySceneManager>();
+
 
     }
     public override void ManagerOnEachSceneStart(UnityEngine.SceneManagement.Scene scene)
@@ -32,6 +36,7 @@ public class BattleManager : Manager
         {
             return;
         }
+        BattlePreviewSubManager.Initialize();
         CombinatorSubManager.Initialise();
         StartCoroutine(Turn());
     }
@@ -72,7 +77,9 @@ public class BattleManager : Manager
     private void StartTurn()
     {
         //Checker ici
-        CombinatorSubManager.Draw(4);
+        var isDrawLess = playerInstance.GetStatus<DrawLess>();
+        var drawLessStatus = isDrawLess != null ? isDrawLess.GetAmount():0;
+        CombinatorSubManager.Draw(4-drawLessStatus);
     }
 
     public void PlayerTurn(Combinator a, Combinator b)
@@ -81,12 +88,8 @@ public class BattleManager : Manager
         c.CallConsequence(playerInstance, opponentInstance);
 
         CombinatorSubManager.DiscardCombinator(a, b);
-
-        //if(CombinatorSubManager.CombinatorsCount <= 0) 
-        //{
-        //    _playerTurn = false;   
-        //}
     }
+
 
     public void StopPlayerTurn()
     {
@@ -100,7 +103,6 @@ public class BattleManager : Manager
         _opponentTurn = false;
 
     }
-
 
     public void EndOfBattle(bool playerDead = true)
     {

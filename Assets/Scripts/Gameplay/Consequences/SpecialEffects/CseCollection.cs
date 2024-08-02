@@ -5,14 +5,22 @@ using UnityEngine;
 [System.Serializable]
 public class CseCollection 
 {
-    [SerializeField]
-    private List<ConsequenceSpecialEffect> _collection;
+    public CSE_Draw draw;
+    public CSE_WinGold winGold;
 
     public void CallEffects(FightingInstance instanceTarget)
     {
-        foreach (var cse in _collection)
-        {
-            cse.ApplyEffect(instanceTarget);
-        }
+        draw.CallEffect(instanceTarget);
+        winGold.CallEffect(instanceTarget);
+    }
+    
+
+    public string GetDescription()
+    {
+        var drawRet = $"Draw {draw.Amount.ColorizeString(ColorizeExtention.StatsColor)}. ";
+        var wGoldRet = $"Get {winGold.Amount.ColorizeString(ColorizeExtention.GoldColor)} G. ";
+        return 
+            (draw.use?drawRet:string.Empty)+
+            (winGold.use ? wGoldRet: string.Empty);
     }
 }

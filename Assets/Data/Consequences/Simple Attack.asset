@@ -15,6 +15,13 @@ MonoBehaviour:
   selfInflicted: 0
   icon: {fileID: 21300000, guid: eff6a1c7625c7f148b52d35d49c52185, type: 3}
   clip: {fileID: 7400000, guid: 813d22b7c68a56b44ae062211e642111, type: 2}
+  _cseCollection:
+    draw:
+      use: 0
+      amount: 1
+    winGold:
+      use: 0
+      amount: 1
   statusToInflict: []
   type: 0
   baseDamages: 5

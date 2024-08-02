@@ -4,9 +4,9 @@ using UnityEngine;
 
 public static class OverallExtention 
 {
-    public static void ColorDebugLog(this object toPrint, Color color)
+    public static void ColorDebugLog(this object toPrint, Color color = default)
     {
-        Debug.Log($"<color=#{ColorUtility.ToHtmlStringRGB(color)}>{toPrint}</color>");
+        Debug.Log(toPrint.ColorizeString(color));
     }
 
     public static Vector3 ClampedVector3(this Vector3 vector, Vector3 min, Vector3 max)

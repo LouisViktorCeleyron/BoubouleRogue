@@ -18,5 +18,13 @@ public class OffensiveConsequence : StatusOnlyConsequence
         }
         base.ConsequenceAction();
     }
+
+    public override string GetDescription()
+    {
+        var retBaseDam = $"{baseDamages.ColorizeString(ColorizeExtention.DammageColor)} Damages. ";
+        var retRecDam = $"{recoilDamages.ColorizeString(ColorizeExtention.DammageColor)} Recoil Damages. ";
+        var retBase = base.GetDescription();
+        return retBaseDam + (recoilDamages>0?retBaseDam:string.Empty) + retBase;
+    }
 }
 

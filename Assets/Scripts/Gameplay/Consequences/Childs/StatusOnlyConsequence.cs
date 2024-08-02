@@ -16,6 +16,18 @@ public class StatusOnlyConsequence : Consequence
             status.ApplyStatus(_target);
         }
     }
+
+    public override string GetDescription()
+    {
+        var retStatus = string.Empty;
+        foreach (var status in statusToInflict)
+        {
+            retStatus += $"{status.amount.ColorizeString(ColorizeExtention.StatsColor)} {status.effect}. ";
+        }
+        var retBase = base.GetDescription();
+
+        return retStatus + retBase;
+    }
 }
 
 [System.Serializable]
@@ -23,6 +35,7 @@ public struct StatusInflicted
 {
     public int amount;
     public StatusEffect effect;
+    //En fait il faudrait que je fasse un tableau des consequences avec leur Icones et leur couleur jsp si c'est possible enfin si avec des scriptable quoi 
 
     public void ApplyStatus(FightingInstance target)
     {

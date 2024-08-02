@@ -11,4 +11,11 @@ public class PlayerManager : Manager
     {
         base.ManagerPreAwake();
     }
+
+
+    public void AddGold(int amount)
+    {
+        currentGold += amount;
+        //add feedback
+    }
 }
