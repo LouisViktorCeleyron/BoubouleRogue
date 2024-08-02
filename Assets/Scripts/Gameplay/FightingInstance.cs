@@ -87,10 +87,6 @@ public class FightingInstance : MonoBehaviour
         if (currentStatus != null)
         {
             currentStatus.ChangeAmount(amount);
-            if(currentStatus.GetAmount()<=0)
-            {
-                statusEffects.Remove(currentStatus);
-            }
         }
         else
         {

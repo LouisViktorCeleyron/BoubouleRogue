@@ -27,7 +27,6 @@ public class OponentInstance : FightingInstance
 
     public void LaunchConsequence(BattleManager battleManager)
     {
-        var consequence = _oponentData.GetRandomConsequence();
-        consequence.CallConsequence(battleManager.opponentInstance, battleManager.playerInstance);
+        _oponentData.GetRandomConsequence().CallConsequence(battleManager.opponentInstance, battleManager.playerInstance);
     }
 }

@@ -19,6 +19,12 @@ public class Shield : OnAttackedStatus
         _target.OnStartTurn.Subscribe(ResetShield);
     }
 
+    protected override void Unsubscribe()
+    {
+        base.Unsubscribe();
+        _target.OnStartTurn.Unsubscribe(ResetShield);
+    }
+
     private void ResetShield(FightingInstance target)
     {
         UpdateStatusInTarget(-999);

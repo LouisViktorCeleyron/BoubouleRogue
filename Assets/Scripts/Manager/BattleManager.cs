@@ -19,7 +19,16 @@ public class BattleManager : Manager
     private PlayerManager _playerManager;
     private MySceneManager _mySceneManager;
     private JourneyManager _journeyManager;
-   
+
+    private WaitForEndOfFrame _waitForEndOfFrame = new WaitForEndOfFrame();
+
+    private enum TurnEvolution
+    {
+        PreInit,
+        Init,
+        PlayerTurn,
+        OpTurn
+    }
 
 
     public override void ManagerPreAwake()
@@ -58,27 +67,38 @@ public class BattleManager : Manager
     {
         yield return new WaitUntil(LoopCanStart);
         InitialiseBattle();
+        WaitUntil playerTurnWait = new WaitUntil(() => !_playerTurn);
+        WaitUntil oponentTurnWait = new WaitUntil(() => !_opponentTurn);
+
         while (true) 
         { 
             StartTurn();
             playerInstance.StartTurn();
             _playerTurn = true;
             Debug.Log("Before WaitPlayer turn");
-            yield return new WaitForEndOfFrame();
-            yield return new WaitWhile(()=>_playerTurn );
+            while(_playerTurn)
+            {
+                yield return _waitForEndOfFrame;
+            }
             "End Of Player Turn".ColorDebugLog(Color.black);
             playerInstance.EndTurn();
 
             opponentInstance.StartTurn();
             OpponentTurn();
-            yield return new WaitForEndOfFrame();
-            yield return new WaitWhile(() => _opponentTurn );
+
+            while (_opponentTurn)
+            {
+                yield return _waitForEndOfFrame;
+            }
             opponentInstance.EndTurn();
-            yield return new WaitForEndOfFrame();
+            yield return _waitForEndOfFrame;
         }
     }
 
-
+    private void Update()
+    {
+        
+    }
 
     private void StartTurn()
     {
