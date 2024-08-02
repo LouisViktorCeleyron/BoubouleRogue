@@ -5,14 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class OnStartTurnStatus : Status
 {
+    protected virtual bool _DecreaseAtStart => true;
     private void OnStartTurn(FightingInstance target)
     {
         OnStartTurnAction(target);
-        UpdateStatusInPlayer(-1);
-        if (_amount<=0)
+        if(_DecreaseAtStart)
         {
-            Unsubscribe();
+            UpdateStatusInTarget(-1);
         }
+        
     }
     protected virtual void OnStartTurnAction (FightingInstance target)
     {

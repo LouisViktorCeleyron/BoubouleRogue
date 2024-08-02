@@ -39,7 +39,7 @@ public abstract class Consequence : ScriptableObject
 
     public virtual string GetDescription()
     {
-        return _cseCollection.GetDescription() + "To "+ GetTargetName();
+        return _cseCollection.GetDescription() + " To "+ GetTargetName();
     }
 
 }

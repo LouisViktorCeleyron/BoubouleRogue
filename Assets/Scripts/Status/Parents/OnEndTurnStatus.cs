@@ -8,10 +8,6 @@ public class OnEndTurnStatus : Status
     private void OnEndTurn(FightingInstance target)
     {
         OnEndTurnAction(target);
-        if(_amount<=0)
-        {
-            Unsubscribe();
-        }
     }
     protected virtual void OnEndTurnAction (FightingInstance target)
     {

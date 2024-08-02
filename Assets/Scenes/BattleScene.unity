@@ -2088,9 +2088,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1550459114}
     - target: {fileID: 840037589064029956, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 840037589064029956, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
       propertyPath: OnStatusInflicted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1550459114}
+    - target: {fileID: 840037589064029956, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1550459114}
+    - target: {fileID: 840037589064029956, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 840037589064029956, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetStatus
+      objectReference: {fileID: 0}
+    - target: {fileID: 840037589064029956, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MasterUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 840037589064029956, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2895852955949584433, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.339922
@@ -2386,9 +2410,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1898962489}
     - target: {fileID: 3816052332826363731, guid: 35241f0b47d5d444eb2b4f2dbe17d610, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816052332826363731, guid: 35241f0b47d5d444eb2b4f2dbe17d610, type: 3}
       propertyPath: OnStatusInflicted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1898962489}
+    - target: {fileID: 3816052332826363731, guid: 35241f0b47d5d444eb2b4f2dbe17d610, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1898962489}
+    - target: {fileID: 3816052332826363731, guid: 35241f0b47d5d444eb2b4f2dbe17d610, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816052332826363731, guid: 35241f0b47d5d444eb2b4f2dbe17d610, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetStatus
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816052332826363731, guid: 35241f0b47d5d444eb2b4f2dbe17d610, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MasterUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816052332826363731, guid: 35241f0b47d5d444eb2b4f2dbe17d610, type: 3}
+      propertyPath: OnStatusInflictedFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5825693246853082134, guid: 35241f0b47d5d444eb2b4f2dbe17d610, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1

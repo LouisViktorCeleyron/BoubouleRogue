@@ -448,6 +448,15 @@ MonoBehaviour:
   _loadingSubManager:
     _timeToTransition: 0.5
     _battleTransitionImage: {fileID: 4712909844638643162}
+    _battleTransitionSprites:
+    - {fileID: 21300000, guid: 53f88b882823bd442be921b52e5d6ab0, type: 3}
+    - {fileID: 21300000, guid: 74892823b23cf144db23f26d1f9db311, type: 3}
+    - {fileID: 21300000, guid: 18d59a72d58caf54fb63e74363f64fc8, type: 3}
+    - {fileID: 21300000, guid: 80bfe15cf32c93349af445b457cfb2d3, type: 3}
+    - {fileID: 21300000, guid: d8d7beb6536d4dc4ab9268cff6c021e9, type: 3}
+    - {fileID: 21300000, guid: c43e1e305e8b5414fb7f13d9d9443201, type: 3}
+    - {fileID: 21300000, guid: b3301f3b5dec23344a69d14dd9181196, type: 3}
+    - {fileID: 21300000, guid: 4a0d28c5d7d2ff14589ebaff05783ffd, type: 3}
 --- !u!114 &3982042921222889408
 MonoBehaviour:
   m_ObjectHideFlags: 0

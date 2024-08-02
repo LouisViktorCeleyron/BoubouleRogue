@@ -48,4 +48,34 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
       b: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
     consequence: {fileID: 11400000, guid: 0ad41536ce27b114bb08a474a12fc2bf, type: 2}
+  - name: Debuff Attack
+    elements:
+      a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    consequence: {fileID: 11400000, guid: 18b4429107b493b429fc095af42c6721, type: 2}
+  - name: Super Debuff
+    elements:
+      a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+      b: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+    consequence: {fileID: 11400000, guid: 6ab0faae8d1442344b3fa9eea0778c30, type: 2}
+  - name: Small Heal
+    elements:
+      a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+      b: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+    consequence: {fileID: 11400000, guid: 7bedefc72610f404a969e91ee8841fd9, type: 2}
+  - name: Weird Potion
+    elements:
+      a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+      b: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
+    consequence: {fileID: 11400000, guid: 0519e8c5e1340cb439e219c13328ebf6, type: 2}
+  - name: Small Regen
+    elements:
+      a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+      b: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+    consequence: {fileID: 11400000, guid: a43d81381c3bdfa409ca4bce462d0d12, type: 2}
+  - name: Simple Veil
+    elements:
+      a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+      b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+    consequence: {fileID: 11400000, guid: 1c3f1233904262742ad49a8a19ad4f13, type: 2}
   _defaultConsequence: {fileID: 11400000, guid: 1910cc61d532c704b9af505311eaa3e7, type: 2}

@@ -10,7 +10,7 @@ public class Shield : OnAttackedStatus
     {
         var tempDamage = attack.GetDammage();
         attack.ChangeDammage(-_amount);
-        UpdateStatusInPlayer(-tempDamage);
+        UpdateStatusInTarget(-tempDamage);
     }
 
     protected override void Subscribe()
@@ -21,6 +21,6 @@ public class Shield : OnAttackedStatus
 
     private void ResetShield(FightingInstance target)
     {
-        UpdateStatusInPlayer(-999);
+        UpdateStatusInTarget(-999);
     }
 }

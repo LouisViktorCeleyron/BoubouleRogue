@@ -17,19 +17,36 @@ public class Status
             return ret;
         }
     }
+
+    public virtual bool Positive => true;
+
     public void Inflict(FightingInstance target, int amount)
     {
         _target = target;
         _amount = amount;
         Subscribe();
     }
-    protected void UpdateStatusInPlayer(int amount) 
+    /// <summary>
+    /// Change Status amount for the target fighting Instance with feedback
+    /// </summary>
+    /// <param name="amount"></param>
+    public void UpdateStatusInTarget(int amount) 
     {
         _target.UpdateStatus(amount, StatusEnum);
+        
     }
+    /// <summary>
+    /// Change only amount whithout any feedback. For the feedback version pleas use UpdateStatusInTarget
+    /// </summary>
+    /// <param name="toAddOrRemove"></param>
     public void ChangeAmount(int toAddOrRemove)
     {
         _amount = Mathf.Clamp(0, _amount+toAddOrRemove, 999);
+        $"Change Amount to {_amount}".ColorDebugLog(Color.cyan);
+        if (_amount <= 0)
+        {
+            Unsubscribe();
+        }
     }
 
     public int GetAmount()

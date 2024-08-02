@@ -7,20 +7,25 @@ public class CseCollection
 {
     public CSE_Draw draw;
     public CSE_WinGold winGold;
+    public CSE_RemoveStatus removeStatus;
+    public CSE_Heal heal;
 
     public void CallEffects(FightingInstance instanceTarget)
     {
         draw.CallEffect(instanceTarget);
         winGold.CallEffect(instanceTarget);
+        removeStatus.CallEffect(instanceTarget);
+        heal.CallEffect(instanceTarget);
     }
     
 
     public string GetDescription()
     {
-        var drawRet = $"Draw {draw.Amount.ColorizeString(ColorizeExtention.StatsColor)}. ";
-        var wGoldRet = $"Get {winGold.Amount.ColorizeString(ColorizeExtention.GoldColor)} G. ";
-        return 
-            (draw.use?drawRet:string.Empty)+
-            (winGold.use ? wGoldRet: string.Empty);
+
+        return
+            draw.GetCSEDescription() +
+            heal.GetCSEDescription() +
+            removeStatus.GetCSEDescription() +
+            winGold.GetCSEDescription();
     }
 }

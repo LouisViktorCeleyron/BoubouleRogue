@@ -15,10 +15,13 @@ public class FightingInstance : MonoBehaviour
     public bool isPlayer;
 
     public MyDelegate<Attack> OnAttackReceived;
+    public MyDelegate<Status> OnStatusInflicted;
     public MyDelegate<FightingInstance> OnStartTurn, OnEndTurn;
     
+    
+    [Header("Feedbacks")]
     public UnityEvent<float> OnHpChanged;
-    public UnityEvent<StatusEffect,int> OnStatusInflicted;
+    public UnityEvent<StatusEffect,int> OnStatusInflictedFeedback;
     
     protected BattleManager _battleManager;
     public FightingInstanceFeedbackSubComponent feedbackSubComp;
@@ -29,6 +32,7 @@ public class FightingInstance : MonoBehaviour
         OnAttackReceived = new MyDelegate<Attack>();
         OnStartTurn = new MyDelegate<FightingInstance>();
         OnEndTurn = new MyDelegate<FightingInstance>();
+        OnStatusInflicted = new MyDelegate<Status>();
         statusEffects = new List<Status>();
 
         _battleManager = ManagerManager.GetManager<BattleManager>();
@@ -64,9 +68,13 @@ public class FightingInstance : MonoBehaviour
         SetHp(_currentHp - amount, true);
 
     }
+    public void Heal(int amount) 
+    { 
+        SetHp(_currentHp + amount, false);
+    }
     public void SetHp(int newAmount, bool negativeFeedback = true)
     {
-        _currentHp = newAmount;
+        _currentHp = Mathf.Clamp(newAmount,0,hpMax);
         OnHpChanged.Invoke((float)_currentHp / (float)hpMax);
         if(_currentHp<=0)
         {
@@ -79,6 +87,10 @@ public class FightingInstance : MonoBehaviour
         if (currentStatus != null)
         {
             currentStatus.ChangeAmount(amount);
+            if(currentStatus.GetAmount()<=0)
+            {
+                statusEffects.Remove(currentStatus);
+            }
         }
         else
         {
@@ -86,7 +98,16 @@ public class FightingInstance : MonoBehaviour
             currentStatus.Inflict(this,amount);
             statusEffects.Add(currentStatus);
         }
-        OnStatusInflicted.Invoke(currentStatus.StatusEnum, currentStatus.GetAmount());
+        OnStatusInflictedFeedback.Invoke(currentStatus.StatusEnum, currentStatus.GetAmount());
+        
+        if (currentStatus.GetAmount() <= 0)
+        {
+            statusEffects.Remove(currentStatus);
+        }
+        else
+        {
+            OnStatusInflicted.Launch(currentStatus);
+        }
     }
     public void AddStatusNonGeneric(System.Type type, int amount)
     {

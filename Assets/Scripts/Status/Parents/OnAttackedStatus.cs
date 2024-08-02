@@ -8,10 +8,6 @@ public class OnAttackedStatus : Status
     private void OnAttacked(Attack attack)
     {
         OnAttackedAction(attack);
-        if(_amount<=0)
-        {
-            Unsubscribe();
-        }
     }
     protected virtual void OnAttackedAction (Attack attack)
     {

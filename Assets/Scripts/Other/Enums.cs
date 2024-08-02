@@ -11,6 +11,8 @@ public enum StatusEffect
     Shield,
     Poison,
     Burn,
-    DrawLess
+    Regen,
+    DrawLess,
+    Veil
 }
 

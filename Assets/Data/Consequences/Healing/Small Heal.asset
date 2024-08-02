@@ -10,16 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
-  m_Name: QuickDraw
+  m_Name: Small Heal
   m_EditorClassIdentifier: 
-  selfInflicted: 0
-  icon: {fileID: 21300000, guid: b2e79830fe3350e4392ab61c6dadc034, type: 3}
-  clip: {fileID: 7400000, guid: 66014b05d049d0e46ae0f6209dad3312, type: 2}
+  selfInflicted: 1
+  icon: {fileID: 21300000, guid: 9d7f76dd41da222459b3b017e83de452, type: 3}
+  clip: {fileID: 7400000, guid: e7db9d24d209f18408d7d088d421e57c, type: 2}
   _cseCollection:
     draw:
-      use: 0
+      _use: 0
       amount: 1
     winGold:
-      use: 0
+      _use: 0
       amount: 1
+    removeStatus:
+      _use: 0
+      amount: 5
+      _positive: 0
+    heal:
+      _use: 1
+      amount: 5
   statusToInflict: []

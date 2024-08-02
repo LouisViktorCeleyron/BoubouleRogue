@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Burn : OnAttackedStatus
 {
+    public override bool Positive => false;
+
     protected override void OnAttackedAction(Attack attack)
     {
         attack.ChangeDammage(+_amount);
-        _target.UpdateStatus(-1,StatusEnum);
+        UpdateStatusInTarget(-1);
     }
 }

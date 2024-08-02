@@ -1,3 +1,4 @@
+using LCStarterContent.Common;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,9 @@ public class LoadingSubManager
 
     private Image _currentImageTransition;
 
+    [SerializeField]
+    private Sprite[] _battleTransitionSprites;
+
     public void Initialize(MySceneManager master)
     {
         _master = master;
@@ -23,7 +27,9 @@ public class LoadingSubManager
 
     public void BattleTranstion(UnityAction toDo)
     {
+
         _currentImageTransition = _battleTransitionImage;
+        _currentImageTransition.sprite = _battleTransitionSprites.GetRandomElement();
         _master.StartCoroutine(SetOnTransition(toDo));
     }
 
