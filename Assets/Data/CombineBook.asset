@@ -18,12 +18,12 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
       b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
     consequence: {fileID: 11400000, guid: 1dddfa8514d1a4b40b46f6cbb2c7b4b4, type: 2}
-  - name: Simple Defense
+  - name: Defense
     elements:
       a: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
       b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
     consequence: {fileID: 11400000, guid: dbeddcd96b122a249af717aebca39692, type: 2}
-  - name: Burn
+  - name: Burning Shot
     elements:
       a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
       b: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
@@ -33,32 +33,37 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
       b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
     consequence: {fileID: 11400000, guid: a21476d46bdce3540bc166af2a61d751, type: 2}
-  - name: Poison Attack
+  - name: Simple Poison
     elements:
       a: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
       b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
     consequence: {fileID: 11400000, guid: 9ac6a4321ce1b844896268785971f870, type: 2}
-  - name: Quick Attack
+  - name: Quick Strike
     elements:
       a: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
       b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
     consequence: {fileID: 11400000, guid: 972ffcd0b6dd82b4db15d467c2d26891, type: 2}
-  - name: Quick Draw
+  - name: Heal Mist
+    elements:
+      a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+      b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+    consequence: {fileID: 11400000, guid: a43d81381c3bdfa409ca4bce462d0d12, type: 2}
+  - name: QuickDraw
     elements:
       a: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
       b: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
     consequence: {fileID: 11400000, guid: 0ad41536ce27b114bb08a474a12fc2bf, type: 2}
-  - name: Debuff Attack
+  - name: Debuff Strike
     elements:
       a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
       b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
     consequence: {fileID: 11400000, guid: 18b4429107b493b429fc095af42c6721, type: 2}
-  - name: Super Debuff
+  - name: Vaporize
     elements:
       a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
       b: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
     consequence: {fileID: 11400000, guid: 6ab0faae8d1442344b3fa9eea0778c30, type: 2}
-  - name: Small Heal
+  - name: Light Potion
     elements:
       a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
       b: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
@@ -68,12 +73,7 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
       b: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
     consequence: {fileID: 11400000, guid: 0519e8c5e1340cb439e219c13328ebf6, type: 2}
-  - name: Small Regen
-    elements:
-      a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
-      b: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
-    consequence: {fileID: 11400000, guid: a43d81381c3bdfa409ca4bce462d0d12, type: 2}
-  - name: Simple Veil
+  - name: Drop Veil
     elements:
       a: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
       b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
@@ -88,9 +88,14 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
       b: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
     consequence: {fileID: 11400000, guid: 6e08a2f0a8e48124993a528681755434, type: 2}
-  - name: Fire Bulk Up
+  - name: Fire Stance
     elements:
       a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
       b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
     consequence: {fileID: 11400000, guid: b7d9ad553ef503f49a487c67d60f866f, type: 2}
+  - name: Fire Rush
+    elements:
+      a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+      b: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+    consequence: {fileID: 11400000, guid: aa66518f9079eff48bd0e36098c00701, type: 2}
   _defaultConsequence: {fileID: 11400000, guid: 1910cc61d532c704b9af505311eaa3e7, type: 2}

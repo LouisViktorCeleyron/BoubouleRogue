@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 9d7f76dd41da222459b3b017e83de452, type: 3}
+  basePrice: 111
+  color: {r: 0.2901961, g: 0.654902, b: 0.9490197, a: 1}

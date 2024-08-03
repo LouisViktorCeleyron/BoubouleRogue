@@ -9,20 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
-  m_Name: Simple Burn
+  m_Script: {fileID: 11500000, guid: eedc3a04e86757c478398136a668cbde, type: 3}
+  m_Name: Fire Rush
   m_EditorClassIdentifier: 
   selfInflicted: 0
   icon: {fileID: 21300000, guid: c009101dc52f4544e95be28caffdb2f1, type: 3}
-  clip: {fileID: 7400000, guid: 3785f14edc5bac14393e4a5ec89823f6, type: 2}
+  clip: {fileID: 7400000, guid: 5cf3e8ea1e6d1c849acb6d09fb3071fb, type: 2}
   _cseCollection:
-    _collection:
-    - ichBinEinBerliner: 0
-    - ichBinEinBerliner: 0
-    - ichBinEinBerliner: 0
-    - ichBinEinBerliner: 0
-    - ichBinEinBerliner: 0
-    isUsed: 1
+    _collection: []
   statusToInflict:
-  - amount: 3
+  - amount: 2
     effect: 2
+    inverseTarget: 1
+  type: 0
+  baseDamages: 8
+  recoilDamages: 0
+  references:
+    version: 2
+    RefIds: []

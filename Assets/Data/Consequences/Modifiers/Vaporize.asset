@@ -10,23 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
-  m_Name: Super Debuff
+  m_Name: Vaporize
   m_EditorClassIdentifier: 
   selfInflicted: 0
   icon: {fileID: 21300000, guid: 8703dcb30cf192b4ba086f89d4c4c17b, type: 3}
   clip: {fileID: 7400000, guid: 3785f14edc5bac14393e4a5ec89823f6, type: 2}
   _cseCollection:
-    draw:
-      _use: 0
-      amount: 1
-    winGold:
-      _use: 0
-      amount: 1
-    removeStatus:
-      _use: 1
-      amount: 3
-      _positive: 1
-    heal:
-      _use: 0
-      amount: 1
+    _collection:
+    - rid: 5899924501021327361
   statusToInflict: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5899924501021327361
+      type: {class: CSE_RemoveStatus, ns: , asm: Assembly-CSharp}
+      data:
+        name: RemoveStatus
+        _amountOfStatusToRemove: 3
+        _onlyPositiveStatus: 1

@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eedc3a04e86757c478398136a668cbde, type: 3}
-  m_Name: Quick Attack
+  m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
+  m_Name: Heal Mist
   m_EditorClassIdentifier: 
-  selfInflicted: 0
-  icon: {fileID: 21300000, guid: 79192f28d1ec8624b8bf366a7a934bb7, type: 3}
-  clip: {fileID: 7400000, guid: 813d22b7c68a56b44ae062211e642111, type: 2}
+  selfInflicted: 1
+  icon: {fileID: 21300000, guid: 9d7f76dd41da222459b3b017e83de452, type: 3}
+  clip: {fileID: 7400000, guid: e7db9d24d209f18408d7d088d421e57c, type: 2}
   _cseCollection:
     draw:
-      _use: 1
+      _use: 0
       amount: 1
     winGold:
       _use: 0
@@ -29,7 +29,6 @@ MonoBehaviour:
     heal:
       _use: 0
       amount: 1
-  statusToInflict: []
-  type: 0
-  baseDamages: 2
-  recoilDamages: 0
+  statusToInflict:
+  - amount: 3
+    effect: 3

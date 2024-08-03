@@ -10,6 +10,8 @@ public class ManagerBridge : MonoBehaviour
     private JourneyManager _journeyManager;
     private AudioManager _audioManager;
 
+    //Peut etre que je devrais faire des subclass ici ptdr
+
     private void Start()
     {
         _mySceneManager = ManagerManager.GetManager<MySceneManager>();
@@ -20,14 +22,12 @@ public class ManagerBridge : MonoBehaviour
 
     public void BattleScene()
     {
-        _audioManager.LoadMusic("Battle");
         _mySceneManager.LoadBattle();
     }
     public void BattleScene(OpponentData specificOpponent)
     {
-        _audioManager.LoadMusic("Boss");
         _journeyManager.SetSpecificOpponent(specificOpponent);
-        _mySceneManager.LoadBattle();
+        _mySceneManager.LoadBattle("Boss");
     }
     public void MapScene()
     {
@@ -45,5 +45,21 @@ public class ManagerBridge : MonoBehaviour
     public void PassPlayerTurn()
     {
         _battleManager.StopPlayerTurn();
+    }
+    public void MenuScene()
+    {
+        _mySceneManager.LoadMainMenu();
+    }
+    public void NewRunScene()
+    {
+        _mySceneManager.LoadNewRunScene();
+    }
+    public void LoadSfx(AudioClip clip)
+    {
+        _audioManager.LoadSfx(clip);
+    }
+    public void TempDebug(string msg = "Hello World")
+    {
+        Debug.Log(msg);
     }
 }

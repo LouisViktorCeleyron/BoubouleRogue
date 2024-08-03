@@ -33,6 +33,7 @@ public struct CombinaisonElements
 [System.Serializable]
 public class CombinaisonWithResult
 {
+    [HideInInspector]
     public string name;
     public CombinaisonElements elements;
     public Consequence consequence;

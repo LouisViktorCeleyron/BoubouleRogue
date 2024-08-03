@@ -339,7 +339,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 555
   m_TargetDisplay: 0
 --- !u!114 &4150435068689334292
 MonoBehaviour:
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loadingSubManager:
     _timeToTransition: 0.5
-    _battleTransitionImage: {fileID: 4712909844638643162}
+    _shaderedTransitionImage: {fileID: 4712909844638643162}
     _battleTransitionSprites:
     - {fileID: 21300000, guid: 53f88b882823bd442be921b52e5d6ab0, type: 3}
     - {fileID: 21300000, guid: 74892823b23cf144db23f26d1f9db311, type: 3}
@@ -457,6 +457,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c43e1e305e8b5414fb7f13d9d9443201, type: 3}
     - {fileID: 21300000, guid: b3301f3b5dec23344a69d14dd9181196, type: 3}
     - {fileID: 21300000, guid: 4a0d28c5d7d2ff14589ebaff05783ffd, type: 3}
+    _menuTransitionSprites: {fileID: 21300000, guid: ab24f017396892c48af03f791661db1b, type: 3}
 --- !u!114 &3982042921222889408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,17 +492,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpMax: 20
   currentHp: 20
-  Deck:
+  _deck:
+  - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+  - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+  - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+  - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
   - {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
   - {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
-  - {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
-  - {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
-  - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
-  - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
-  - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
-  - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
-  - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
-  - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+  - {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+  - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+  - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+  - {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
   currentGold: 0
 --- !u!114 &1397536334289530472
 MonoBehaviour:
@@ -551,14 +552,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _musicSource: {fileID: 7722863825065287589}
-  _sfxSources: []
+  _sfxSources:
+  - {fileID: 2239346990429388365}
+  - {fileID: 1410869834370332192}
   _musics:
     keys:
     - Boss
     - Battle
+    - Map
+    - Menu
+    - NewRun
     values:
     - {fileID: 8300000, guid: ac301a2b2b63476468d29827de839661, type: 3}
     - {fileID: 8300000, guid: 21c1671242392714a8ce0a4f734d4b55, type: 3}
+    - {fileID: 8300000, guid: f93f12f0f828e014fad85e3675670813, type: 3}
+    - {fileID: 8300000, guid: cc6c851be960af94eacb9a30377e4869, type: 3}
+    - {fileID: 8300000, guid: f709e0e329c236a48ac36137a57a7a9a, type: 3}
 --- !u!1 &4109258743677341617
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,7 +776,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

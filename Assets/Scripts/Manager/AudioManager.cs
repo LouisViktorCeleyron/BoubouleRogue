@@ -25,6 +25,17 @@ public class AudioManager : Manager
         base.ManagerOnEachSceneStart(scene);
     }
 
+    public void LoadSfx(AudioClip sfxClip)
+    {
+        var availableAS = _sfxSources.Find((AudioSource asource) => !asource.isPlaying);
+        if (availableAS != null) 
+        { 
+            availableAS.clip = sfxClip;
+            availableAS.time =0;
+            availableAS?.Play();
+        }
+    }
+
     public void LoadMusic(string musicName)
     {
         var tryGetMusic = _musics[musicName];

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
-  m_Name: FireBulkUp
+  m_Name: Fire Stance
   m_EditorClassIdentifier: 
   selfInflicted: 0
   icon: {fileID: 21300000, guid: b170085678464c944a02723515a87e52, type: 3}

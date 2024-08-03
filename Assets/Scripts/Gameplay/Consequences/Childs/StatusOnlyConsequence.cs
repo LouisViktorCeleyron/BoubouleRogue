@@ -12,8 +12,8 @@ public class StatusOnlyConsequence : Consequence
     {
         foreach (var status in statusToInflict) 
         {
-            $"{status.effect} inflicted".ColorDebugLog(Color.magenta);
-            status.ApplyStatus(_target);
+            var targetForStatus = status.inverseTarget ? _otherTarget : _target;
+            status.ApplyStatus(targetForStatus);
         }
     }
 
@@ -35,6 +35,8 @@ public struct StatusInflicted
 {
     public int amount;
     public StatusEffect effect;
+    public bool inverseTarget;
+
     //En fait il faudrait que je fasse un tableau des consequences avec leur Icones et leur couleur jsp si c'est possible enfin si avec des scriptable quoi 
 
     public void ApplyStatus(FightingInstance target)

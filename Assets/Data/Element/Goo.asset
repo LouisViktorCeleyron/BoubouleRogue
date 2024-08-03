@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Goo
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 52532ceabcc87e74e9864fd7a4a06603, type: 3}
+  basePrice: 111
+  color: {r: 0.60385996, g: 0.31278923, b: 0.6698113, a: 1}

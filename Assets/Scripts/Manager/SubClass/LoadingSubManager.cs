@@ -13,12 +13,14 @@ public class LoadingSubManager
     [SerializeField]
     private float _timeToTransition;
     [SerializeField]
-    private Image _battleTransitionImage;
+    private Image _shaderedTransitionImage;
 
     private Image _currentImageTransition;
 
     [SerializeField]
     private Sprite[] _battleTransitionSprites;
+    [SerializeField]
+    private Sprite _menuTransitionSprites;
 
     public void Initialize(MySceneManager master)
     {
@@ -28,8 +30,16 @@ public class LoadingSubManager
     public void BattleTranstion(UnityAction toDo)
     {
 
-        _currentImageTransition = _battleTransitionImage;
+        _currentImageTransition = _shaderedTransitionImage;
         _currentImageTransition.sprite = _battleTransitionSprites.GetRandomElement();
+        _master.StartCoroutine(SetOnTransition(toDo));
+    }
+
+    public void MenuTranstion(UnityAction toDo)
+    {
+
+        _currentImageTransition = _shaderedTransitionImage;
+        _currentImageTransition.sprite = _menuTransitionSprites;
         _master.StartCoroutine(SetOnTransition(toDo));
     }
 
@@ -53,8 +63,9 @@ public class LoadingSubManager
         {
             cutoff += 0.01f;
             transitionMaterial.SetFloat("_Cutoff",cutoff);
-            yield return new WaitForSeconds(_timeToTransition/100);
+            yield return new WaitForSeconds(_timeToTransition/100); // A Stocker pour gagner du temps
         }
+
 
         toDo.Invoke();
 
@@ -66,10 +77,12 @@ public class LoadingSubManager
     {
         //SuperTemp A voir si j'ai besoin de créer un master Coroutine/Gerrer le temps avec des update
 
-        
+
 
         var transitionMaterial = _currentImageTransition.material;
         var cutoff = 1f;
+        
+        yield return new WaitForSeconds(1.5f);
 
         while (cutoff >= 0)
         {

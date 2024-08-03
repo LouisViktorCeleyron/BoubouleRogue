@@ -7,5 +7,6 @@ public class Element : ScriptableObject
 {
     public Sprite icone;
     public int basePrice=111;
+    public Color color;
 
 }

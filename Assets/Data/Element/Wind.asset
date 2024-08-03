@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Wind
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: b70e2b3c904a7bf4d9128649df2b4f21, type: 3}
+  basePrice: 111
+  color: {r: 0.7294118, g: 0.89019614, b: 0.9058824, a: 1}

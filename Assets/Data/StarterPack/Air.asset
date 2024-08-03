@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925d1b14ef11dfa4185c4251d9fd9909, type: 3}
+  m_Name: Air
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  elements:
+    keys:
+    - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+    - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+    - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    - {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+    values: 03000000030000000300000001000000
+  _coloredDescription:
+  - text: 'This one is a breeze. '
+    colored: 1
+  - text: 'Just use Air to make '
+    colored: 0
+  - text: 'long term change '
+    colored: 1
+  - text: to the battle.
+    colored: 0
+  color: {r: 0.7294118, g: 0.89019614, b: 0.9058824, a: 1}

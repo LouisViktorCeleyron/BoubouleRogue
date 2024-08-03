@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 9ed395858999f254d9512ad878441080, type: 3}
+  basePrice: 111
+  color: {r: 0.6981132, g: 0.6618903, b: 0.6618903, a: 1}
