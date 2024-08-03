@@ -88,4 +88,9 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
       b: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
     consequence: {fileID: 11400000, guid: 6e08a2f0a8e48124993a528681755434, type: 2}
+  - name: Fire Bulk Up
+    elements:
+      a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+      b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+    consequence: {fileID: 11400000, guid: b7d9ad553ef503f49a487c67d60f866f, type: 2}
   _defaultConsequence: {fileID: 11400000, guid: 1910cc61d532c704b9af505311eaa3e7, type: 2}

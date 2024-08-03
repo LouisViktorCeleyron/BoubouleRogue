@@ -5,16 +5,20 @@ using UnityEngine;
 [System.Serializable]
 public class ConsequenceSpecialEffect
 {
+    [SerializeField]
+    [HideInInspector]
+    protected string name = "CSE";
     protected BattleManager _BattleManager => ManagerManager.GetManager<BattleManager>();
     protected PlayerManager _PlayerManager => ManagerManager.GetManager<PlayerManager>();
     [SerializeField]
-    protected bool _use;
     public void CallEffect(FightingInstance targetInstance)
     {
-        if (_use)
-        {
-            ApplyEffect(targetInstance);
-        }
+        ApplyEffect(targetInstance);
+    }
+
+    public ConsequenceSpecialEffect() 
+    { 
+        name = GetType().ToString().Remove(0,4);
     }
 
     protected virtual void ApplyEffect(FightingInstance targetInstance)
@@ -23,7 +27,7 @@ public class ConsequenceSpecialEffect
     }
     public string GetCSEDescription()
     {
-        return _use?CSEDescription():string.Empty; 
+        return CSEDescription(); 
     }
 
     protected virtual string CSEDescription()
@@ -35,18 +39,18 @@ public class ConsequenceSpecialEffect
 public class CSE_Draw : ConsequenceSpecialEffect
 {
     [SerializeField]
-    private int amount = 1;
+    private int _cardsToDraw = 1;
 
     protected override void ApplyEffect(FightingInstance targetInstance)
     {
-        _BattleManager.CombinatorSubManager.Draw(amount);
+        _BattleManager.CombinatorSubManager.Draw(_cardsToDraw);
         "Ici ça pioche".ColorDebugLog(Color.green);
     }
 
 
     protected override string CSEDescription()
     {
-        return $"Draw {amount.ColorizeString(ColorizeExtention.StatsColor)}. "; ;
+        return $"Draw {_cardsToDraw.ColorizeString(ColorizeExtention.StatsColor)}. "; ;
     }
 }
 
@@ -54,42 +58,50 @@ public class CSE_Draw : ConsequenceSpecialEffect
 public class CSE_WinGold : ConsequenceSpecialEffect
 {
     [SerializeField]
-    private int amount = 1;
+    private int _goldWon = 1;
 
     protected override void ApplyEffect(FightingInstance targetInstance)
     {
-        _PlayerManager.AddGold(amount);
+        _PlayerManager.AddGold(_goldWon);
     }
 
     protected override string CSEDescription()
     {
-        return $"Get {amount.ColorizeString(ColorizeExtention.GoldColor)} G. ";
+        return $"Get {_goldWon.ColorizeString(ColorizeExtention.GoldColor)} G. ";
     }
 }
 
 [System.Serializable]
 public class CSE_RemoveStatus : ConsequenceSpecialEffect
 {
+
     [SerializeField]
-    private int amount = 1;
+    private int _amountOfStatusToRemove = 1;
     [SerializeField]
-    private bool _positive;
+    private bool _onlyPositiveStatus;
+    
+    /*
+    Si besoin ajouter le fait de retirer un statu specifique
+    [SerializeField]
+    private bool _specificStatus;
+    */
+    
 
     protected override void ApplyEffect(FightingInstance targetInstance)
     {
         foreach (var s in targetInstance.statusEffects)
         {
-            if (s.Positive == _positive)
+            if (s.Positive == _onlyPositiveStatus)
             {
-                s.UpdateStatusInTarget(-amount);
+                s.UpdateStatusInTarget(-_amountOfStatusToRemove);
             }
         }
     }
 
     protected override string CSEDescription()
     {
-        var positiveText = _positive ? "positive".ColorizeString(Color.green) : "negative".ColorizeString(Color.red);
-        return $"Remove {amount.ColorizeString(Color.magenta)} of every {positiveText} status";
+        var positiveText = _onlyPositiveStatus ? "positive".ColorizeString(Color.green) : "negative".ColorizeString(Color.red);
+        return $"Remove {_amountOfStatusToRemove.ColorizeString(Color.magenta)} of every {positiveText} status";
     }
 }
 
@@ -97,15 +109,15 @@ public class CSE_RemoveStatus : ConsequenceSpecialEffect
 public class CSE_Heal : ConsequenceSpecialEffect
 {
     [SerializeField]
-    private int amount = 1;
+    private int _HpHealed = 1;
 
     protected override void ApplyEffect(FightingInstance targetInstance)
     {
-        targetInstance.Heal(amount);
+        targetInstance.Heal(_HpHealed);
     }
 
     protected override string CSEDescription()
     {
-        return $"Heal {amount.ColorizeString(Color.green)} HP";
+        return $"Heal {_HpHealed.ColorizeString(Color.green)} HP";
     }
 }

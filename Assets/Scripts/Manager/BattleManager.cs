@@ -15,7 +15,7 @@ public class BattleManager : Manager
     public DrawingBoard board;
 
     [SerializeField]
-    private bool _playerTurn, _opponentTurn, _initialized;
+    private bool _playerTurn, _opponentTurn;
     private PlayerManager _playerManager;
     private MySceneManager _mySceneManager;
     private JourneyManager _journeyManager;
@@ -47,7 +47,6 @@ public class BattleManager : Manager
         }
         BattlePreviewSubManager.Initialize();
         CombinatorSubManager.Initialise();
-        _initialized = false;
         StartCoroutine(Turn());
     }
     private void SetUpOpponent()

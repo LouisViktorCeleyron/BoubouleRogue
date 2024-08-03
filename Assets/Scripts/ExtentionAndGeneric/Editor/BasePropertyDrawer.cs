@@ -16,8 +16,14 @@ public abstract class BasePropertyDrawer : PropertyDrawer
     //Property parameters
     private Rect position;
     private SerializedProperty property;
-    protected float usableSpace;
+    protected float usableSpace, baseIndentLevel;
     internal object target;
+
+    protected float _baseLineHeight = EditorGUIUtility.singleLineHeight + 1;
+
+    public BasePropertyDrawer()
+    {
+    }
 
     internal T GetTargetAs<T>() where T : class
     {
@@ -32,7 +38,7 @@ public abstract class BasePropertyDrawer : PropertyDrawer
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         
-        target = fieldInfo.GetValue(property.serializedObject.targetObject);
+        target = fieldInfo.GetValue(property.serializedObject.targetObject); //Put this on constructor pls futur louis
 
         AtStartOfGUI(property);
 
@@ -43,6 +49,7 @@ public abstract class BasePropertyDrawer : PropertyDrawer
         //Construct Drawer rect
 
         int currentIndentation = EditorGUI.indentLevel;
+        baseIndentLevel = EditorGUI.indentLevel;
         EditorGUI.indentLevel = 0;
         float indentationPixel = currentIndentation * 16;
         SetCurrentXList(position.x + indentationPixel);
@@ -94,7 +101,7 @@ public abstract class BasePropertyDrawer : PropertyDrawer
     /// <returns></returns>
     internal Rect MakeRectForDrawer(int collumn, float usedSpace, int ySize, float spaceAfterElement)
     {
-        if (collumn > numberOfLine)
+        if (collumn >= numberOfLine)
         {
             Debug.LogError("You can't draw elements in a line above the number of line of the elements");
             return new Rect(0, 0, 0, 0);
