@@ -2245,7 +2245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hpMax: 50
-  _currentHp: 25
+  _currentHp: 50
   _deck:
   - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
   - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
