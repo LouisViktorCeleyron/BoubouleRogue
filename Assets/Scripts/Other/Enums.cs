@@ -15,6 +15,8 @@ public enum StatusEffect
     DrawLess,
     Veil,
     Dodge,
-    BulkUp
+    BulkUp,
+    Needle,
+    Thorns
 }
 

@@ -14,4 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 9e6ba01c631434e4e8df445902ba0a20, type: 3}
   basePrice: 111
+  description: The best victories always starts with a great defense. In fact if
+    you're doing smart combo with this Element your opponent might never touch you...
+    I said MIGHT
   color: {r: 0.5943396, g: 0.3357133, b: 0.19344072, a: 1}
+  potentialMix:
+  - {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+  - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+  - {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}

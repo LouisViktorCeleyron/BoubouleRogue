@@ -7,12 +7,16 @@ public class MyDelegate<T>
 {
     private UnityAction<T> _action;
 
+    public List<string> DEBUG_MethodStringList;
+
     public void Subscribe(UnityAction<T> newAction)
     {
+        //$"{newAction.Method.Name} Subscribed".ColorDebugLog(Color.red);
         _action += newAction;
     }
     public void Unsubscribe(UnityAction<T> newAction)
     {
+        //$"{newAction.Method.Name} Unubscribed".ColorDebugLog(Color.red);
         _action -= newAction;
     }
     public void Launch(T param)
@@ -27,10 +31,12 @@ public class MyDelegate
 
     public void Subscribe(UnityAction newAction)
     {
+        //$"{newAction.Method.Name} Subscribed".ColorDebugLog(Color.red);
         _action += newAction;
     }
     public void Unsubscribe(UnityAction newAction)
     {
+        //$"{newAction.Method.Name} Unubscribed".ColorDebugLog(Color.red);
         _action -= newAction;
     }
     public void Launch()

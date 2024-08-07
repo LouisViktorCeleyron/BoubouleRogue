@@ -7,14 +7,14 @@ public class Attack
     private int _dammage;
     private ElementalType _type;
     //private FightingInstance _launcher;
-    private FightingInstance _target;
+    private FightingInstance _target, _launcher;
     
 
-    public Attack(int dammage, ElementalType type, /*FightingInstance launcher,*/ FightingInstance target)
+    public Attack(int dammage, ElementalType type, FightingInstance launcher, FightingInstance target)
     {
         this._dammage = dammage;
         this._type = type;
-        //this._launcher = launcher;
+        this._launcher = launcher;
         this._target = target;
     }
     public void ChangeDammage(int valueToAddOrRemove)
@@ -24,6 +24,11 @@ public class Attack
     public int GetDammage()
     {
         return _dammage;
+    }
+
+    public FightingInstance GetLauncher()
+    {
+        return this._launcher;
     }
 
     public void ProcessAttack()

@@ -18,7 +18,6 @@ public abstract class Consequence : ScriptableObject
         _target = selfInflicted ? launcher : opponent;
         _otherTarget = selfInflicted ? opponent : launcher;
         //$"{launcher.gameObject.name} launched {name}, {_target.name} is the target".ColorDebugLog(Color.red);
-        Debug.Log(GetDescription());
         _launcher = launcher;
         ConsequenceAction();
         _cseCollection.CallEffects(_target);
@@ -40,7 +39,7 @@ public abstract class Consequence : ScriptableObject
 
     public virtual string GetDescription()
     {
-        return _cseCollection.GetDescription() + " To "+ GetTargetName();
+        return _cseCollection.GetDescription() + " To "+ GetTargetName()+". ";
     }
 
 }

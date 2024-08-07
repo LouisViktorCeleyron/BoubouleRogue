@@ -9,8 +9,15 @@ public abstract class Manager : MonoBehaviour
     {
 
     }
+    public virtual void ManagerPostAwake()
+    {
 
+    }
     public virtual void ManagerOnEachSceneStart(Scene scene)
+    {
+
+    }
+    public virtual void ManagerOnEachSceneLeft(Scene scene)
     {
 
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,6 @@ public class StatusOnlyConsequence : Consequence
 {
     [SerializeField]
     private List<StatusInflicted> statusToInflict;
-
     protected override void ConsequenceAction()
     {
         foreach (var status in statusToInflict) 
@@ -20,13 +20,23 @@ public class StatusOnlyConsequence : Consequence
     public override string GetDescription()
     {
         var retStatus = string.Empty;
+        var retInverseTarget = string.Empty;
         foreach (var status in statusToInflict)
         {
-            retStatus += $"{status.amount.ColorizeString(ColorizeExtention.StatsColor)} {status.effect}. ";
+            var currentRetStatus = $"{status.amount.ColorizeString(ColorizeExtention.StatsColor)} {status.effect}";
+            if(status.inverseTarget)
+            {
+                var retTargetTarget = !selfInflicted ? "self" : "oponent";
+                retInverseTarget += $"{currentRetStatus}, to {retTargetTarget}.";
+            }
+            else
+            {
+                retStatus += currentRetStatus+". ";
+            }
         }
         var retBase = base.GetDescription();
 
-        return retStatus + retBase;
+        return retStatus + retBase + retInverseTarget;
     }
 }
 

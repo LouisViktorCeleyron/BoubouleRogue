@@ -44,7 +44,6 @@ public class CSE_Draw : ConsequenceSpecialEffect
     protected override void ApplyEffect(FightingInstance targetInstance)
     {
         _BattleManager.CombinatorSubManager.Draw(_cardsToDraw);
-        "Ici ça pioche".ColorDebugLog(Color.green);
     }
 
 

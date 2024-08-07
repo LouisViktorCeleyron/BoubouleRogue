@@ -145,6 +145,15 @@ namespace LCStarterContent
             {
                 return list[Random.Range(0, list.Length)];
             }
+
+            public static T GetLast<T>(this List<T> list)
+            {
+                return list[list.Count-1];
+            }
+            public static T GetLast<T>(this T[] list)
+            {
+                return list[list.Length-1];
+            }
         }
     }
 }

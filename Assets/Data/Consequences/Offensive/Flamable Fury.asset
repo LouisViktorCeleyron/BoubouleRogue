@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eedc3a04e86757c478398136a668cbde, type: 3}
+  m_Name: Flamable Fury
+  m_EditorClassIdentifier: 
+  selfInflicted: 0
+  icon: {fileID: 21300000, guid: 8703dcb30cf192b4ba086f89d4c4c17b, type: 3}
+  clip: {fileID: 7400000, guid: 3785f14edc5bac14393e4a5ec89823f6, type: 2}
+  _cseCollection:
+    _collection: []
+  statusToInflict:
+  - amount: 2
+    effect: 2
+    inverseTarget: 0
+  - amount: 2
+    effect: 1
+    inverseTarget: 0
+  type: 0
+  baseDamages: 2
+  howManyTimes: 0
+  recoilDamages: 0
+  references:
+    version: 2
+    RefIds: []

@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.UIElements;
+using LCStarterContent.Editor;
 using System;
-using System.Linq;
-using Unity.VisualScripting;
 
 [CustomPropertyDrawer(typeof(CseCollection))]
 public class CseCollectionPropertyDrawer : BasePropertyDrawer
@@ -22,7 +20,7 @@ public class CseCollectionPropertyDrawer : BasePropertyDrawer
 
     public CseCollectionPropertyDrawer()
     {
-        SetClassList();
+        _cseSubClassList = typeof(ConsequenceSpecialEffect).GetAllSubclassOf();
     }
     
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
@@ -39,25 +37,6 @@ public class CseCollectionPropertyDrawer : BasePropertyDrawer
         _availableCseSubclass = _targetAsCseCollection.GetAvailableCSEArray(_cseSubClassList);
     }
 
-    private void SetClassList()
-    {
-        var cseType = typeof(ConsequenceSpecialEffect);
-        _cseSubClassList = new List<Type>();
-        foreach (var a in System.Threading.Thread.GetDomain().GetAssemblies())
-        {
-            if (a.FullName.StartsWith("System."))
-            {
-                continue;
-            }
-            foreach (var t in a.GetTypes())
-            {
-                if (t.IsSubclassOf(cseType))
-                {
-                    _cseSubClassList.Add(t);
-                }
-            }
-        }
-    }
     internal override void OnGUIEffect(Rect position, SerializedProperty property)
     {
 

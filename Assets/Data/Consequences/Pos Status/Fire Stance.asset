@@ -12,23 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
   m_Name: Fire Stance
   m_EditorClassIdentifier: 
-  selfInflicted: 0
+  selfInflicted: 1
   icon: {fileID: 21300000, guid: b170085678464c944a02723515a87e52, type: 3}
   clip: {fileID: 7400000, guid: 66014b05d049d0e46ae0f6209dad3312, type: 2}
   _cseCollection:
-    draw:
-      _use: 0
-      amount: 1
-    winGold:
-      _use: 0
-      amount: 1
-    removeStatus:
-      _use: 0
-      amount: 1
-      _positive: 0
-    heal:
-      _use: 0
-      amount: 1
+    _collection: []
   statusToInflict:
   - amount: 2
     effect: 7
+    inverseTarget: 0
+  references:
+    version: 2
+    RefIds: []

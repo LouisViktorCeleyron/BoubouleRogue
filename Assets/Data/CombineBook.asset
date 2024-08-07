@@ -36,7 +36,7 @@ MonoBehaviour:
   - name: Simple Poison
     elements:
       a: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
-      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+      b: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
     consequence: {fileID: 11400000, guid: 9ac6a4321ce1b844896268785971f870, type: 2}
   - name: Quick Strike
     elements:
@@ -45,8 +45,8 @@ MonoBehaviour:
     consequence: {fileID: 11400000, guid: 972ffcd0b6dd82b4db15d467c2d26891, type: 2}
   - name: Heal Mist
     elements:
-      a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
-      b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+      a: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+      b: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
     consequence: {fileID: 11400000, guid: a43d81381c3bdfa409ca4bce462d0d12, type: 2}
   - name: QuickDraw
     elements:
@@ -98,4 +98,44 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
       b: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
     consequence: {fileID: 11400000, guid: aa66518f9079eff48bd0e36098c00701, type: 2}
+  - name: Easy Jet
+    elements:
+      a: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+      b: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+    consequence: {fileID: 11400000, guid: 2e7ae65c442e4a3409a6af8e4ea7a235, type: 2}
+  - name: Thouthand Cut
+    elements:
+      a: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+      b: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+    consequence: {fileID: 11400000, guid: 863e9d32796a2424781cad48a08ae61f, type: 2}
+  - name: NEEDLES
+    elements:
+      a: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    consequence: {fileID: 11400000, guid: 4d8d2ace06a439d41b68998abae33a1e, type: 2}
+  - name: Needle Shield
+    elements:
+      a: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+      b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+    consequence: {fileID: 11400000, guid: 9711dfb0797d20e4cabcf079a53e0ccd, type: 2}
+  - name: Deadly Mist
+    elements:
+      a: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+      b: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
+    consequence: {fileID: 11400000, guid: 3feae8dae9348a44cbf427f70fd030df, type: 2}
+  - name: Poison Strilke
+    elements:
+      a: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+      b: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
+    consequence: {fileID: 11400000, guid: cf39436754fce4d43bd51a2d1d92ad66, type: 2}
+  - name: Flamable Fury
+    elements:
+      a: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+      b: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
+    consequence: {fileID: 11400000, guid: eb667b6049283f54e8fe52627a709c4a, type: 2}
+  - name: Splosh
+    elements:
+      a: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+      b: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+    consequence: {fileID: 11400000, guid: 33039597c67b0454ab24b938a233205d, type: 2}
   _defaultConsequence: {fileID: 11400000, guid: 1910cc61d532c704b9af505311eaa3e7, type: 2}

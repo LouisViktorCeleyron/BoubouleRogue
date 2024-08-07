@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class ElementAndCombinatorSubManager
 {
     private List<Element> _inBattleDeck, _discardPile;
     private List<Combinator> _availableElements;
+    private int _playerHand;
+    public int maxHand = 8;
+
+    public UnityEvent tooManyCardInHandFeedback;
 
     public int CombinatorsCount => _availableElements.Count;
     private PlayerManager _playerManager;
@@ -20,6 +25,7 @@ public class ElementAndCombinatorSubManager
 
         _inBattleDeck = new List<Element>(_playerManager.Deck);
         _discardPile = new List<Element>();
+        _playerHand = 0;
     }
 
    
@@ -48,9 +54,17 @@ public class ElementAndCombinatorSubManager
 
     public void DrawSpecific(Element element)
     {
+        _playerHand++;
         var combinator = Object.Instantiate(combinatorPrefab, _battleManager.board.RandomPointInBoard(), Quaternion.identity);
         combinator.Initialise(element);
         SubscribleCombinator(combinator);
+
+        if(_playerHand>maxHand)
+        {
+            tooManyCardInHandFeedback.Invoke();
+            DiscardCombinator(combinator);
+        }
+
     }
 
     public void Draw(int amount = 1)
@@ -68,8 +82,10 @@ public class ElementAndCombinatorSubManager
     }
     private void DiscardCombinator(Combinator combinator)
     {
+        _playerHand--;
         _availableElements.Remove(combinator);
         _discardPile?.Add(combinator.element);
+        GameObject.Destroy(combinator.gameObject);
     }
     public void DiscardCombinator(params Combinator[] combinators)
     {

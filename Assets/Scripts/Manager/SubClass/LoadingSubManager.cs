@@ -21,7 +21,7 @@ public class LoadingSubManager
     private Sprite[] _battleTransitionSprites;
     [SerializeField]
     private Sprite _menuTransitionSprites;
-
+    private Coroutine _offTransition;
     public void Initialize(MySceneManager master)
     {
         _master = master;
@@ -29,7 +29,6 @@ public class LoadingSubManager
 
     public void BattleTranstion(UnityAction toDo)
     {
-
         _currentImageTransition = _shaderedTransitionImage;
         _currentImageTransition.sprite = _battleTransitionSprites.GetRandomElement();
         _master.StartCoroutine(SetOnTransition(toDo));
@@ -37,7 +36,7 @@ public class LoadingSubManager
 
     public void MenuTranstion(UnityAction toDo)
     {
-
+        _master.StopAllCoroutines();
         _currentImageTransition = _shaderedTransitionImage;
         _currentImageTransition.sprite = _menuTransitionSprites;
         _master.StartCoroutine(SetOnTransition(toDo));
@@ -49,15 +48,20 @@ public class LoadingSubManager
         {
             return;
         }
-        _master.StartCoroutine(SetOffTransition());
+        _offTransition = _master.StartCoroutine(SetOffTransition());
     }
 
     private IEnumerator SetOnTransition(UnityAction toDo)
     {
         //SuperTemp A voir si j'ai besoin de créer un master Coroutine/Gerrer le temps avec des update
+        if(_offTransition != null)
+        {
+            _master.StopCoroutine(_offTransition);
+        }
         var transitionMaterial = _currentImageTransition.material;
         _currentImageTransition.gameObject.SetActive(true);
         var cutoff = 0f;
+        transitionMaterial.SetFloat("_Cutoff", cutoff);
 
         while (cutoff <= 1)
         {
@@ -68,15 +72,12 @@ public class LoadingSubManager
 
 
         toDo.Invoke();
-
-        yield return null;
     }
 
 
     private IEnumerator SetOffTransition()
     {
         //SuperTemp A voir si j'ai besoin de créer un master Coroutine/Gerrer le temps avec des update
-
 
 
         var transitionMaterial = _currentImageTransition.material;
@@ -92,7 +93,7 @@ public class LoadingSubManager
         }
 
         _currentImageTransition.gameObject.SetActive(false);
-        yield return null;
+
     }
 
 }

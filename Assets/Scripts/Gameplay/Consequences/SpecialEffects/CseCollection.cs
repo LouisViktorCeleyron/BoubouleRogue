@@ -19,6 +19,10 @@ public class CseCollection
     
     public string GetDescription()
     {
+        if(_collection == null || _collection.Count ==0)
+        {
+            return string.Empty;
+        }
         var ret = string.Empty;
         foreach (var cse in _collection)
         {

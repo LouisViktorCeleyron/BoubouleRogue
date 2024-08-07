@@ -27,7 +27,6 @@ public class ManagerManager : MonoBehaviour
         ProcessManagerAwake();
         SceneManager.sceneLoaded += OnStartScene;
 
-
         DontDestroyOnLoad(gameObject);
     }
 
@@ -51,6 +50,10 @@ public class ManagerManager : MonoBehaviour
         { 
             manager.ManagerPreAwake();
         }
+        foreach (var manager in managers)
+        {
+            manager.ManagerPostAwake();
+        }
     }
 
     public void OnStartScene(Scene newScene, LoadSceneMode loadSceneMode)
@@ -58,6 +61,18 @@ public class ManagerManager : MonoBehaviour
         foreach (var manager in managers)
         {
             manager.ManagerOnEachSceneStart(newScene);
+        }
+    }
+
+    public static void OnEndScene()
+    {
+        instance.OnEndScene(SceneManager.GetActiveScene());
+    }
+    public void OnEndScene(Scene leftScene)
+    {
+        foreach (var manager in managers)
+        {
+            manager.ManagerOnEachSceneLeft(leftScene);
         }
     }
 }

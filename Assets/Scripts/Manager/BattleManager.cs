@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BattleManager : Manager
 {
-    public FightingInstance playerInstance;
+    public PlayerInstance playerInstance;
     public OponentInstance opponentInstance;
 
     public CombineBook book;
@@ -21,6 +21,7 @@ public class BattleManager : Manager
     private JourneyManager _journeyManager;
 
     private WaitForEndOfFrame _waitForEndOfFrame = new WaitForEndOfFrame();
+    private bool _endOfBattle;
 
     private enum TurnEvolution
     {
@@ -47,6 +48,7 @@ public class BattleManager : Manager
         }
         BattlePreviewSubManager.Initialize();
         CombinatorSubManager.Initialise();
+        StopAllCoroutines();
         StartCoroutine(Turn());
     }
     private void SetUpOpponent()
@@ -56,8 +58,10 @@ public class BattleManager : Manager
 
     private void InitialiseBattle()
     {
+        _endOfBattle = false;
+
         CombinatorSubManager.ResetAvailableElements();
-        playerInstance.SetHp(_playerManager.currentHp);
+        playerInstance.Init(_playerManager.CurrentHp, _playerManager.HpMax);
         SetUpOpponent();
 
     }
@@ -69,17 +73,16 @@ public class BattleManager : Manager
         WaitUntil playerTurnWait = new WaitUntil(() => !_playerTurn);
         WaitUntil oponentTurnWait = new WaitUntil(() => !_opponentTurn);
 
-        while (true) 
+        while (!_endOfBattle) 
         { 
             StartTurn();
+            opponentInstance.SetConsequence();
             playerInstance.StartTurn();
             _playerTurn = true;
-            Debug.Log("Before WaitPlayer turn");
             while(_playerTurn)
             {
                 yield return _waitForEndOfFrame;
             }
-            "End Of Player Turn".ColorDebugLog(Color.black);
             playerInstance.EndTurn();
 
             opponentInstance.StartTurn();
@@ -102,6 +105,7 @@ public class BattleManager : Manager
     private void StartTurn()
     {
         //Checker ici
+
         var isDrawLess = playerInstance.GetStatus<DrawLess>();
         var drawLessStatus = isDrawLess != null ? isDrawLess.GetAmount():0;
         CombinatorSubManager.Draw(4-drawLessStatus);
@@ -131,9 +135,10 @@ public class BattleManager : Manager
 
     public void EndOfBattle(bool playerDead = true)
     {
-        if(playerDead)
+        _endOfBattle = true;
+        if(!playerDead)
         {
-            _playerManager.currentHp = playerInstance.GetHp();
+            _playerManager.SetHp(playerInstance.GetHp());
             _mySceneManager.LoadMap();
         }
         else

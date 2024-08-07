@@ -42,7 +42,6 @@ public class Status
     public void ChangeAmount(int toAddOrRemove)
     {
         _amount = Mathf.Clamp(0, _amount+toAddOrRemove, 999);
-        $"Change Amount to {_amount}".ColorDebugLog(Color.cyan);
         if (_amount <= 0)
         {
             Unsubscribe();

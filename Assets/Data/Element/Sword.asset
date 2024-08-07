@@ -14,4 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 9ed395858999f254d9512ad878441080, type: 3}
   basePrice: 111
+  description: Sharp and robust. It is wildly recommended to always have at least
+    one of these with you. Who know what kind of devastating attack you can make
+    with it
   color: {r: 0.6981132, g: 0.6618903, b: 0.6618903, a: 1}
+  potentialMix:
+  - {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+  - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+  - {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}

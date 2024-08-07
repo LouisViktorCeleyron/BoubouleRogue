@@ -6,12 +6,15 @@ using UnityEngine;
 public class OffensiveConsequence : StatusOnlyConsequence
 {
     public ElementalType type = ElementalType.Neutral;
-    public int baseDamages, recoilDamages = 0;
+    public int baseDamages, howManyTimes=1,recoilDamages = 0;
 
     protected override void ConsequenceAction()
     {
-        var attack = new Attack(baseDamages, type, _target);
-        _target.ReceiveAttack(attack);
+        var attack = new Attack(baseDamages, type, _launcher,_target);
+        for (int i = 0; i < howManyTimes; i++) 
+        { 
+            _target.ReceiveAttack(attack);
+        }
         if( recoilDamages > 0 ) 
         {
             _launcher.AutoInflictedDamage(recoilDamages);
@@ -23,8 +26,9 @@ public class OffensiveConsequence : StatusOnlyConsequence
     {
         var retBaseDam = $"{baseDamages.ColorizeString(ColorizeExtention.DammageColor)} Damages. ";
         var retRecDam = $"{recoilDamages.ColorizeString(ColorizeExtention.DammageColor)} Recoil Damages. ";
+        var retAmount = $"{howManyTimes.ColorizeString(ColorizeExtention.DammageColor)} Times. ";
         var retBase = base.GetDescription();
-        return retBaseDam + (recoilDamages>0?retBaseDam:string.Empty) + retBase;
+        return retBaseDam + (recoilDamages>0?retRecDam:string.Empty) + retBase + (howManyTimes>1?retAmount:string.Empty) ;
     }
 }
 
