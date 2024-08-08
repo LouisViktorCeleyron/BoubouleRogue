@@ -13,24 +13,29 @@ public class UIManager : Manager
     [SerializeField]
     private TextMeshProUGUI _stairsText, _goldText,_healthText;
     [SerializeField]
-    private GameObject _feedbackUI, _packIcon;
+    private GameObject _feedbackUI, _packIcon, _gatchaUI;
+    [SerializeField]
+    private RewardMaster _rewardMaster;
     [SerializeField]
     private ElementPackMaster _packUIMaster;
 
     private JourneyManager _journeyManager;
     private PlayerManager _playerManager;
+    private AudioManager _audioManager;
 
     public bool IsUIOnFront()
     {
-        return _packUIMaster.gameObject.activeInHierarchy;
+        return 
+            _packUIMaster.gameObject.activeInHierarchy ||
+            _gatchaUI.gameObject.activeInHierarchy ||
+            _rewardMaster.gameObject.activeInHierarchy;
     }
-
     public override void ManagerPreAwake()
     {
         _journeyManager = ManagerManager.GetManager<JourneyManager>();
         _playerManager = ManagerManager.GetManager<PlayerManager>();
+        _audioManager = ManagerManager.GetManager<AudioManager>();
     }
-
     public override void ManagerPostAwake()
     {
         _playerManager.onGoldChanged.Subscribe(UpdateGold);
@@ -44,10 +49,13 @@ public class UIManager : Manager
         DisplayPackIcon(isActive);
 
     }
-
     public void DisplayPackIcon(bool value)
     {
         _packIcon.SetActive(value);
+    }
+    public void DisplayBattleFeedbackUI(bool isActive)
+    {
+        _feedbackUI.SetActive(isActive);
     }
 
     public void ActivatePackUI(bool toDelete = false)
@@ -67,10 +75,26 @@ public class UIManager : Manager
         _packUIMaster.elementDeletePackSubMaster.Reset();
 
     }
-    public void DisplayBattleFeedbackUI(bool isActive)
+    public void ActivateGatchaUI(bool value)
     {
-        Debug.Log(isActive);
-        _feedbackUI.SetActive(isActive);
+        _gatchaUI.SetActive(value);
+        if(value)
+        {
+            _audioManager.LoadTempMusic("Motus");
+        }
+        else
+        {
+            _audioManager.ContinueMusic();
+        }
+    }
+    public void ActivateRewardMaster(bool value)
+    {
+        //J'ai mis le changement de scene direct dans le bouton
+        _rewardMaster.gameObject.SetActive(value);
+        if(value)
+        {
+            _rewardMaster.Init();
+        }
     }
 
     public void UpdateStairs(int i)
@@ -81,11 +105,12 @@ public class UIManager : Manager
     {
         _goldText.text = i.ToString("000");
     }
-
     public void UpdateHealth(int i)
     {
         _healthText.text = $"{i.ToString("00")}/{_playerManager.HpMax}";
     }
+    
+    
     public override void ManagerOnEachSceneLeft(Scene scene)
     {
         DisplayRunUIBand(false);

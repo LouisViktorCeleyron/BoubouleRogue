@@ -30,8 +30,11 @@ public class BatlleManagerBridge : MonoBehaviour
 
     public void StopPreview()
     {
-        _consDescriptionText.gameObject.SetActive(false);
-        _consTitleText.gameObject.SetActive(false);
+        if(_consDescriptionText)
+        {
+            _consDescriptionText.gameObject.SetActive(false);
+            _consTitleText.gameObject.SetActive(false);
+        }
     }
 
 }

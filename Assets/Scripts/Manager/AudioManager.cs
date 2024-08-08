@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class AudioManager : Manager
 {
     [SerializeField]
-    private AudioSource _musicSource;
+    private AudioSource _musicSource,_tempMusicSource;
     [SerializeField]
     private List<AudioSource> _sfxSources;
 
@@ -48,5 +48,31 @@ public class AudioManager : Manager
             _musicSource.clip = tryGetMusic;
             _musicSource.Play();
         }
+    }
+
+
+    public void LoadTempMusic(string musicName)
+    {
+        var tryGetMusic = _musics[musicName];
+        if (tryGetMusic != null)
+        {
+            _tempMusicSource.clip = tryGetMusic;
+            _musicSource.Pause();
+            _tempMusicSource.Play();
+        }
+    }
+
+    public void ContinueMusic()
+    {
+        if(_tempMusicSource.isPlaying)
+        {
+            _tempMusicSource.Stop();
+            _musicSource.Play();
+        }
+    }
+
+    public override void ManagerOnEachSceneLeft(Scene scene)
+    {
+        ContinueMusic();
     }
 }

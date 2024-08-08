@@ -19,6 +19,7 @@ public class BattleManager : Manager
     private PlayerManager _playerManager;
     private MySceneManager _mySceneManager;
     private JourneyManager _journeyManager;
+    private UIManager _uiManager;
 
     private WaitForEndOfFrame _waitForEndOfFrame = new WaitForEndOfFrame();
     private bool _endOfBattle;
@@ -37,6 +38,7 @@ public class BattleManager : Manager
         _journeyManager=ManagerManager.GetManager<JourneyManager>();
         _playerManager =ManagerManager.GetManager<PlayerManager>();
         _mySceneManager =ManagerManager.GetManager<MySceneManager>();
+        _uiManager = ManagerManager.GetManager<UIManager>();
 
 
     }
@@ -139,7 +141,8 @@ public class BattleManager : Manager
         if(!playerDead)
         {
             _playerManager.SetHp(playerInstance.GetHp());
-            _mySceneManager.LoadMap();
+            opponentInstance.gameObject.SetActive(false);
+            _uiManager.ActivateRewardMaster(true);
         }
         else
         {

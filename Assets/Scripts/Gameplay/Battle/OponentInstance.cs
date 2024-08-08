@@ -22,7 +22,7 @@ public class OponentInstance : FightingInstance
     }
     public void Initialise(OpponentData oponentData)
     {
-        Debug.Log("coucou");
+        //Debug.Log("coucou");
         _oponentData = oponentData;
         _spriteRenderer.sprite = _oponentData.sprite;
         _opponentName.text = oponentData.name;

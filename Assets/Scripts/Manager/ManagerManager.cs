@@ -43,7 +43,6 @@ public class ManagerManager : MonoBehaviour
         return null;
     }
 
-
     private void ProcessManagerAwake()
     {
         foreach (var manager in managers) 

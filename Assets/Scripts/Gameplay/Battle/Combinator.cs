@@ -10,12 +10,14 @@ public class Combinator : MonoBehaviour
     private bool _isSelected;
 
     private BattleManager _battleManager;
+    private UIManager _uiManager;
 
     private Combinator _otherCombinator;
     // Start is called before the first frame update
     void Start()
     {
         _battleManager = ManagerManager.GetManager<BattleManager>();
+        _uiManager = ManagerManager.GetManager<UIManager>();
     }
     public void Initialise(Element element)
     {
@@ -24,6 +26,10 @@ public class Combinator : MonoBehaviour
     }
     private void OnMouseDrag()
     {
+        if (_uiManager.IsUIOnFront())
+        {
+            return;
+        }
         _isSelected = true;
         var mousPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane+10);
         var newPos = Camera.main.ScreenToWorldPoint(mousPos);

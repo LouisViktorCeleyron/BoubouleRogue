@@ -8,6 +8,7 @@ public static class OverallExtention
     {
         Debug.Log(toPrint.ColorizeString(color));
     }
+    
 
     public static Vector3 ClampedVector3(this Vector3 vector, Vector3 min, Vector3 max)
     {
