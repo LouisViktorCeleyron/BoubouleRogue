@@ -16,7 +16,7 @@ MonoBehaviour:
   basePrice: 111
   description: This Element bring you closer to absolute freedom. With it your power
     are weaker, but last much much longer
-  color: {r: 0.7294118, g: 0.89019614, b: 0.9058824, a: 1}
+  color: {r: 0.42352945, g: 0.7803922, b: 0.70980394, a: 1}
   potentialMix:
   - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
   - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}

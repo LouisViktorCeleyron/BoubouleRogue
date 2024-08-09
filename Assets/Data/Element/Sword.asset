@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Sharp and robust. It is wildly recommended to always have at least
     one of these with you. Who know what kind of devastating attack you can make
     with it
-  color: {r: 0.6981132, g: 0.6618903, b: 0.6618903, a: 1}
+  color: {r: 0.78823537, g: 0.7843138, b: 0.7843138, a: 1}
   potentialMix:
   - {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
   - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}

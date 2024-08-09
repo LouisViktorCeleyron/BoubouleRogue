@@ -42,12 +42,18 @@ public class WeightedList<T> : SerializedWeightedListParent
 {
 
     public List<WeightedElement<T>> _weightedElementsList;
-    public float TotalWeight => _weightedElementsList.Sum((_weightedElement)=> _weightedElement.Weight);
+    public float TotalWeight => _weightedElementsList.Sum((_weightedElement) => _weightedElement.Weight);
 
     public void Add(T element, float weight)
     {
         _weightedElementsList.Add(new WeightedElement<T>(element, weight));
     }
+
+    public WeightedList()
+    {
+        _weightedElementsList = new List<WeightedElement<T>>();
+    }
+
 
     public T this[int index]
     {

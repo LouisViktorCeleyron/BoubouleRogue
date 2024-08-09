@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName ="Gatcha Master", menuName ="MyStuffs/GatchaMaster")]
 public class GatchaMaster : ScriptableObject
 {
     public List<Element> commonElements;
@@ -13,10 +14,10 @@ public class GatchaMaster : ScriptableObject
     public WeightedList<Element> GetElementsForGatcha()
     {
         var ret = new WeightedList<Element>();
-
-        ret.Add(commonElements.GetRandomElement(), 6);
-        ret.Add(rareElements.GetRandomElement(), 3);
-        ret.Add(legendaryElements.GetRandomElement(), 1);
+        var c = commonElements.GetRandomElement();
+        ret.Add(c, 6f);
+        ret.Add(rareElements.GetRandomElement(), 3f);
+        ret.Add(legendaryElements.GetRandomElement(), 1f);
 
         return ret;
     }

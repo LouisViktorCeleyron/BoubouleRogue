@@ -17,7 +17,7 @@ MonoBehaviour:
   description: 'Harness the true power of heat with this Element. Perfect to hit
     hard or inflicting devastating status effect to your opponent. But at which cost
     ? '
-  color: {r: 0.882353, g: 0.31764707, b: 0.11764707, a: 1}
+  color: {r: 0.9176471, g: 0.28235295, b: 0.14509805, a: 1}
   potentialMix:
   - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
   - {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}

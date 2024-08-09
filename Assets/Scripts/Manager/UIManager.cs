@@ -13,7 +13,9 @@ public class UIManager : Manager
     [SerializeField]
     private TextMeshProUGUI _stairsText, _goldText,_healthText;
     [SerializeField]
-    private GameObject _feedbackUI, _packIcon, _gatchaUI;
+    private GameObject _feedbackUI, _packIcon;
+    [SerializeField]
+    private GatchaUIMaster _gatchaUI;
     [SerializeField]
     private RewardMaster _rewardMaster;
     [SerializeField]
@@ -75,9 +77,13 @@ public class UIManager : Manager
         _packUIMaster.elementDeletePackSubMaster.Reset();
 
     }
+    public void InitGatchaUIButton(GameObject button = null)
+    {
+        _gatchaUI.Init(button);
+    }
     public void ActivateGatchaUI(bool value)
     {
-        _gatchaUI.SetActive(value);
+        _gatchaUI.gameObject.SetActive(value);
         if(value)
         {
             _audioManager.LoadTempMusic("Motus");

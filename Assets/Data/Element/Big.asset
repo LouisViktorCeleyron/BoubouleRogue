@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 118bd8503ba39c04da5dc6fc19f8e359, type: 3}
-  m_Name: Goo
+  m_Name: Big
   m_EditorClassIdentifier: 
-  icone: {fileID: 21300000, guid: 52532ceabcc87e74e9864fd7a4a06603, type: 3}
+  icone: {fileID: 21300000, guid: 679d9250a1ed1ee4098d5ec4b96f9b4f, type: 3}
   basePrice: 111
   description: 
-  color: {r: 0.62352943, g: 0.3647059, b: 0.64705884, a: 1}
+  color: {r: 0.6627451, g: 0.52156866, b: 0.7411765, a: 1}
   potentialMix: []
