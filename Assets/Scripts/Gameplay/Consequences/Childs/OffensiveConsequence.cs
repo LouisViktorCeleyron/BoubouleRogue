@@ -7,10 +7,12 @@ public class OffensiveConsequence : StatusOnlyConsequence
 {
     public ElementalType type = ElementalType.Neutral;
     public int baseDamages, howManyTimes=1,recoilDamages = 0;
-
+    
     protected override void ConsequenceAction()
     {
-        var attack = new Attack(baseDamages, type, _launcher,_target);
+        var damage = baseDamages + _launcher.Stats.Strength;
+        var attack = new Attack(damage, type, _launcher,_target);
+
         for (int i = 0; i < howManyTimes; i++) 
         { 
             _target.ReceiveAttack(attack);
@@ -24,7 +26,7 @@ public class OffensiveConsequence : StatusOnlyConsequence
 
     public override string GetDescription()
     {
-        var retBaseDam = $"{baseDamages.ColorizeString(ColorizeExtention.DammageColor)} Damages. ";
+        var retBaseDam = $"{(baseDamages+_launcher.Stats.Strength).ColorizeString(ColorizeExtention.DammageColor)} Damages. ";
         var retRecDam = $"{recoilDamages.ColorizeString(ColorizeExtention.DammageColor)} Recoil Damages. ";
         var retAmount = $"{howManyTimes.ColorizeString(ColorizeExtention.DammageColor)} Times. ";
         var retBase = base.GetDescription();

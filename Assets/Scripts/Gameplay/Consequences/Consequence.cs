@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Consequence : ScriptableObject
 {
-    public bool selfInflicted;
+    public bool selfInflicted,destroyElements;
     public Sprite icon;
     public AnimationClip clip;
     protected FightingInstance _target, _launcher, _otherTarget;
@@ -39,7 +39,9 @@ public abstract class Consequence : ScriptableObject
 
     public virtual string GetDescription()
     {
-        return _cseCollection.GetDescription() + " To "+ GetTargetName()+". ";
+        var ret = _cseCollection.GetDescription() + " To " + GetTargetName() + ". ";
+        var destroyRet = destroyElements?"Remove Element from Pack Until the end of the battle. ":string.Empty;
+        return destroyRet+ret;
     }
 
 }

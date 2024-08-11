@@ -14,13 +14,13 @@ public class PlayerInstance : FightingInstance
     
     public void Init(int currentHp, int hpMax)
     {
-        _hpMax = hpMax;
-        SetHp(currentHp);
+        _stats.SetHpMax(hpMax);
+        _stats.SetHp(currentHp);
     }
 
     public override void SetHpMoreFeedback()
     {
-        _playerManager.SetHp(_currentHp);
+        _playerManager.SetHp(Stats.GetHp());
     }
 
     public override void EndOfBattle()

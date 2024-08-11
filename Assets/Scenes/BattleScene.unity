@@ -3887,6 +3887,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 228813378}
     - target: {fileID: 840037589064029956, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
+      propertyPath: _stats._hpMax
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 840037589064029956, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
       propertyPath: _attackPreview
       value: 
       objectReference: {fileID: 1268862900}

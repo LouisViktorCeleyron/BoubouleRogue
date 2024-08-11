@@ -117,8 +117,8 @@ public class BattleManager : Manager
     {
         var c =book.GetConsequence(a.element, b.element);
         c.CallConsequence(playerInstance, opponentInstance);
-
-        CombinatorSubManager.DiscardCombinator(a, b);
+        
+        CombinatorSubManager.DiscardCombinator(c.destroyElements, a, b );
     }
 
 
@@ -140,7 +140,7 @@ public class BattleManager : Manager
         _endOfBattle = true;
         if(!playerDead)
         {
-            _playerManager.SetHp(playerInstance.GetHp());
+            _playerManager.SetHp(playerInstance.Stats.GetHp());
             opponentInstance.gameObject.SetActive(false);
             _uiManager.ActivateRewardMaster(true);
         }

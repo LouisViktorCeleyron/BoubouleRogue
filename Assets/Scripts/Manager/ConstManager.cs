@@ -7,5 +7,7 @@ public class ConstManager : Manager
     public int basePlayerHP = 30;
     public int basePlayerGold = 50;
     public int baseGoldReward = 30;
+    public int baseNeedleDamage = 3;
+    public int baseThunderMarkDamage = 10;
 
 }

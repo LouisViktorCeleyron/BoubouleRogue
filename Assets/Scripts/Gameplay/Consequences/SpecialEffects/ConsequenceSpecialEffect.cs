@@ -10,6 +10,9 @@ public class ConsequenceSpecialEffect
     protected string name = "CSE";
     protected BattleManager _BattleManager => ManagerManager.GetManager<BattleManager>();
     protected PlayerManager _PlayerManager => ManagerManager.GetManager<PlayerManager>();
+
+    public virtual bool HighPriority => false;
+
     [SerializeField]
     public void CallEffect(FightingInstance targetInstance)
     {
@@ -53,6 +56,40 @@ public class CSE_Draw : ConsequenceSpecialEffect
     }
 }
 
+[System.Serializable]
+public class CSE_DrawSpecific : ConsequenceSpecialEffect
+{
+    [SerializeField]
+    private List<DrawSpecificDico> _elementToDraw;
+
+    protected override void ApplyEffect(FightingInstance targetInstance)
+    {
+        foreach (var element in _elementToDraw)
+        {
+            for (int i = 0; i < element.amount; i++)
+            {
+                _BattleManager.CombinatorSubManager.DrawSpecific(element.element);
+            }
+        }
+    }
+
+
+    protected override string CSEDescription()
+    {
+        var ret = string.Empty;
+        foreach (var e in _elementToDraw)
+        {
+            ret += $"{e.amount} {e.element}".ColorizeString(e.element.color);
+        }
+        return $"Draw {ret}. They're  available until the end of the battle."; ;
+    }
+}
+[System.Serializable]
+public struct DrawSpecificDico
+{
+    public Element element;
+    public int amount;
+}
 [System.Serializable]
 public class CSE_WinGold : ConsequenceSpecialEffect
 {
@@ -99,8 +136,9 @@ public class CSE_RemoveStatus : ConsequenceSpecialEffect
 
     protected override string CSEDescription()
     {
+        var addOrRemoveText = _amountOfStatusToRemove < 0 ? "Add" : "Remove";
         var positiveText = _onlyPositiveStatus ? "positive".ColorizeString(Color.green) : "negative".ColorizeString(Color.red);
-        return $"Remove {_amountOfStatusToRemove.ColorizeString(Color.magenta)} of every {positiveText} status";
+        return $"{_amountOfStatusToRemove} {_amountOfStatusToRemove.ColorizeString(Color.magenta)} of every {positiveText} status";
     }
 }
 
@@ -120,3 +158,40 @@ public class CSE_Heal : ConsequenceSpecialEffect
         return $"Heal {_HpHealed.ColorizeString(Color.green)} HP";
     }
 }
+
+[System.Serializable]
+public class CSE_Discard : ConsequenceSpecialEffect
+{
+    public override bool HighPriority => true;
+
+    [Header("High Priority CSE")]
+    [SerializeField]
+    private int _discardAmount;
+
+    protected override void ApplyEffect(FightingInstance targetInstance)
+    {
+        var battleManager = ManagerManager.GetManager<BattleManager>();
+        var combinatorSub = battleManager.CombinatorSubManager;
+        if (_discardAmount >= combinatorSub.PlayerHand)
+        {
+            combinatorSub.DiscardAllCombinator();
+        }
+        else
+        {
+            for (int i = 0; i < _discardAmount; i++)
+            {
+                combinatorSub.DiscardRandomCominator();   
+            }
+        }
+    }
+
+    protected override string CSEDescription()
+    {
+        if(_discardAmount>20) //temp
+        {
+            return "Discard all elements".ColorizeString(Color.red);
+        }
+        return $"Discard {_discardAmount.ColorizeString(Color.green)} random elements";
+    }
+}
+

@@ -1,3 +1,4 @@
+using LCStarterContent.Common;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class ElementAndCombinatorSubManager
     private List<Element> _inBattleDeck, _discardPile;
     private List<Combinator> _availableElements;
     private int _playerHand;
+    public int PlayerHand;
     public int maxHand = 8;
 
     public UnityEvent tooManyCardInHandFeedback;
@@ -80,21 +82,37 @@ public class ElementAndCombinatorSubManager
         _inBattleDeck = new List<Element>(_discardPile);
         _discardPile = new List<Element>(); 
     }
-    private void DiscardCombinator(Combinator combinator)
+    private void DiscardCombinator(Combinator combinator, bool destroy = false)
     {
         _playerHand--;
         _availableElements.Remove(combinator);
-        _discardPile?.Add(combinator.element);
+        if(!destroy)
+        {
+            _discardPile?.Add(combinator.element);
+        }
         GameObject.Destroy(combinator.gameObject);
     }
-    public void DiscardCombinator(params Combinator[] combinators)
+    public void DiscardCombinator(bool destroy= false, params Combinator[] combinators)
     {
         foreach (var combinator in combinators)
         {
-            DiscardCombinator(combinator);
+            DiscardCombinator(combinator,destroy);
         }
     }
 
+    public void DiscardAllCombinator()
+    {
+        foreach (var item in _availableElements)
+        {
+            DiscardCombinator(item);
+        }
+    }
+    
+    public void DiscardRandomCominator()
+    {
+        var c =_availableElements.GetRandomElement();
+        DiscardCombinator(c);
+    }
 
     public void SubscribleCombinator(Combinator combinator)
     {

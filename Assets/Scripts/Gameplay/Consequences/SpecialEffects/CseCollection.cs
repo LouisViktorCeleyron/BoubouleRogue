@@ -11,7 +11,24 @@ public class CseCollection
     private List<ConsequenceSpecialEffect> _collection;
     public void CallEffects(FightingInstance instanceTarget)
     {
+        var highPrio = new List<ConsequenceSpecialEffect>();
+        var lowPrio = new List<ConsequenceSpecialEffect>();
         foreach (var cse in _collection)
+        {
+            if (cse.HighPriority)
+            {
+                highPrio.Add(cse);
+            }
+            else
+            {
+                lowPrio.Add(cse);
+            }
+        }
+        foreach (var cse in highPrio)
+        {
+            cse.CallEffect(instanceTarget);
+        }
+        foreach (var cse in lowPrio)
         {
             cse.CallEffect(instanceTarget);
         }

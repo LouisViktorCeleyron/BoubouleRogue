@@ -17,7 +17,13 @@ public enum StatusEffect
     Dodge,
     BulkUp,
     Needle,
-    Thorns
+    Thorns,
+    Haystack,
+    Tough,
+    ThunderMarked,
+    ThunderMark,
+    Shock,
+    Factory
 }
 
 

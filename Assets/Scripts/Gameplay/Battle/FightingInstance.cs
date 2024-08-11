@@ -7,9 +7,8 @@ using UnityEngine.Events;
 public class FightingInstance : MonoBehaviour
 {
     [SerializeField]
-    protected int _hpMax = 30;
-    [SerializeField]
-    protected int _currentHp = 30;
+    protected FIStats _stats;
+    public FIStats Stats => _stats;
 
     public List<Status> statusEffects;
 
@@ -26,6 +25,8 @@ public class FightingInstance : MonoBehaviour
     protected BattleManager _battleManager;
     public FightingInstanceFeedbackSubComponent feedbackSubComp;
     private bool _lockAntiStack;
+
+
     private void Awake()
     {
         //init
@@ -36,9 +37,15 @@ public class FightingInstance : MonoBehaviour
         statusEffects = new List<Status>();
         feedbackSubComp.Init(this);
 
+        _stats = new FIStats(this);
+
         _battleManager = ManagerManager.GetManager<BattleManager>();
     }
 
+    public virtual void SetHpMoreFeedback()
+    {
+
+    }
 
     public void StartTurn()
     {
@@ -48,38 +55,22 @@ public class FightingInstance : MonoBehaviour
     {
         OnEndTurn.Launch(this);
     }
-    public int GetHp() 
-    { 
-        return _currentHp;
-    }
+    
     public void ReceiveAttack(Attack  attack)
     {
         OnAttackReceived.Launch(attack);
-        SetHp(_currentHp - attack.GetDammage());
+        _stats.AddHp(- attack.GetDammage());
     }
     public void AutoInflictedDamage(int amount)
     {
-        SetHp(_currentHp - amount, true);
+        _stats.AddHp (- amount, true);
 
     }
-    public void Heal(int amount) 
+    public void Heal(int amount)
     { 
-        SetHp(_currentHp + amount, false);
+        _stats.AddHp( amount, false);
     }
-    public void SetHp(int newAmount, bool negativeFeedback = true)
-    {
-        _currentHp = Mathf.Clamp(newAmount,0,_hpMax);
-        OnHpChanged.Invoke(_currentHp,_hpMax);
-        SetHpMoreFeedback();
-        if(_currentHp<=0)
-        {
-            EndOfBattle();
-        }
-    }
-    public virtual void SetHpMoreFeedback()
-    {
-
-    }
+ 
     public virtual void EndOfBattle()
     {
 

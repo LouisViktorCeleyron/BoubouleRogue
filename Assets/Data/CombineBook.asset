@@ -138,4 +138,104 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
       b: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
     consequence: {fileID: 11400000, guid: 33039597c67b0454ab24b938a233205d, type: 2}
+  - name: Super Thorn
+    elements:
+      a: {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
+      b: {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
+    consequence: {fileID: 11400000, guid: c870e857cc59bc44ea1e7363d38ad339, type: 2}
+  - name: TIMBER
+    elements:
+      a: {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
+      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    consequence: {fileID: 11400000, guid: 4590bd483c7b9a840a44b667b8da3f19, type: 2}
+  - name: Javelin Throw
+    elements:
+      a: {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
+      b: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+    consequence: {fileID: 11400000, guid: c3de38371912c184493f4147de176ab2, type: 2}
+  - name: Arson
+    elements:
+      a: {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
+      b: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+    consequence: {fileID: 11400000, guid: 4d1b46b466cefce4facb1ea6ba0f3bc1, type: 2}
+  - name: Swamp's Cleanse
+    elements:
+      a: {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
+      b: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+    consequence: {fileID: 11400000, guid: b61604e3aa17ee6459d7b29ef282fc64, type: 2}
+  - name: Shock
+    elements:
+      a: {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
+      b: {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
+    consequence: {fileID: 11400000, guid: 21917d87c54865344872204ef165fdf4, type: 2}
+  - name: Overheat
+    elements:
+      a: {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
+      b: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+    consequence: {fileID: 11400000, guid: 1ddff1738ff26114da1100dcfe104801, type: 2}
+  - name: Deal with Thor
+    elements:
+      a: {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
+      b: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+    consequence: {fileID: 11400000, guid: f0dfc7b977499e741b1a1054771cb559, type: 2}
+  - name: Force Field
+    elements:
+      a: {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
+      b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+    consequence: {fileID: 11400000, guid: d44428380da5d0648b3de86f0c747c4d, type: 2}
+  - name: Conduction
+    elements:
+      a: {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
+      b: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+    consequence: {fileID: 11400000, guid: bcd1e3bf90446f94e8a2f1d03ad392ee, type: 2}
+  - name: Lightning Blade
+    elements:
+      a: {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
+      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    consequence: {fileID: 11400000, guid: 1cf1a7d1c2d4a1a4898f5e52facf29b1, type: 2}
+  - name: GodSpeed
+    elements:
+      a: {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
+      b: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
+    consequence: {fileID: 11400000, guid: 0792e079f9a68cf41be4bab84e3fd9a4, type: 2}
+  - name: Big Sword
+    elements:
+      a: {fileID: 11400000, guid: 92a3ab0ba930c34479d167bb4c788e22, type: 2}
+      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    consequence: {fileID: 11400000, guid: 8412ae781ed981346adc8f8f838a6686, type: 2}
+  - name: Big Defense
+    elements:
+      a: {fileID: 11400000, guid: 92a3ab0ba930c34479d167bb4c788e22, type: 2}
+      b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+    consequence: {fileID: 11400000, guid: 1c2c0720078bae243842a813f8d370e4, type: 2}
+  - name: Big Shock
+    elements:
+      a: {fileID: 11400000, guid: 92a3ab0ba930c34479d167bb4c788e22, type: 2}
+      b: {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
+    consequence: {fileID: 11400000, guid: 78ffc6e071972ed43bb89fa69ea4b9b6, type: 2}
+  - name: Big Poison
+    elements:
+      a: {fileID: 11400000, guid: 92a3ab0ba930c34479d167bb4c788e22, type: 2}
+      b: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
+    consequence: {fileID: 11400000, guid: bce4c61f3ad520343be59a6b6e447ff0, type: 2}
+  - name: Big Potion
+    elements:
+      a: {fileID: 11400000, guid: 92a3ab0ba930c34479d167bb4c788e22, type: 2}
+      b: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+    consequence: {fileID: 11400000, guid: 0bce7acfacaf3914fadb817b7f1319b4, type: 2}
+  - name: Big Burn
+    elements:
+      a: {fileID: 11400000, guid: 92a3ab0ba930c34479d167bb4c788e22, type: 2}
+      b: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+    consequence: {fileID: 11400000, guid: 3fe8456c3657bf641859fb71551219ea, type: 2}
+  - name: Big Breeze
+    elements:
+      a: {fileID: 11400000, guid: 92a3ab0ba930c34479d167bb4c788e22, type: 2}
+      b: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+    consequence: {fileID: 11400000, guid: ca793ca3e34246642a87f8180bf943b0, type: 2}
+  - name: Big Thorn
+    elements:
+      a: {fileID: 11400000, guid: 92a3ab0ba930c34479d167bb4c788e22, type: 2}
+      b: {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
+    consequence: {fileID: 11400000, guid: 29531a03402f69548a4e2250a1e66750, type: 2}
   _defaultConsequence: {fileID: 11400000, guid: 1910cc61d532c704b9af505311eaa3e7, type: 2}

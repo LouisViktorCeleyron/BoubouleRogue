@@ -1048,7 +1048,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
   - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
   - {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+  - {fileID: 11400000, guid: 92a3ab0ba930c34479d167bb4c788e22, type: 2}
+  - {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
+  - {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
   - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+  - {fileID: 11400000, guid: 267dc66a9dfed684c9d127e2c3d0a61d, type: 2}
   showDebug: 0
 --- !u!114 &101161163565366671
 MonoBehaviour:
@@ -2884,6 +2888,7 @@ MonoBehaviour:
   opponentInstance: {fileID: 0}
   book: {fileID: 11400000, guid: 21d346c73fc22a6419ce9fb0a5a01e5f, type: 2}
   CombinatorSubManager:
+    PlayerHand: 0
     maxHand: 8
     tooManyCardInHandFeedback:
       m_PersistentCalls:
@@ -3012,6 +3017,8 @@ MonoBehaviour:
   basePlayerHP: 33
   basePlayerGold: 50
   baseGoldReward: 30
+  baseNeedleDamage: 3
+  baseThunderMarkDamage: 10
 --- !u!1 &2346238941032757374
 GameObject:
   m_ObjectHideFlags: 0

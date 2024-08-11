@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Needle Shield
   m_EditorClassIdentifier: 
   selfInflicted: 1
+  destroyElements: 0
   icon: {fileID: 0}
   clip: {fileID: 7400000, guid: 66014b05d049d0e46ae0f6209dad3312, type: 2}
   _cseCollection:
@@ -21,8 +22,8 @@ MonoBehaviour:
   - amount: 2
     effect: 0
     inverseTarget: 0
-  - amount: 3
-    effect: 9
+  - amount: 1
+    effect: 10
     inverseTarget: 0
   references:
     version: 2

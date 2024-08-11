@@ -7,9 +7,10 @@ public class Needle : OnStartTurnStatus
     public override StatusEffect StatusEnum => StatusEffect.Needle;
     protected override bool _DecreaseAtStart => false;
     public override bool Positive => false;
+    private ConstManager _constManager;
     protected override void OnStartTurnAction(FightingInstance target)
     {
-        target.AutoInflictedDamage(3 * _amount);
+        target.AutoInflictedDamage(_constManager.baseNeedleDamage * _amount);
     }
 
     public void ResetDamage(Attack atk)
@@ -19,6 +20,7 @@ public class Needle : OnStartTurnStatus
     protected override void Subscribe()
     {
         base.Subscribe();
+        _constManager = ManagerManager.GetManager<ConstManager>();
         _target.OnAttackReceived.Subscribe(ResetDamage);
     }
     protected override void Unsubscribe()

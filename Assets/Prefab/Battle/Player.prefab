@@ -205,8 +205,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da01474426e27aa4fb36894f2ff3a690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hpMax: 30
-  _currentHp: 30
+  _stats:
+    _hpMax: 0
+    _currentHp: 0
+  Stats:
+    _hpMax: 0
+    _currentHp: 0
   statusEffects: []
   OnHpChanged:
     m_PersistentCalls:

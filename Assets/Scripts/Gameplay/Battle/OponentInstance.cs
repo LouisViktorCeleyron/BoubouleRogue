@@ -26,8 +26,8 @@ public class OponentInstance : FightingInstance
         _oponentData = oponentData;
         _spriteRenderer.sprite = _oponentData.sprite;
         _opponentName.text = oponentData.name;
-        _hpMax = oponentData.baseHp;
-        SetHp(_hpMax);
+        Stats.SetHpMax (oponentData.baseHp);
+        Stats.SetHp (oponentData.baseHp);
 
     }
     public void SetConsequence()
