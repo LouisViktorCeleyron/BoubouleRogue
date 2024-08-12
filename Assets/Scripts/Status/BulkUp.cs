@@ -3,30 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BulkUp : OnStatusStatus
+public class BulkUp : OnStartTurnStatus
 {
     public override StatusEffect StatusEnum => base.StatusEnum;
-    protected override void OnStatusInflictedAction(Status statusInflicted)
+
+    protected override void OnAmountChange(int amountChanged)
     {
-        if(statusInflicted.StatusEnum == StatusEffect.Shield)
-        {
-            statusInflicted.UpdateStatusInTarget(_amount);
-        }
+        "Amount Changed".ColorDebugLog();
+        _target.Stats.AddBulk(amountChanged);
     }
 
-    private void ReduceStack(FightingInstance fi)
-    {
-        UpdateStatusInTarget(-1);
-    }
-    protected override void Subscribe()
-    {
-        base.Subscribe();
-        _target.OnStartTurn.Subscribe(ReduceStack);
-    }
-
-    protected override void Unsubscribe()
-    {
-        base.Unsubscribe();
-        _target.OnStartTurn.Unsubscribe(ReduceStack);
-    }
 }

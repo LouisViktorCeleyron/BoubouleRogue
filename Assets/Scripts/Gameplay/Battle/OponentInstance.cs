@@ -28,12 +28,19 @@ public class OponentInstance : FightingInstance
         _opponentName.text = oponentData.name;
         Stats.SetHpMax (oponentData.baseHp);
         Stats.SetHp (oponentData.baseHp);
+        Stats.SetStrength(oponentData.baseStrengh);
+        Stats.SetBulk(oponentData.baseBulk);
+
+        foreach (var status in oponentData.startingStatus)
+        {
+            UpdateStatus(status);
+        }
 
     }
     public void SetConsequence()
     {
         _nextConsequence = _oponentData.GetRandomConsequence();
-        _consDescText.text = _nextConsequence.GetDescription();
+        _consDescText.text = _nextConsequence.GetDescription(this);
         _consNameText.text = _nextConsequence.name;
     }
     public void LaunchConsequence(BattleManager battleManager)

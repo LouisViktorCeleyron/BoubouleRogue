@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Factory
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 666933088496def4f9525d0604deebf8, type: 3}
-  basePrice: 111
-  description: 
+  basePrice: 200
+  description: I Hate capitalism. But in videogames mass factory element crafting
+    might come handy.
   color: {r: 0.69803923, g: 0.2509804, b: 0.14509805, a: 1}
-  potentialMix: []
+  potentialMix:
+  - {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+  - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+  - {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}

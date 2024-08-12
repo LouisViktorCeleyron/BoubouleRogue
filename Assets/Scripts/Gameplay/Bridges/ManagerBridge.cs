@@ -30,6 +30,12 @@ public class ManagerBridge : MonoBehaviour
         _journeyManager.SetSpecificOpponent(specificOpponent);
         _mySceneManager.LoadBattle("Boss");
     }
+
+    public void BattleSceneBoss()
+    {
+        _journeyManager.SetBoss(); 
+        _mySceneManager.LoadBattle("Boss");
+    }
     public void MapScene(bool riseFloor)
     {
         _mySceneManager.LoadMap(riseFloor);

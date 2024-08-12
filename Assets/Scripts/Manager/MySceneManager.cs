@@ -46,6 +46,11 @@ public class MySceneManager : Manager
         {
             _journeyManager.GoUpAFloor();
         }
+        _journeyManager.CheckEndOfRealms();  
+        if(_journeyManager.TEMP_winer)
+        {
+            return;
+        }
         _loadingSubManager.MenuTranstion(() => LoadScene(3, true));
     }
     public void LoadBattle(string audioTrack = "Battle")
@@ -69,9 +74,9 @@ public class MySceneManager : Manager
     }
     public void LoadGameOver()
     {
-        LoadScene(7);
+        _loadingSubManager.MenuTranstion(() => LoadScene(7, true));
     }
-
+   
     public void LoadScene(int index, bool withUI =false)
     {
         ManagerManager.OnEndScene();

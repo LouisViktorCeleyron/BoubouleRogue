@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eedc3a04e86757c478398136a668cbde, type: 3}
+  m_Name: Double Standard
+  m_EditorClassIdentifier: 
+  selfInflicted: 0
+  destroyElements: 0
+  icon: {fileID: 0}
+  clip: {fileID: 7400000, guid: 813d22b7c68a56b44ae062211e642111, type: 2}
+  _cseCollection:
+    _collection: []
+  statusToInflict:
+  - amount: 3
+    effect: 0
+    inverseTarget: 1
+  type: 0
+  baseDamages: 3
+  howManyTimes: 1
+  recoilDamages: 0
+  leechLife: 0
+  references:
+    version: 2
+    RefIds: []

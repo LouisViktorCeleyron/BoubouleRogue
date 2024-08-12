@@ -13,12 +13,16 @@ PrefabInstance:
       value: BossBattleButton
       objectReference: {fileID: 0}
     - target: {fileID: 4585930319870741171, guid: 5d32ce450726a3046b59051c3fea6eaf, type: 3}
+      propertyPath: canClick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585930319870741171, guid: 5d32ce450726a3046b59051c3fea6eaf, type: 3}
       propertyPath: OnClickAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4585930319870741171, guid: 5d32ce450726a3046b59051c3fea6eaf, type: 3}
       propertyPath: OnClickAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BattleScene
+      value: BattleSceneBoss
       objectReference: {fileID: 0}
     - target: {fileID: 4585930319870741171, guid: 5d32ce450726a3046b59051c3fea6eaf, type: 3}
       propertyPath: OnClickAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -27,10 +31,10 @@ PrefabInstance:
     - target: {fileID: 4585930319870741171, guid: 5d32ce450726a3046b59051c3fea6eaf, type: 3}
       propertyPath: OnClickAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: df27d72f0531bf54389c1b324150c242, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4585930319870741171, guid: 5d32ce450726a3046b59051c3fea6eaf, type: 3}
       propertyPath: OnClickAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: OpponentData, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6685532768513978945, guid: 5d32ce450726a3046b59051c3fea6eaf, type: 3}
       propertyPath: m_LocalPosition.x

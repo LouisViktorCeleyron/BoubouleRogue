@@ -10,13 +10,13 @@ public class FactoryConsequence : Consequence
         var f = _target.GetStatus<Factory>();
         if(f== null)
         {
-            _target.AddStatus<Factory>(1);
+            f=_target.AddStatus<Factory>(1);
         }
         f.element = element;
     }
-    public override string GetDescription()
+    public override string GetDescription(FightingInstance launcher = null)
     {
         
-     return $"Add 1 new {element.GetColoredElementName()} to your hand every turn. They're available until the end of the battle. Only 1 Factory can be active. The new one will replace the active one.";   
+     return $"Add 1 new {element.GetColoredElementName()} to your hand every turn. Replace old Factory";   
     }
 }

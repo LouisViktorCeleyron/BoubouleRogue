@@ -8,7 +8,10 @@ public class Status
 {
     protected FightingInstance _target;
     [SerializeField]
-    protected int _amount;
+    private int _amount;
+    public int Amount => _amount;
+    [SerializeField]
+    private string _name;
     public virtual StatusEffect StatusEnum
     {
         get
@@ -19,11 +22,19 @@ public class Status
     }
 
     public virtual bool Positive => true;
+    /// <summary>
+    /// Launched on Start and/or on admition
+    /// </summary>
+    public virtual void StartStatus()
+    {
 
+    }
     public void Inflict(FightingInstance target, int amount)
     {
+        _name = GetType().Name;
         _target = target;
-        _amount = amount;
+        StartStatus();
+        ChangeAmount(amount);
         Subscribe();
     }
     /// <summary>
@@ -41,17 +52,24 @@ public class Status
     /// <param name="toAddOrRemove"></param>
     public void ChangeAmount(int toAddOrRemove)
     {
-        _amount = Mathf.Clamp(0, _amount+toAddOrRemove, 999);
+        BeforeAmountChange(ref toAddOrRemove);
+        var addedOrRemoved = Mathf.Clamp(toAddOrRemove, -_amount, 999);
+        _amount += addedOrRemoved;
+        OnAmountChange(addedOrRemoved);
         if (_amount <= 0)
         {
             Unsubscribe();
         }
     }
-
-    public int GetAmount()
+    protected virtual void BeforeAmountChange(ref int amountChanged)
     {
-        return _amount;
+
     }
+    protected virtual void OnAmountChange(int amountChanged)
+    {
+
+    }
+
     protected virtual void Subscribe()
     {
 

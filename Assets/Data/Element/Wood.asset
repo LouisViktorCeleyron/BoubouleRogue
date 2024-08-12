@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: b1f2eae6d45877b42b83a21c60ecdb0d, type: 3}
-  basePrice: 111
-  description: 
+  basePrice: 120
+  description: Years and years of technological evolution are fun and all but no
+    matter how evolve you are being hit by a piece of wood still hurt. Create a solid
+    strategie with this element
   color: {r: 0.54509807, g: 0.34117648, b: 0.16470589, a: 1}
-  potentialMix: []
+  potentialMix:
+  - {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+  - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+  - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}

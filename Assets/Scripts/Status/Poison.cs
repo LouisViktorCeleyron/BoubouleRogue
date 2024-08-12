@@ -8,6 +8,6 @@ public class Poison : OnStartTurnStatus
     public override bool Positive => false;
     protected override void OnStartTurnAction(FightingInstance target)
     {
-        target.AutoInflictedDamage(_amount);
+        target.AutoInflictedDamage(Amount);
     }
 }

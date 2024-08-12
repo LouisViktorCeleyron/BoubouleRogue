@@ -19,7 +19,7 @@ public class GoldReward : Reward
         _playerManager = ManagerManager.GetManager<PlayerManager>();
         _journeyManager = ManagerManager.GetManager<JourneyManager>();
         _constManager = ManagerManager.GetManager<ConstManager>();
-        _goldAmount = ((_journeyManager.realmNumber+1) * _constManager.baseGoldReward) + (Random.Range(0, 3) * _journeyManager.GetFloor());
+        _goldAmount = ((_journeyManager.RealmNumber+1) * _constManager.baseGoldReward) + (Random.Range(0, 3) * _journeyManager.GetFloor());
         _label.text = $"{_goldAmount} Golds";
     }
     protected override void RewardVariance()

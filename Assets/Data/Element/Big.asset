@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Big
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 679d9250a1ed1ee4098d5ec4b96f9b4f, type: 3}
-  basePrice: 111
-  description: 
+  basePrice: 200
+  description: 'BIG, IT MAKES EVERYHING BIGGER. '
   color: {r: 0.6627451, g: 0.52156866, b: 0.7411765, a: 1}
-  potentialMix: []
+  potentialMix:
+  - {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+  - {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+  - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}

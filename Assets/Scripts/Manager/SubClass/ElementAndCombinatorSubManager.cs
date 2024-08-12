@@ -102,9 +102,14 @@ public class ElementAndCombinatorSubManager
 
     public void DiscardAllCombinator()
     {
+        var tempList = new List<Combinator>();
         foreach (var item in _availableElements)
         {
-            DiscardCombinator(item);
+            tempList.Add(item);
+        }
+        foreach (var item in tempList)
+        {
+            DiscardCombinator(item,false);
         }
     }
     

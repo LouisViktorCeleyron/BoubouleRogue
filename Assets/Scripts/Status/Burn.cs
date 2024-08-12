@@ -8,7 +8,7 @@ public class Burn : OnAttackedStatus
 
     protected override void OnAttackedAction(Attack attack)
     {
-        attack.ChangeDammage(+_amount);
+        attack.ChangeDammage(+Amount);
         UpdateStatusInTarget(-1);
     }
 }

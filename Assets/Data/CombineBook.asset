@@ -103,7 +103,7 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
       b: {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}
     consequence: {fileID: 11400000, guid: 2e7ae65c442e4a3409a6af8e4ea7a235, type: 2}
-  - name: Thouthand Cut
+  - name: Thousand Cut
     elements:
       a: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
       b: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
@@ -238,4 +238,54 @@ MonoBehaviour:
       a: {fileID: 11400000, guid: 92a3ab0ba930c34479d167bb4c788e22, type: 2}
       b: {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
     consequence: {fileID: 11400000, guid: 29531a03402f69548a4e2250a1e66750, type: 2}
+  - name: Spike Shield
+    elements:
+      a: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+      b: {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
+    consequence: {fileID: 11400000, guid: 85ddffd7750ce1048bb7d579733986e4, type: 2}
+  - name: Wood Factory
+    elements:
+      a: {fileID: 11400000, guid: 267dc66a9dfed684c9d127e2c3d0a61d, type: 2}
+      b: {fileID: 11400000, guid: 4f5e9f7c8a524c64b93fec5159f8f119, type: 2}
+    consequence: {fileID: 11400000, guid: dc7b2ca778accf54495e5a8358dc8366, type: 2}
+  - name: Wind Factory
+    elements:
+      a: {fileID: 11400000, guid: 267dc66a9dfed684c9d127e2c3d0a61d, type: 2}
+      b: {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+    consequence: {fileID: 11400000, guid: 6a0346d95d98ba543b3ef50f57041ee1, type: 2}
+  - name: Water Factory
+    elements:
+      a: {fileID: 11400000, guid: 267dc66a9dfed684c9d127e2c3d0a61d, type: 2}
+      b: {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}
+    consequence: {fileID: 11400000, guid: 6906795a2ca8e154f9ee835cfec60b6c, type: 2}
+  - name: Sword Factory
+    elements:
+      a: {fileID: 11400000, guid: 267dc66a9dfed684c9d127e2c3d0a61d, type: 2}
+      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    consequence: {fileID: 11400000, guid: 080218484174a4642933ef252acf46b2, type: 2}
+  - name: Shield Factory
+    elements:
+      a: {fileID: 11400000, guid: 267dc66a9dfed684c9d127e2c3d0a61d, type: 2}
+      b: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+    consequence: {fileID: 11400000, guid: d9784045a97e4294c9e750952924288b, type: 2}
+  - name: Goo Factory
+    elements:
+      a: {fileID: 11400000, guid: 267dc66a9dfed684c9d127e2c3d0a61d, type: 2}
+      b: {fileID: 11400000, guid: 6ecc31f7be78a8b468369f283f4fcc7e, type: 2}
+    consequence: {fileID: 11400000, guid: b58a42506d18c5e42b7b9cabf4382fcc, type: 2}
+  - name: Fire Factory
+    elements:
+      a: {fileID: 11400000, guid: 267dc66a9dfed684c9d127e2c3d0a61d, type: 2}
+      b: {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+    consequence: {fileID: 11400000, guid: e343bccdf7ce84548a93464ca1e93412, type: 2}
+  - name: Electricity Factory
+    elements:
+      a: {fileID: 11400000, guid: 267dc66a9dfed684c9d127e2c3d0a61d, type: 2}
+      b: {fileID: 11400000, guid: 4fea87a1854b64f4b9c15c7de3b83b16, type: 2}
+    consequence: {fileID: 11400000, guid: 303999199bf404f49aa07120da4c353c, type: 2}
+  - name: Double Standard
+    elements:
+      a: {fileID: 11400000, guid: 43e2f73a8c047c949a9a039256b6a4e3, type: 2}
+      b: {fileID: 11400000, guid: b31cc489f81d03646983c0f190ab35dc, type: 2}
+    consequence: {fileID: 11400000, guid: 6bfffa19a17ee8041899cb05cf582b0b, type: 2}
   _defaultConsequence: {fileID: 11400000, guid: 1910cc61d532c704b9af505311eaa3e7, type: 2}

@@ -10,9 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3ac9c170f2822148aeedf0773846866, type: 3}
-  m_Name: Devil
+  m_Name: Ghost
   m_EditorClassIdentifier: 
-  baseHp: 30
+  baseHp: 130
   availableConsequences:
-  - {fileID: 11400000, guid: a21476d46bdce3540bc166af2a61d751, type: 2}
-  sprite: {fileID: 21300000, guid: bc1e22241fe4f4643903e0dc6f4ead35, type: 3}
+  - {fileID: 11400000, guid: 6ab0faae8d1442344b3fa9eea0778c30, type: 2}
+  - {fileID: 11400000, guid: 1dddfa8514d1a4b40b46f6cbb2c7b4b4, type: 2}
+  - {fileID: 11400000, guid: 702d1184ad5eb5542975d50d3dce57c7, type: 2}
+  sprite: {fileID: 21300000, guid: e5305d179606ed049ba4d80108adbceb, type: 3}
+  baseStrengh: 5
+  baseBulk: 5
+  startingStatus: []

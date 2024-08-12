@@ -36,8 +36,9 @@ public class BuyableElement : MonoBehaviour
     {
         if(_playerManager.CurrentGold>= _element.basePrice)
         {
-            _playerManager.Deck.Add(_element);
+            _playerManager.AddElementToDeck(_element);
             _button.interactable = false;
+            _playerManager.AddGold(-_element.basePrice);
             _button.gameObject.SetActive(false);
         }
     }

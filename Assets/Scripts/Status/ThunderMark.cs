@@ -11,7 +11,7 @@ public class ThunderMark : Status
     public void Release()
     {
         var constManager = ManagerManager.GetManager<ConstManager>();
-        _target.AutoInflictedDamage(_amount * constManager.baseThunderMarkDamage);
+        _target.AutoInflictedDamage(Amount * constManager.baseThunderMarkDamage);
         UpdateStatusInTarget(-999);
     }
 

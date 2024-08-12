@@ -9,10 +9,17 @@ public class Shield : OnAttackedStatus
     protected override void OnAttackedAction(Attack attack)
     {
         var tempDamage = attack.GetDammage();
-        attack.ChangeDammage(-_amount);
+        attack.ChangeDammage(-Amount);
         UpdateStatusInTarget(-tempDamage);
     }
 
+    protected override void BeforeAmountChange(ref int amountChanged)
+    {
+        if(amountChanged > 0)
+        {
+            amountChanged += _target.Stats.Bulk;
+        }
+    }
     protected override void Subscribe()
     {
         base.Subscribe();

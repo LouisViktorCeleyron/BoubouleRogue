@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ac9c170f2822148aeedf0773846866, type: 3}
+  m_Name: WereWolf
+  m_EditorClassIdentifier: 
+  baseHp: 40
+  availableConsequences:
+  - {fileID: 11400000, guid: dbeddcd96b122a249af717aebca39692, type: 2}
+  - {fileID: 11400000, guid: 6e245cb07fda258448d8f204577d69c4, type: 2}
+  - {fileID: 11400000, guid: 6bfffa19a17ee8041899cb05cf582b0b, type: 2}
+  sprite: {fileID: 21300000, guid: 26b6ad0c7a81f9c4cad39747f872b0eb, type: 3}
+  baseStrengh: 1
+  baseBulk: 1
+  startingStatus: []

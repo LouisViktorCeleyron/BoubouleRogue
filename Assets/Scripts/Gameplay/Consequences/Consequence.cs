@@ -20,7 +20,7 @@ public abstract class Consequence : ScriptableObject
         //$"{launcher.gameObject.name} launched {name}, {_target.name} is the target".ColorDebugLog(Color.red);
         _launcher = launcher;
         ConsequenceAction();
-        _cseCollection.CallEffects(_target);
+        _cseCollection.CallEffects(_target,_launcher);
         if(clip)
         {
             _target.feedbackSubComp.PlayClip(clip);
@@ -37,7 +37,7 @@ public abstract class Consequence : ScriptableObject
 
     }
 
-    public virtual string GetDescription()
+    public virtual string GetDescription(FightingInstance launcher = null)
     {
         var ret = _cseCollection.GetDescription() + " To " + GetTargetName() + ". ";
         var destroyRet = destroyElements?"Remove Element from Pack Until the end of the battle. ":string.Empty;

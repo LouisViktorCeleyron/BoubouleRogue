@@ -10,6 +10,11 @@ public class FIStats
 
     public int Strength=> _strength;
 
+
+    private int _bulk;
+
+    public int Bulk => _bulk;
+
     [SerializeField]
     private int _hpMax = 30;
     [SerializeField]
@@ -30,6 +35,16 @@ public class FIStats
     public void SetStrength(int value)
     {
         _strength = Mathf.Clamp(value, 0, 999);
+    }
+
+    public void AddBulk(int value)
+    {
+        SetBulk(_bulk + value);
+    }
+
+    public void SetBulk(int value)
+    {
+        _bulk = Mathf.Clamp(value, -999, 999);
     }
 
     public int GetHp()

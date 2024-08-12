@@ -31,8 +31,5 @@ public class MapButton : MonoBehaviour
             _sprite.color = _future;
             _onClick.canClick = false;
         }
-        //debug
-        _onClick.canClick = true;
-
     }
 }

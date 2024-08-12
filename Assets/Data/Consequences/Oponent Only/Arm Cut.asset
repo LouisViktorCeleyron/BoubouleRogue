@@ -9,19 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eedc3a04e86757c478398136a668cbde, type: 3}
-  m_Name: Thouthand Cut
+  m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
+  m_Name: Arm Cut
   m_EditorClassIdentifier: 
   selfInflicted: 0
-  icon: {fileID: 0}
-  clip: {fileID: 7400000, guid: 813d22b7c68a56b44ae062211e642111, type: 2}
+  destroyElements: 0
+  icon: {fileID: 21300000, guid: dca5ee889b9cf194681b647003165f02, type: 3}
+  clip: {fileID: 7400000, guid: 3785f14edc5bac14393e4a5ec89823f6, type: 2}
   _cseCollection:
     _collection: []
-  statusToInflict: []
-  type: 0
-  baseDamages: 2
-  howManyTimes: 3
-  recoilDamages: 0
+  statusToInflict:
+  - amount: 3
+    effect: 4
+    inverseTarget: 0
   references:
     version: 2
     RefIds: []

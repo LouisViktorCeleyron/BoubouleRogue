@@ -2947,8 +2947,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54f30a0cd6f88a48864d9ebb9f182a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  realmNumber: 0
-  currentRealms: {fileID: 11400000, guid: 7dcc916c5bcd6964b8133b3eda20ff33, type: 2}
+  _realmNumber: 0
+  _realms:
+  - {fileID: 11400000, guid: 09581c610379d1740a7555463d40b37c, type: 2}
+  - {fileID: 11400000, guid: 4aacaceeff88c564c9ab279a78ecd221, type: 2}
+  - {fileID: 11400000, guid: afcebf6a687c9734cbfb3e0b00a76cf0, type: 2}
+  TEMP_winer: 0
 --- !u!114 &1681797053042679664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3014,7 +3018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c19eb8aa0794a449a8fd5b5d6d0e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePlayerHP: 33
+  basePlayerHP: 60
   basePlayerGold: 50
   baseGoldReward: 30
   baseNeedleDamage: 3

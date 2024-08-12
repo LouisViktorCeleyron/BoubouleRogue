@@ -24,6 +24,7 @@ public class ConsequenceSpecialEffect
         name = GetType().ToString().Remove(0,4);
     }
 
+
     protected virtual void ApplyEffect(FightingInstance targetInstance)
     {
 
@@ -125,12 +126,18 @@ public class CSE_RemoveStatus : ConsequenceSpecialEffect
 
     protected override void ApplyEffect(FightingInstance targetInstance)
     {
+        var tempList = new List<Status>();
         foreach (var s in targetInstance.statusEffects)
         {
             if (s.Positive == _onlyPositiveStatus)
             {
-                s.UpdateStatusInTarget(-_amountOfStatusToRemove);
+                tempList.Add(s);
             }
+        }
+
+        foreach (var s in tempList) 
+        {
+            s.UpdateStatusInTarget(-_amountOfStatusToRemove);
         }
     }
 
@@ -138,7 +145,7 @@ public class CSE_RemoveStatus : ConsequenceSpecialEffect
     {
         var addOrRemoveText = _amountOfStatusToRemove < 0 ? "Add" : "Remove";
         var positiveText = _onlyPositiveStatus ? "positive".ColorizeString(Color.green) : "negative".ColorizeString(Color.red);
-        return $"{_amountOfStatusToRemove} {_amountOfStatusToRemove.ColorizeString(Color.magenta)} of every {positiveText} status";
+        return $"{addOrRemoveText} {Mathf.Abs(_amountOfStatusToRemove).ColorizeString(Color.magenta)} of every {positiveText} status";
     }
 }
 

@@ -17,13 +17,14 @@ public class StatusOnlyConsequence : Consequence
         }
     }
 
-    public override string GetDescription()
+    public override string GetDescription(FightingInstance launcher = null)
     {
         var retStatus = string.Empty;
         var retInverseTarget = string.Empty;
         foreach (var status in statusToInflict)
         {
-            var currentRetStatus = $"{status.amount.ColorizeString(ColorizeExtention.StatsColor)} {status.effect}";
+            var amountShieldTEMP = status.effect == StatusEffect.Shield && launcher!= null? launcher.Stats.Bulk : 0;
+            var currentRetStatus = $"{(status.amount + amountShieldTEMP).ColorizeString(ColorizeExtention.StatsColor)} {status.effect}";
             if(status.inverseTarget)
             {
                 var retTargetTarget = !selfInflicted ? "self" : "oponent";
@@ -34,7 +35,7 @@ public class StatusOnlyConsequence : Consequence
                 retStatus += currentRetStatus+". ";
             }
         }
-        var retBase = base.GetDescription();
+        var retBase = base.GetDescription(launcher);
 
         return retStatus + retBase + retInverseTarget;
     }
@@ -51,6 +52,6 @@ public struct StatusInflicted
 
     public void ApplyStatus(FightingInstance target)
     {
-       target.UpdateStatus(amount, effect);
+       target.UpdateStatus(this);
     }
 }

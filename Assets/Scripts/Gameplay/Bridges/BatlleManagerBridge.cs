@@ -24,7 +24,7 @@ public class BatlleManagerBridge : MonoBehaviour
         _consDescriptionText.gameObject.SetActive(true);
         _consTitleText.gameObject.SetActive(true);
 
-        _consDescriptionText.text = consequence.GetDescription();
+        _consDescriptionText.text = consequence.GetDescription(_battleManager.playerInstance);
         _consTitleText.text = consequence.name;
     }
 

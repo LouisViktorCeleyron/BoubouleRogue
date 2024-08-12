@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ac9c170f2822148aeedf0773846866, type: 3}
+  m_Name: Devil
+  m_EditorClassIdentifier: 
+  baseHp: 100
+  availableConsequences:
+  - {fileID: 11400000, guid: 6ab0faae8d1442344b3fa9eea0778c30, type: 2}
+  - {fileID: 11400000, guid: eaa67f08b97c60441a88c7e3e7ed2edd, type: 2}
+  - {fileID: 11400000, guid: 6bfffa19a17ee8041899cb05cf582b0b, type: 2}
+  - {fileID: 11400000, guid: b61604e3aa17ee6459d7b29ef282fc64, type: 2}
+  sprite: {fileID: 21300000, guid: bc1e22241fe4f4643903e0dc6f4ead35, type: 3}
+  baseStrengh: 3
+  baseBulk: 3
+  startingStatus: []

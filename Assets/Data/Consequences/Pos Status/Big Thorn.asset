@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b82a5f7a453f547bc5fda588141886, type: 3}
   m_Name: Big Thorn
   m_EditorClassIdentifier: 
-  selfInflicted: 0
+  selfInflicted: 1
   destroyElements: 0
   icon: {fileID: 0}
   clip: {fileID: 7400000, guid: 66014b05d049d0e46ae0f6209dad3312, type: 2}

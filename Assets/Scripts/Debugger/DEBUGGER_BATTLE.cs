@@ -46,6 +46,15 @@ public class DEBUGGER_BATTLE : MonoBehaviour
                     manager.CombinatorSubManager.DrawSpecific(item);
                 }
             }
+
+            if(GUILayout.Button("Heal"))
+            {
+                manager.playerInstance.Heal(999);
+            }
+            if (GUILayout.Button("Tough"))
+            {
+                manager.playerInstance.AddStatus<Tough>(1);
+            }
         }
     }
 }

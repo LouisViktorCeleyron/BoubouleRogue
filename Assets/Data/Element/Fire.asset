@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 8703dcb30cf192b4ba086f89d4c4c17b, type: 3}
-  basePrice: 111
+  basePrice: 100
   description: 'Harness the true power of heat with this Element. Perfect to hit
     hard or inflicting devastating status effect to your opponent. But at which cost
     ? '

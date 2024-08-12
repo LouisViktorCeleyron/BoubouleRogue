@@ -7,15 +7,9 @@ public class Tough : Status
 
     public override StatusEffect StatusEnum => StatusEffect.Tough;
 
-    protected override void Subscribe()
+    protected override void OnAmountChange(int amountChanged)
     {
-        _target.Stats.AddStrength(1);
-        base.Subscribe();
+        _target.Stats.AddStrength(amountChanged);
     }
 
-    protected override void Unsubscribe()
-    {
-        _target.Stats.AddStrength(-1);
-        base.Unsubscribe();
-    }
 }

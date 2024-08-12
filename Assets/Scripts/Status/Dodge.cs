@@ -8,7 +8,7 @@ public class Dodge : OnAttackedStatus
     protected override void OnAttackedAction(Attack attack)
     {
         var generatedDodge = Random.Range(0, 11);
-        if(generatedDodge <= _amount)
+        if(generatedDodge <= Amount)
         {
             attack.ChangeDammage(-999);
             UpdateStatusInTarget(-999);

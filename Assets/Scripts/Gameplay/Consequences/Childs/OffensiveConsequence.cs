@@ -7,15 +7,23 @@ public class OffensiveConsequence : StatusOnlyConsequence
 {
     public ElementalType type = ElementalType.Neutral;
     public int baseDamages, howManyTimes=1,recoilDamages = 0;
-    
+    public bool leechLife;
     protected override void ConsequenceAction()
     {
         var damage = baseDamages + _launcher.Stats.Strength;
         var attack = new Attack(damage, type, _launcher,_target);
 
+
         for (int i = 0; i < howManyTimes; i++) 
         { 
-            _target.ReceiveAttack(attack);
+            if(leechLife)
+            {
+                _target.ReceiveAttack(attack, (int i)=> _launcher.Heal(i));
+            }
+            else
+            {
+                _target.ReceiveAttack(attack);
+            }
         }
         if( recoilDamages > 0 ) 
         {
@@ -24,12 +32,13 @@ public class OffensiveConsequence : StatusOnlyConsequence
         base.ConsequenceAction();
     }
 
-    public override string GetDescription()
+    public override string GetDescription(FightingInstance launcher = null)
     {
-        var retBaseDam = $"{(baseDamages+_launcher.Stats.Strength).ColorizeString(ColorizeExtention.DammageColor)} Damages. ";
+        var launcherStat = launcher != null? launcher.Stats.Strength : 0;
+        var retBaseDam = $"{(baseDamages+launcherStat).ColorizeString(ColorizeExtention.DammageColor)} Damages. ";
         var retRecDam = $"{recoilDamages.ColorizeString(ColorizeExtention.DammageColor)} Recoil Damages. ";
         var retAmount = $"{howManyTimes.ColorizeString(ColorizeExtention.DammageColor)} Times. ";
-        var retBase = base.GetDescription();
+        var retBase = base.GetDescription(launcher);
         return retBaseDam + (recoilDamages>0?retRecDam:string.Empty) + retBase + (howManyTimes>1?retAmount:string.Empty) ;
     }
 }

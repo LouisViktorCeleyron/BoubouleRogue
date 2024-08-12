@@ -88,8 +88,14 @@ public class BattleManager : Manager
             playerInstance.EndTurn();
 
             opponentInstance.StartTurn();
-            OpponentTurn();
 
+            //c'est pas trés propre ici, 
+            while(_endOfBattle)
+            {
+                yield return _waitForEndOfFrame;
+
+            }
+            OpponentTurn();
             while (_opponentTurn)
             {
                 yield return _waitForEndOfFrame;
@@ -109,16 +115,16 @@ public class BattleManager : Manager
         //Checker ici
 
         var isDrawLess = playerInstance.GetStatus<DrawLess>();
-        var drawLessStatus = isDrawLess != null ? isDrawLess.GetAmount():0;
+        var drawLessStatus = isDrawLess != null ? isDrawLess.Amount:0;
         CombinatorSubManager.Draw(4-drawLessStatus);
     }
 
     public void PlayerTurn(Combinator a, Combinator b)
     {
         var c =book.GetConsequence(a.element, b.element);
+        CombinatorSubManager.DiscardCombinator(c.destroyElements, a, b );
         c.CallConsequence(playerInstance, opponentInstance);
         
-        CombinatorSubManager.DiscardCombinator(c.destroyElements, a, b );
     }
 
 
@@ -142,6 +148,7 @@ public class BattleManager : Manager
         {
             _playerManager.SetHp(playerInstance.Stats.GetHp());
             opponentInstance.gameObject.SetActive(false);
+
             _uiManager.ActivateRewardMaster(true);
         }
         else

@@ -20,10 +20,10 @@ MonoBehaviour:
     _collection: []
   statusToInflict:
   - amount: 3
-    effect: 11
-    inverseTarget: 0
-  - amount: 5
     effect: 12
+    inverseTarget: 0
+  - amount: 3
+    effect: 11
     inverseTarget: 0
   references:
     version: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Movement
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 9394dcdf55c955740afe0776d4155a84, type: 3}
-  basePrice: 111
+  basePrice: 120
   description: So quick, you could take the time to beat up the opponent AND make
     yourself a good tea. I wonder what else this speed can bring you ?
   color: {r: 0.654902, g: 0.82745105, b: 0.79215693, a: 1}

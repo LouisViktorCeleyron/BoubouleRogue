@@ -19,7 +19,7 @@ MonoBehaviour:
   _cseCollection:
     _collection: []
   statusToInflict:
-  - amount: 8
+  - amount: 6
     effect: 1
     inverseTarget: 0
   references:

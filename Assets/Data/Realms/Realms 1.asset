@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a249a72255fe9bb4199c15b3777a4508, type: 3}
-  m_Name: Realms
+  m_Name: Realms 1
   m_EditorClassIdentifier: 
   availableOpponents:
-  - {fileID: 11400000, guid: c6a720f2578ae4d4fa0e0faa255f3950, type: 2}
-  - {fileID: 11400000, guid: a09ced74c7bc9f541a89ab85db96ad59, type: 2}
   - {fileID: 11400000, guid: 38377124ba50b944cb71c8187a27ab43, type: 2}
+  - {fileID: 11400000, guid: 85feb88f0053f7c4faaa290ae03a4ba1, type: 2}
+  - {fileID: 11400000, guid: 463e49fd553a6fd4a813c47c370b44ff, type: 2}
   - {fileID: 11400000, guid: 1b27e460b2540534fa0503ce9b3cc64c, type: 2}
+  - {fileID: 11400000, guid: 10943102711549b4aa0791ec45f8c7cb, type: 2}
+  boss: {fileID: 11400000, guid: f6db2f521a8716947a1da942ced3f392, type: 2}

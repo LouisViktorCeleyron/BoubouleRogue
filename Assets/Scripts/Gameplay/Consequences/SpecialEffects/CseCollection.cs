@@ -9,7 +9,7 @@ public class CseCollection
     [SerializeField]
     [SerializeReference]
     private List<ConsequenceSpecialEffect> _collection;
-    public void CallEffects(FightingInstance instanceTarget)
+    public void CallEffects(FightingInstance instanceTarget, FightingInstance launcher)
     {
         var highPrio = new List<ConsequenceSpecialEffect>();
         var lowPrio = new List<ConsequenceSpecialEffect>();
@@ -40,12 +40,20 @@ public class CseCollection
         {
             return string.Empty;
         }
-        var ret = string.Empty;
+        var retP = string.Empty;
+        var retL = string.Empty;
         foreach (var cse in _collection)
         {
-            ret += cse.GetCSEDescription();
+            if(cse.HighPriority) 
+            { 
+                retP += cse.GetCSEDescription();
+            }
+            else
+            {
+                retL += cse.GetCSEDescription();
+            }
         }
-        return ret;
+        return retP + retL;
     }
 
     /// <summary>

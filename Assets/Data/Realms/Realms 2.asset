@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a249a72255fe9bb4199c15b3777a4508, type: 3}
+  m_Name: Realms 2
+  m_EditorClassIdentifier: 
+  availableOpponents:
+  - {fileID: 11400000, guid: bf57e9644a8205c48b21409e1ef71431, type: 2}
+  - {fileID: 11400000, guid: 9c8088d769619ba4c84678bd194ad220, type: 2}
+  - {fileID: 11400000, guid: 8aa9af6e3720f564e9d03e2429c6a35b, type: 2}
+  - {fileID: 11400000, guid: d1081e36506b09742abe9c357410b4a9, type: 2}
+  - {fileID: 11400000, guid: 6724f612356f9d549b57ce329fd2111f, type: 2}
+  boss: {fileID: 11400000, guid: f38996760b3abd346ba4f9cd9a555ca5, type: 2}

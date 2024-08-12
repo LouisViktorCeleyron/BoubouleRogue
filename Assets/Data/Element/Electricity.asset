@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Electricity
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: ac772ad24e7e4024ca4488f90662c040, type: 3}
-  basePrice: 111
-  description: 
+  basePrice: 120
+  description: I wonder what you could power with this. Use this element to create
+    powerful attack. Just be careful to not be in the area of effect
   color: {r: 0.92549026, g: 0.8980393, b: 0.427451, a: 1}
-  potentialMix: []
+  potentialMix:
+  - {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+  - {fileID: 11400000, guid: 6a71251ca79168845ad255f62a7dd64c, type: 2}
+  - {fileID: 11400000, guid: 3cc10b1882fae1041a8e776fc5be26a1, type: 2}

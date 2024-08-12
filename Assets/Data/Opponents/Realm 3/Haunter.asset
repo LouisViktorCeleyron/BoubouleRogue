@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ac9c170f2822148aeedf0773846866, type: 3}
+  m_Name: Haunter
+  m_EditorClassIdentifier: 
+  baseHp: 90
+  availableConsequences:
+  - {fileID: 11400000, guid: 3feae8dae9348a44cbf427f70fd030df, type: 2}
+  - {fileID: 11400000, guid: ea512ac5a98597c448cbf1c28b0dddab, type: 2}
+  - {fileID: 11400000, guid: cf39436754fce4d43bd51a2d1d92ad66, type: 2}
+  sprite: {fileID: 21300000, guid: 7b9ac088e51dbbe4ea086529573bbcce, type: 3}
+  baseStrengh: 3
+  baseBulk: 0
+  startingStatus: []

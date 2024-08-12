@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 9e6ba01c631434e4e8df445902ba0a20, type: 3}
-  basePrice: 111
+  basePrice: 80
   description: The best victories always starts with a great defense. In fact if
     you're doing smart combo with this Element your opponent might never touch you...
     I said MIGHT

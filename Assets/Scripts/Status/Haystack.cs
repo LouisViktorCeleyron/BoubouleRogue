@@ -6,7 +6,7 @@ public class Haystack : OnAttackedStatus
 {
     protected override void OnAttackedAction(Attack attack)
     {
-        attack.GetLauncher().AddStatus<Needle>(1);
+        attack.GetLauncher().AddStatus<Needle>(Amount);
     }
 
     protected override void Subscribe()

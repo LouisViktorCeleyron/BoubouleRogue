@@ -10,7 +10,7 @@ public class Needle : OnStartTurnStatus
     private ConstManager _constManager;
     protected override void OnStartTurnAction(FightingInstance target)
     {
-        target.AutoInflictedDamage(_constManager.baseNeedleDamage * _amount);
+        target.AutoInflictedDamage(_constManager.baseNeedleDamage * Amount);
     }
 
     public void ResetDamage(Attack atk)

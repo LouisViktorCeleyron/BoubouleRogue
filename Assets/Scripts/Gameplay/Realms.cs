@@ -6,4 +6,5 @@ using UnityEngine;
 public class Realms : ScriptableObject
 {
     public List<OpponentData> availableOpponents;
+    public OpponentData boss;
 }

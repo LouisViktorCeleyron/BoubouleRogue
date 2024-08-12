@@ -8,7 +8,9 @@ public class OpponentData : ScriptableObject
     public int baseHp;
     public List<Consequence> availableConsequences;
     public Sprite sprite;
+    public int baseStrengh, baseBulk;
 
+    public List<StatusInflicted> startingStatus;
 
     public Consequence GetRandomConsequence()
     {

@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3ac9c170f2822148aeedf0773846866, type: 3}
-  m_Name: Frankenstein
+  m_Name: Burning Spirit
   m_EditorClassIdentifier: 
-  baseHp: 17
+  baseHp: 110
   availableConsequences:
-  - {fileID: 11400000, guid: dbeddcd96b122a249af717aebca39692, type: 2}
-  - {fileID: 11400000, guid: 6e245cb07fda258448d8f204577d69c4, type: 2}
-  - {fileID: 11400000, guid: 9ac6a4321ce1b844896268785971f870, type: 2}
-  sprite: {fileID: 21300000, guid: 15edaa36db5b14140afda369d7b67ff9, type: 3}
+  - {fileID: 11400000, guid: 1ddff1738ff26114da1100dcfe104801, type: 2}
+  - {fileID: 11400000, guid: b7d9ad553ef503f49a487c67d60f866f, type: 2}
+  - {fileID: 11400000, guid: d44428380da5d0648b3de86f0c747c4d, type: 2}
+  sprite: {fileID: 21300000, guid: 7611d87f938632e40b396c99f8d0e16c, type: 3}
+  baseStrengh: 6
+  baseBulk: 2
+  startingStatus: []

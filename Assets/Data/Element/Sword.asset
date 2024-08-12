@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 9ed395858999f254d9512ad878441080, type: 3}
-  basePrice: 111
+  basePrice: 80
   description: Sharp and robust. It is wildly recommended to always have at least
     one of these with you. Who know what kind of devastating attack you can make
     with it

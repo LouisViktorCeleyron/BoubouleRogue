@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Goo
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 52532ceabcc87e74e9864fd7a4a06603, type: 3}
-  basePrice: 111
-  description: 
+  basePrice: 120
+  description: Eeew that's some slimy goo. Well I'm sure you can use this to poison
+    foes or make weird potions. I wonder if it's flamable...
   color: {r: 0.62352943, g: 0.3647059, b: 0.64705884, a: 1}
-  potentialMix: []
+  potentialMix:
+  - {fileID: 11400000, guid: b4fb3f731c3399046a4e4b4232c59856, type: 2}
+  - {fileID: 11400000, guid: 2d186f0f012a4714dac5e8c6ed6b9284, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   icone: {fileID: 21300000, guid: 9d7f76dd41da222459b3b017e83de452, type: 3}
-  basePrice: 111
+  basePrice: 100
   description: Splich sploch. Discover the healing property of water. If you heal
     someone too much (say your opponent) maybe you can remove their strengh too.
   color: {r: 0.32156864, g: 0.5529412, b: 0.79215693, a: 1}

@@ -7,7 +7,7 @@ public class Thorns : OnAttackedStatus
     public override StatusEffect StatusEnum => StatusEffect.Thorns;
     protected override void OnAttackedAction(Attack attack)
     {
-        attack.GetLauncher().AutoInflictedDamage(_amount);
+        attack.GetLauncher().AutoInflictedDamage(Amount);
         UpdateStatusInTarget(-1);
     }
 }
