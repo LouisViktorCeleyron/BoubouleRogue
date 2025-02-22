@@ -36,5 +36,5 @@ You can find every thing you need to know (Eleemnts, combos, ennemys, status eff
 Game Design, Programmation, that one devil dude in the shop : Louis Celeyron (me c: )
 Moral support and yelling at me when I try to make everything I do gambling and TCG related : Oko "Nervous Nightjar" Zabicki 
 
-
+Music by HitLab available on https://pixabay.com/users/hitslab-47305729/  
 Icons made by Lorc Sbed, DarkZaitzev, Faithtoken, Delapouite, Carl Olsen, Willdabeast, and Caro Asercion available on https://game-icons.net
