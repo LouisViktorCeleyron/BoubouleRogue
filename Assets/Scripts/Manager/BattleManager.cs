@@ -89,7 +89,7 @@ public class BattleManager : Manager
 
             opponentInstance.StartTurn();
 
-            //c'est pas trés propre ici, 
+            //Not really clean here
             while(_endOfBattle)
             {
                 yield return _waitForEndOfFrame;
@@ -103,11 +103,6 @@ public class BattleManager : Manager
             opponentInstance.EndTurn();
             yield return _waitForEndOfFrame;
         }
-    }
-
-    private void Update()
-    {
-        
     }
 
     private void StartTurn()

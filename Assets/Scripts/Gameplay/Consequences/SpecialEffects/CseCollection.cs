@@ -81,24 +81,24 @@ public class CseCollection
         _collection.RemoveAt(i);
     }
 
-    public string[] GetAvailableCSEArray(List<Type> subclassString)
+    public string[] GetAvailableCSEArray(List<Type> subcassTypes)
     {
         //Prevent NRE
         InitializeArray();
         //Prevent Old Asset Burning new Property Drawer
-        if(_collection.Count >subclassString.Count)
+        if(_collection.Count >subcassTypes.Count)
         {
             _collection.Clear();
         }
         //Actual code
-        var ret = new string[subclassString.Count-_collection.Count];
+        var ret = new string[subcassTypes.Count-_collection.Count];
         var i = 0;
-        foreach (var subClassString in subclassString)
+        foreach (var type in subcassTypes)
         {
-            var isInCollection = _collection.FindIndex((ConsequenceSpecialEffect cse)=> cse.GetType()==subClassString);
+            var isInCollection = _collection.FindIndex((ConsequenceSpecialEffect cse)=> cse.GetType()==type);
             if(isInCollection == -1)
             {
-                ret[i] = subClassString.ToString();
+                ret[i] = type.ToString();
 
                 i++;
             }

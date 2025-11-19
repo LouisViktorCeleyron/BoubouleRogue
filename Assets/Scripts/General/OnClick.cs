@@ -1,29 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class OnClick : MonoBehaviour
 {
     public UnityEvent OnClickAction;
     private UIManager _uiManager;
-    public bool canClick = true;
+    private bool _canClick = true;
+    //Temp
+
+
     private void Start()
     {
         _uiManager = ManagerManager.GetManager<UIManager>();
     }
 
+    public void Enable()
+    {
+        _canClick = true;
+    }
+    public void Disable() 
+    { 
+        _canClick = false;
+    }
+
     private void OnMouseDown()
     {
-        if(!canClick) 
-        { 
+        if (!_canClick)
+        {
             return;
         }
-        if(_uiManager.IsUIOnFront())
+        if (_uiManager.IsUIOnFront())
         {
-            return; 
+            return;
         }
         OnClickAction.Invoke();
-
     }
+
 }
