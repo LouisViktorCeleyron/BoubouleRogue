@@ -20,7 +20,7 @@ public class FightingInstance : MonoBehaviour
     
     [Header("Feedbacks")]
     public UnityEvent<int,int> OnHpChanged;
-    public UnityEvent<StatusEffect,int> OnStatusInflictedFeedback;
+    public UnityEvent<Status> OnStatusInflictedFeedback;
     
     protected BattleManager _battleManager;
     public FightingInstanceFeedbackSubComponent feedbackSubComp;
@@ -97,7 +97,7 @@ public class FightingInstance : MonoBehaviour
             currentStatus.Inflict(this,amount);
             statusEffects.Add(currentStatus);
         }
-        OnStatusInflictedFeedback.Invoke(currentStatus.StatusEnum, currentStatus.Amount);
+        OnStatusInflictedFeedback.Invoke(currentStatus);
         
         if (currentStatus.Amount <= 0)
         {

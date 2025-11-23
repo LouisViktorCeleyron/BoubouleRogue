@@ -13,6 +13,11 @@ public class MasterBattleUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _hpText;
 
+    [SerializeField]
+    private TextMeshProUGUI _descText;
+    [SerializeField]
+    private GameObject _descriptionContainer;
+
     public void UpdateUIHP(int hp, int hpMax)
     {
         SetFilling((float)hp/(float)hpMax);
@@ -26,20 +31,31 @@ public class MasterBattleUI : MonoBehaviour
         _colorimage.color = Color.Lerp(colorB,colorA,percent);
     }
 
-    public void SetStatus(StatusEffect status, int amount)
+    public void SetDescription(Status status)
     {
-        var statusIndex = statusDico.FindIndex((FlemmeDeDicoStatusAndUI s) => s.statusEffect == status);
+        _descriptionContainer.SetActive(true);
+        _descText.text = status.GetDescription();
+    }
+
+    public void HideDescription()
+    {
+        _descriptionContainer.SetActive(false);
+    }
+
+    public void SetStatus(Status status)
+    {
+        var statusIndex = statusDico.FindIndex((FlemmeDeDicoStatusAndUI s) => s.statusEffect == status.StatusEnum);
         if(statusIndex>=0)
         {
             var foundedStatus = statusDico[statusIndex];
-            if(amount<=0)
+            if(status.Amount<=0)
             {
                 foundedStatus.statusUI.gameObject.SetActive(false);
             }
             else
             {
                 foundedStatus.statusUI.gameObject.SetActive(true);
-                foundedStatus.statusUI.SetStatus(amount);
+                foundedStatus.statusUI.SetStatus(status,this);
             }
         }
     }

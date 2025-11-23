@@ -6,8 +6,8 @@ public static class ColorizeExtention
 {
 
     public static Color StatsColor => Color.blue;
-    public static Color GoodStatusColor => Color.white;
-    public static Color BadStatusColor => Color.white;
+    public static Color GoodStatusColor => Color.cyan;
+    public static Color BadStatusColor => Color.red;
     public static Color DammageColor => Color.red;
     public static Color GoldColor => Color.yellow;
 

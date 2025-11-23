@@ -11,4 +11,9 @@ public class DrawLess : OnStartTurnStatus
     {
         
     }
+
+    public override string GetDescription()
+    {
+        return $"Draw {Amount.ColorizeStatusString(true)} less elements next turn";  
+    }
 }
