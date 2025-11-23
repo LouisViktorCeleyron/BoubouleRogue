@@ -36,4 +36,11 @@ public class Shield : OnAttackedStatus
     {
         UpdateStatusInTarget(-999);
     }
+
+    public override string GetDescription()
+    {
+        var amount = $"{Amount}".ColorizeStatusString();
+
+        return $"Prevent up to {amount} damage. Remove all stack at the start of the user's turn";
+    }
 }

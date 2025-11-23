@@ -11,4 +11,9 @@ public class Burn : OnAttackedStatus
         attack.ChangeDammage(+Amount);
         UpdateStatusInTarget(-1);
     }
+
+    public override string GetDescription()
+    {
+        return $"The next attack I receive will deal {Amount.ColorizeStatusString(true)} more damage. Lose all stack when attacked";
+    }
 }

@@ -8,8 +8,10 @@ public class StarterPackSetUp : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _descriptionText, _nameText, _contentText;
     [SerializeField]
-    private StarterPack _defaultPack;
+    private PackBridgeUI _defaultPack;
     private PlayerManager _playerManager;
+    [SerializeField]
+    private List<PackBridgeUI> _packs;
 
     void Start()
     {
@@ -18,10 +20,15 @@ public class StarterPackSetUp : MonoBehaviour
     }
 
 
-    public void SetUpPack(StarterPack starterPack)
+    public void SetUpPack(PackBridgeUI selectedPack)
     {
-        SetUpGameplayData(starterPack);
-        SetUpFeedback(starterPack);
+        foreach (var pack in _packs)
+        {
+            pack.UnselectFB();
+        }
+        selectedPack.SelectFB();
+        SetUpGameplayData(selectedPack.Pack);
+        SetUpFeedback(selectedPack.Pack);
     }
 
     private void SetUpGameplayData(StarterPack starterPack)

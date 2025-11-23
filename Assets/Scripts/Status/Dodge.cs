@@ -14,4 +14,10 @@ public class Dodge : OnAttackedStatus
             UpdateStatusInTarget(-999);
         }
     }
+
+    public override string GetDescription()
+    {
+        var amountText = $"{Amount * 10}% chances".ColorizeStatusString();
+        return $"{amountText} to avoid all damage and lose all {"Dodge stacks".ColorizeStatusString()}.";
+    }
 }

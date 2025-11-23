@@ -13,4 +13,8 @@ public class BulkUp : OnStartTurnStatus
         _target.Stats.AddBulk(amountChanged);
     }
 
+    public override string GetDescription()
+    {
+        return $"I will gain {Amount.ColorizeStatusString()} more shield";
+    }
 }

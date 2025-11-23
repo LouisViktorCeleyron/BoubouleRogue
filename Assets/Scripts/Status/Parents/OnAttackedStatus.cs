@@ -22,4 +22,9 @@ public class OnAttackedStatus : Status
     {
         _target.OnAttackReceived.Unsubscribe(OnAttacked);
     }
+
+    public override string GetDescription()
+    {
+        return "When Attacked";
+    }
 }

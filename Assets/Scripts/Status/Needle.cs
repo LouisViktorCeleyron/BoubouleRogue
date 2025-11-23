@@ -28,4 +28,9 @@ public class Needle : OnStartTurnStatus
         _target.OnAttackReceived.Unsubscribe(ResetDamage);
         base.Unsubscribe();
     }
+
+    public override string GetDescription()
+    {
+        return $"At the start of my turn, I'll lose {Amount.ColorizeStatusString(true)} HP. Lose all stack when attacked";
+    }
 }

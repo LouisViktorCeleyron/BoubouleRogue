@@ -10,4 +10,9 @@ public class Regen : OnStartTurnStatus
         target.Heal(Amount);
         base.OnStartTurnAction(target);
     }
+
+    public override string GetDescription()
+    {
+        return $"At the start of the turn, Heal {Amount.ColorizeStatusString()} hp and lose 1 stack";
+    }
 }

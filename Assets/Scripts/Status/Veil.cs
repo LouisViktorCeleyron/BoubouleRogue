@@ -14,4 +14,9 @@ public class Veil : OnStatusStatus
             UpdateStatusInTarget(-1);
         }
     }
+
+    public override string GetDescription()
+    {
+        return $"I will prevent the next {Amount.ColorizeStatusString()} {"Negative Status".ColorizeStatusString(true)} I get. Then lose 1 Stack";
+    }
 }

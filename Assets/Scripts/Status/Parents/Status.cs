@@ -80,4 +80,8 @@ public class Status
 
     }
 
+    public virtual string GetDescription()
+    {
+        return "Status will do stuff when stuff";
+    }
 }
