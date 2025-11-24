@@ -25,4 +25,9 @@ public class Haystack : OnAttackedStatus
     {
         UpdateStatusInTarget(-999);
     }
+
+    public override string GetDescription()
+    {
+        return $"If i'm attacked, I'll inflict {(Amount + " Needles").ColorizeStatusString()}. Lose all stacks at the start of my turn";
+    }
 }

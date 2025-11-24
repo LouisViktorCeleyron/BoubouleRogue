@@ -8,8 +8,8 @@ public class Shield : OnAttackedStatus
 
     protected override void OnAttackedAction(Attack attack)
     {
-        var tempDamage = attack.GetDammage();
-        attack.ChangeDammage(-Amount);
+        var tempDamage = attack.GetDamage();
+        attack.ChangeDamage(-Amount);
         UpdateStatusInTarget(-tempDamage);
     }
 

@@ -8,11 +8,12 @@ public class OnEndTurnStatus : Status
     protected bool _shouldDecrease => true;
     private void OnEndTurn(FightingInstance target)
     {
+        OnEndTurnAction(target);
+
         if (_shouldDecrease) 
         {
             UpdateStatusInTarget(-1);
         }
-        OnEndTurnAction(target);
     }
     protected virtual void OnEndTurnAction (FightingInstance target)
     {

@@ -10,4 +10,9 @@ public class Thorns : OnAttackedStatus
         attack.GetLauncher().AutoInflictedDamage(Amount);
         UpdateStatusInTarget(-1);
     }
+
+    public override string GetDescription()
+    {
+        return $"When I'm attacked, I do {Amount.ColorizeStatusString()} damages, then lose 1 stack";
+    }
 }

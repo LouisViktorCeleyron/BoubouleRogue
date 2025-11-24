@@ -10,7 +10,7 @@ public class Dodge : OnAttackedStatus
         var generatedDodge = Random.Range(0, 11);
         if(generatedDodge <= Amount)
         {
-            attack.ChangeDammage(-999);
+            attack.ChangeDamage(-999);
             UpdateStatusInTarget(-999);
         }
     }

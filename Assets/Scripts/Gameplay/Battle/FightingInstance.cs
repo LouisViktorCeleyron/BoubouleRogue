@@ -63,10 +63,10 @@ public class FightingInstance : MonoBehaviour
     public void ReceiveAttack(Attack attack, UnityAction<int> onAtkTaken = null)
     {
         OnAttackReceived.Launch(attack);
-        _stats.AddHp(- attack.GetDammage());
+        _stats.AddHp(- attack.GetDamage());
         if(onAtkTaken != null) 
         {
-            onAtkTaken.Invoke(attack.GetDammage());
+            onAtkTaken.Invoke(attack.GetDamage());
         }
     }
     public void AutoInflictedDamage(int amount)

@@ -12,4 +12,8 @@ public class Tough : Status
         _target.Stats.AddStrength(amountChanged);
     }
 
+    public override string GetDescription()
+    {
+        return $"My attack will do {Amount.ColorizeStatusString()} more damage";
+    }
 }

@@ -15,4 +15,9 @@ public class ThunderMark : Status
         UpdateStatusInTarget(-999);
     }
 
+    public override string GetDescription()
+    {
+        return $"When released, lose all stack and I'll receive {"The same amount".ColorizeStatusString(true)} in damage";
+    }
+
 }

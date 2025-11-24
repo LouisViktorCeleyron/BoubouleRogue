@@ -17,4 +17,9 @@ public class ThunderMarked : OnEndTurnStatus
         base.Unsubscribe();
     }
 
+    public override string GetDescription()
+    {
+        return $"At the end of my turn i'll lose 1 stack and gain {("1 Thunder Mark").ColorizeStatusString()}. When stack reach 0 ThunderMark will be released";
+    }
+
 }

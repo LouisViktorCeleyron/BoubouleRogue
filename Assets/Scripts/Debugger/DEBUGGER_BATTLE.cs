@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class DEBUGGER_BATTLE : MonoBehaviour
 {
     public Element[] debugDeck;
     private BattleManager manager;
+
+    private float _buttonSize = 50;
+
+    [SerializeField]
+    private GUIStyle _style;
 
     [SerializeField]
     private bool showDebug;
@@ -37,24 +43,26 @@ public class DEBUGGER_BATTLE : MonoBehaviour
 
     private void OnGUI()
     {
-        if(showDebug)
+        if (showDebug)
         {
+            GUILayout.BeginArea(new Rect(0,0, Screen.width/4f,Screen.height));
             foreach (var item in debugDeck)
             {
-                if(GUILayout.Button($"Draw {item.name}"))
+                if(GUILayout.Button($"Draw {item.name}", _style, GUILayout.MinHeight(_buttonSize)))
                 {
                     manager.CombinatorSubManager.DrawSpecific(item);
                 }
             }
 
-            if(GUILayout.Button("Heal"))
+            if(GUILayout.Button("Heal",_style,GUILayout.MinHeight(_buttonSize)))
             {
                 manager.playerInstance.Heal(999);
             }
-            if (GUILayout.Button("Tough"))
+            if (GUILayout.Button("Tough",_style, GUILayout.MinHeight(_buttonSize)))
             {
                 manager.playerInstance.AddStatus<Tough>(1);
             }
+            GUILayout.EndArea();
         }
     }
 }

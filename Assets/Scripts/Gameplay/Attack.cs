@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class Attack 
 {
-    private int _dammage;
+    private int _damage;
     private ElementalType _type;
     //private FightingInstance _launcher;
     private FightingInstance _target, _launcher;
     
 
-    public Attack(int dammage, ElementalType type, FightingInstance launcher, FightingInstance target)
+    public Attack(int damage, ElementalType type, FightingInstance launcher, FightingInstance target)
     {
-        this._dammage = dammage;
+        this._damage = damage;
         this._type = type;
         this._launcher = launcher;
         this._target = target;
     }
-    public void ChangeDammage(int valueToAddOrRemove)
+    public void ChangeDamage(int valueToAddOrRemove)
     {
-        _dammage = Mathf.Clamp(0, _dammage + valueToAddOrRemove, 999);
+        _damage = Mathf.Clamp(0, _damage + valueToAddOrRemove, 999);
     }
-    public int GetDammage()
+    public int GetDamage()
     {
-        return _dammage;
+        return _damage;
     }
 
     public FightingInstance GetLauncher()

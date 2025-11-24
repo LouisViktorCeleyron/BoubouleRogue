@@ -35,9 +35,9 @@ public class OffensiveConsequence : StatusOnlyConsequence
     public override string GetDescription(FightingInstance launcher = null)
     {
         var launcherStat = launcher != null? launcher.Stats.Strength : 0; //Adding the strengh status to dammage
-        var retBaseDam = $"{(baseDamages+launcherStat).ColorizeString(ColorizeExtention.DammageColor)} Damages. ";//How many dammage the atack will do
-        var retRecDam = $"{recoilDamages.ColorizeString(ColorizeExtention.DammageColor)} Recoil Damages. ";// If it has recoil dammage 
-        var retAmount = $"{howManyTimes.ColorizeString(ColorizeExtention.DammageColor)} Times. ";// How many time
+        var retBaseDam = $"{(baseDamages+launcherStat).ColorizeString(ColorizeExtention.DamageColor)} Damages. ";//How many dammage the atack will do
+        var retRecDam = $"{recoilDamages.ColorizeString(ColorizeExtention.DamageColor)} Recoil Damages. ";// If it has recoil dammage 
+        var retAmount = $"{howManyTimes.ColorizeString(ColorizeExtention.DamageColor)} Times. ";// How many time
         var retBase = base.GetDescription(launcher);//Get status from base class
         return retBaseDam + (recoilDamages>0?retRecDam:string.Empty) + retBase + (howManyTimes>1?retAmount:string.Empty); //combine everything into a string
     }

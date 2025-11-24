@@ -7,6 +7,8 @@ using UnityEngine;
 public class Status
 {
     protected FightingInstance _target;
+    public virtual string Name => StatusEnum.ToString();
+
     [SerializeField]
     private int _amount;
     public int Amount => _amount;

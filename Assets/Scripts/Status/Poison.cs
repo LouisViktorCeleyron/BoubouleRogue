@@ -10,4 +10,9 @@ public class Poison : OnStartTurnStatus
     {
         target.AutoInflictedDamage(Amount);
     }
+
+    public override string GetDescription()
+    {
+        return $"I will receive {Amount.ColorizeStatusString(true)} damages at the start of my turn, then lose 1 stack";
+    }
 }
