@@ -25,7 +25,12 @@ public class OponentInstance : FightingInstance
         //Debug.Log("coucou");
         _oponentData = oponentData;
         _spriteRenderer.sprite = _oponentData.sprite;
-        _opponentName.text = oponentData.name;
+        if (_oponentData.opponentPrefab != null )
+        {
+            Instantiate(_oponentData.opponentPrefab, transform);
+            _spriteRenderer.enabled = false;
+        }
+        _opponentName.text = oponentData.name;  
         Stats.SetHpMax (oponentData.baseHp);
         Stats.SetHp (oponentData.baseHp);
         Stats.SetStrength(oponentData.baseStrengh);

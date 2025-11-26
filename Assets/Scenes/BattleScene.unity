@@ -1042,7 +1042,7 @@ Transform:
   m_GameObject: {fileID: 525270017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.4284363, y: 1.1952674, z: 0}
+  m_LocalPosition: {x: 5.4284363, y: 0.54, z: 0}
   m_LocalScale: {x: 2.466, y: 0.4429, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3653,7 +3653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2895852955949584433, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19179034
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 2895852955949584433, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3687,9 +3687,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3912362778580064846, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7111108022230185992, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
       propertyPath: m_Name
       value: Opponent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111108022230185992, guid: be1aae7fa15a6a640972d2abbf8d5e7b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

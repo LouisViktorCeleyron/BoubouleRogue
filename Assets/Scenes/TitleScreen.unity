@@ -1334,6 +1334,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 101161163565366671, guid: 1fd7d9d52acbc9149825f6e7d77c1b30, type: 3}
+      propertyPath: _loadableOpponent.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 101161163565366671, guid: 1fd7d9d52acbc9149825f6e7d77c1b30, type: 3}
+      propertyPath: _loadableOpponent.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: a09ced74c7bc9f541a89ab85db96ad59, type: 2}
     - target: {fileID: 2119142904019572118, guid: 1fd7d9d52acbc9149825f6e7d77c1b30, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

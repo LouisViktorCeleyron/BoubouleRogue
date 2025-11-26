@@ -7,6 +7,7 @@ public class OpponentData : ScriptableObject
 {
     public int baseHp;
     public List<Consequence> availableConsequences;
+    public GameObject opponentPrefab;
     public Sprite sprite;
     public int baseStrengh, baseBulk;
 

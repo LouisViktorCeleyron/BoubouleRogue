@@ -1133,6 +1133,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2338db5f6a21253479273b15678820f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _style:
+    m_Name: button
+    m_Normal:
+      m_Background: {fileID: 11006, guid: 0000000000000000e000000000000000, type: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    m_Hover:
+      m_Background: {fileID: 11003, guid: 0000000000000000e000000000000000, type: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
+    m_Active:
+      m_Background: {fileID: 11002, guid: 0000000000000000e000000000000000, type: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 11005, guid: 0000000000000000e000000000000000, type: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 11004, guid: 0000000000000000e000000000000000, type: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 11002, guid: 0000000000000000e000000000000000, type: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 6
+      m_Right: 6
+      m_Top: 6
+      m_Bottom: 4
+    m_Margin:
+      m_Left: 4
+      m_Right: 4
+      m_Top: 4
+      m_Bottom: 4
+    m_Padding:
+      m_Left: 6
+      m_Right: 6
+      m_Top: 3
+      m_Bottom: 3
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 0}
+    m_FontSize: 36
+    m_FontStyle: 0
+    m_Alignment: 4
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 1
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  _loadableOpponent:
+  - {fileID: 11400000, guid: f6db2f521a8716947a1da942ced3f392, type: 2}
+  - {fileID: 11400000, guid: 38377124ba50b944cb71c8187a27ab43, type: 2}
+  - {fileID: 11400000, guid: 85feb88f0053f7c4faaa290ae03a4ba1, type: 2}
+  - {fileID: 11400000, guid: 463e49fd553a6fd4a813c47c370b44ff, type: 2}
+  - {fileID: 11400000, guid: 1b27e460b2540534fa0503ce9b3cc64c, type: 2}
+  - {fileID: 11400000, guid: 10943102711549b4aa0791ec45f8c7cb, type: 2}
+  - {fileID: 11400000, guid: bf57e9644a8205c48b21409e1ef71431, type: 2}
+  - {fileID: 11400000, guid: 9c8088d769619ba4c84678bd194ad220, type: 2}
+  - {fileID: 11400000, guid: 8aa9af6e3720f564e9d03e2429c6a35b, type: 2}
+  - {fileID: 11400000, guid: f38996760b3abd346ba4f9cd9a555ca5, type: 2}
+  - {fileID: 11400000, guid: d1081e36506b09742abe9c357410b4a9, type: 2}
+  - {fileID: 11400000, guid: 6724f612356f9d549b57ce329fd2111f, type: 2}
+  - {fileID: 11400000, guid: 3c983fe33fa6c9e44a7a2664b55c6dc7, type: 2}
+  - {fileID: 11400000, guid: c6a720f2578ae4d4fa0e0faa255f3950, type: 2}
+  - {fileID: 11400000, guid: 0d062ec8bc56a1c4bb6ec01a40ad1170, type: 2}
+  - {fileID: 11400000, guid: b567ecad86121df4396d2a1fd18420e7, type: 2}
+  - {fileID: 11400000, guid: c0656fec12abe9b418397a780e454359, type: 2}
+  - {fileID: 11400000, guid: fac655e88dcc4ef4c872d40dcd48e1ae, type: 2}
   showDebug: 0
 --- !u!1 &952834225597970540
 GameObject:

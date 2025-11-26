@@ -16,4 +16,8 @@ MonoBehaviour:
   availableConsequences:
   - {fileID: 11400000, guid: 6e245cb07fda258448d8f204577d69c4, type: 2}
   - {fileID: 11400000, guid: 1dddfa8514d1a4b40b46f6cbb2c7b4b4, type: 2}
+  opponentPrefab: {fileID: 7659302535053802559, guid: 6c444a2246778c641bcbfbb090f49c84, type: 3}
   sprite: {fileID: 21300000, guid: 631ce60a27a16524485f693cc817a4ae, type: 3}
+  baseStrengh: 0
+  baseBulk: 0
+  startingStatus: []
