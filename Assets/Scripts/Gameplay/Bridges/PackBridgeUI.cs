@@ -14,7 +14,9 @@ public class PackBridgeUI : MonoBehaviour
     private Color _selectedColor, _unselectedColor;
     [SerializeField]
     private Image _image;
-    
+
+    public Color colorA, colorB;
+
     void Start()
     {
         _ssup = FindObjectOfType<StarterPackSetUp>();                 

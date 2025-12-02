@@ -250,3 +250,6 @@ MonoBehaviour:
   _selectedColor: {r: 1, g: 1, b: 1, a: 1}
   _unselectedColor: {r: 0, g: 0, b: 0, a: 1}
   _image: {fileID: 4016257451420855128}
+  buttonRef: {fileID: 583322159528999575}
+  colorA: {r: 0, g: 0, b: 0, a: 0}
+  colorB: {r: 0, g: 0, b: 0, a: 0}

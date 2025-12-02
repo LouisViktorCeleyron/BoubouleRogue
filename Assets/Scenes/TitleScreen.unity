@@ -2858,9 +2858,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'v0.0.1
+  m_text: 'v0.0.2
 
-    (08-2024)'
+    (12-2025)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb1c3ce77cfa73e4c90e2a6584bdaf8d, type: 2}
   m_sharedMaterial: {fileID: -625126704875770887, guid: bb1c3ce77cfa73e4c90e2a6584bdaf8d, type: 2}

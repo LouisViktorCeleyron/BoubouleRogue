@@ -6,6 +6,8 @@ using UnityEngine;
 public class StarterPackSetUp : MonoBehaviour
 {
     [SerializeField]
+    private UpdatePackColorSelection _colorSelection;
+    [SerializeField]
     private TextMeshProUGUI _descriptionText, _nameText, _contentText;
     [SerializeField]
     private PackBridgeUI _defaultPack;
@@ -27,6 +29,7 @@ public class StarterPackSetUp : MonoBehaviour
             pack.UnselectFB();
         }
         selectedPack.SelectFB();
+        _colorSelection.UpdateColor(selectedPack);
         SetUpGameplayData(selectedPack.Pack);
         SetUpFeedback(selectedPack.Pack);
     }
