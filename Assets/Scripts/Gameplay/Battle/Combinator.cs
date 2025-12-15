@@ -5,12 +5,14 @@ using UnityEngine;
 public class Combinator : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer _spriteRenderer;
+    private SpriteRenderer _spriteRenderer,_bgSpriteRenderer;
     public Element element;
     private bool _isSelected;
 
+
     private BattleManager _battleManager;
     private UIManager _uiManager;
+
 
     private Combinator _otherCombinator;
     // Start is called before the first frame update
@@ -19,6 +21,7 @@ public class Combinator : MonoBehaviour
         _battleManager = ManagerManager.GetManager<BattleManager>();
         _uiManager = ManagerManager.GetManager<UIManager>();
     }
+
     public void Initialise(Element element)
     {
         this.element = element;
@@ -56,6 +59,8 @@ public class Combinator : MonoBehaviour
             _battleManager.BattlePreviewSubManager.HidePreviewPlayerCombinaison();
         }
     }
+
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

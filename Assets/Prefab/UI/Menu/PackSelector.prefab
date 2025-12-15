@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5254902}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -249,7 +249,7 @@ MonoBehaviour:
   _pack: {fileID: 11400000, guid: 03c44c16c3218274e895e2f2446feee1, type: 2}
   _selectedColor: {r: 1, g: 1, b: 1, a: 1}
   _unselectedColor: {r: 0, g: 0, b: 0, a: 1}
-  _image: {fileID: 4016257451420855128}
-  buttonRef: {fileID: 583322159528999575}
+  _bgImage: {fileID: 4016257451420855128}
+  _image: {fileID: 5346867547708103643}
   colorA: {r: 0, g: 0, b: 0, a: 0}
   colorB: {r: 0, g: 0, b: 0, a: 0}

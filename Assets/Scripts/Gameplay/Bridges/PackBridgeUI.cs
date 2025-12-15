@@ -13,7 +13,7 @@ public class PackBridgeUI : MonoBehaviour
     [SerializeField]
     private Color _selectedColor, _unselectedColor;
     [SerializeField]
-    private Image _image;
+    private Image _bgImage,_image;
 
     public Color colorA, colorB;
 
@@ -28,10 +28,12 @@ public class PackBridgeUI : MonoBehaviour
     }
     public void SelectFB()
     {
-        _image.color = _selectedColor;    
+        _bgImage.color = _selectedColor;
+        _image.color = Color.white;
     }
     public void UnselectFB()
     {
-        _image.color = _unselectedColor;
+        _bgImage.color = _unselectedColor;
+        _image.color = new Color(1, 1, 1, .25f);
     }
 }

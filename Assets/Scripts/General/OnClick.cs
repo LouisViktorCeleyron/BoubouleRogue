@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 
 public class OnClick : MonoBehaviour
 {
-    public UnityEvent OnClickAction;
+    public UnityEvent OnClickAction, MouseEnter, MouseExit;
     private UIManager _uiManager;
     private bool _canClick = true;
     //Temp
@@ -40,4 +40,21 @@ public class OnClick : MonoBehaviour
         OnClickAction.Invoke();
     }
 
+    private void OnMouseEnter()
+    {
+        if (!_canClick)
+        {
+            return;
+        }
+        if(_uiManager.IsUIOnFront())
+        {
+            return ;
+        }
+        MouseEnter.Invoke();
+    }
+
+    private void OnMouseExit()
+    {
+        MouseExit.Invoke();
+    }
 }

@@ -66,7 +66,7 @@ public class Status
     protected virtual void BeforeAmountChange(ref int amountChanged)
     {
 
-    }
+    }   
     protected virtual void OnAmountChange(int amountChanged)
     {
 
