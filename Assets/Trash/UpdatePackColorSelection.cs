@@ -28,8 +28,6 @@ public class UpdatePackColorSelection : MonoBehaviour
     {
         _time += Time.deltaTime * (_speed / 10f);
         _camera.backgroundColor = Color.Lerp(_startColor, _targetColor, _time);
-
-        Debug.Log(_time);
         if (_time >= 1)
         {
             _startColor = _targetColor;

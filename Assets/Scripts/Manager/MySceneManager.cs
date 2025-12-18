@@ -55,6 +55,7 @@ public class MySceneManager : Manager
     }
     public void LoadBattle(string audioTrack = "Battle")
     {
+        Debug.Log("coucou");
         _audioManager.LoadMusic(audioTrack);
         _loadingSubManager.BattleTranstion(() =>
         {

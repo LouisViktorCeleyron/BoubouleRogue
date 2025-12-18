@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3ac9c170f2822148aeedf0773846866, type: 3}
-  m_Name: Burning Spirit
+  m_Name: Ifrit
   m_EditorClassIdentifier: 
   baseHp: 110
   availableConsequences:
   - {fileID: 11400000, guid: 1ddff1738ff26114da1100dcfe104801, type: 2}
   - {fileID: 11400000, guid: b7d9ad553ef503f49a487c67d60f866f, type: 2}
   - {fileID: 11400000, guid: d44428380da5d0648b3de86f0c747c4d, type: 2}
+  opponentPrefab: {fileID: 2549336890095735711, guid: 8a2081d3afeb47b4693074887f48f0f8, type: 3}
   sprite: {fileID: 21300000, guid: 7611d87f938632e40b396c99f8d0e16c, type: 3}
   baseStrengh: 6
   baseBulk: 2
