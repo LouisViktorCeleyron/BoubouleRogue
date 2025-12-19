@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public class MapButton : MonoBehaviour
 {
@@ -16,6 +19,10 @@ public class MapButton : MonoBehaviour
     [SerializeField]
     private Color _bgUnhover,_bgHover;
 
+    [SerializeField]
+    private Image[] _imageRef;
+    [SerializeField]
+    private UnityEvent _afterLine;
     [SerializeField]
     private Animator _anim;
 
@@ -37,6 +44,27 @@ public class MapButton : MonoBehaviour
             _sprite.color = _future;
             _onClick.Disable();
         }
+    }
+
+    public void LaunchActionAfterFillingPath()
+    {
+        StartCoroutine(SetLineFill());
+    }
+
+    private IEnumerator SetLineFill()
+    {
+        var fa = 0f;
+        while (fa <= 1)
+        {
+            fa += Time.deltaTime * 2;
+            foreach (var item in _imageRef)
+            {
+                item.fillAmount = fa;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        yield return new WaitForSeconds(.5f);
+        _afterLine.Invoke();
     }
 
     public void ChangeBG(bool hover)

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ManagerBridge : MonoBehaviour
 {
@@ -71,7 +72,7 @@ public class ManagerBridge : MonoBehaviour
     {
         _journeyManager.NewRunSetup();
     }
-
+    
     public void TempDebug(string msg = "Hello World")
     {
         Debug.Log(msg);
